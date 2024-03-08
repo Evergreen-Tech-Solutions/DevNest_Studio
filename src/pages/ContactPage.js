@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
+import Styles from '../styles/ContactPage.module.css';
 
 function ContactPage() {
   return (

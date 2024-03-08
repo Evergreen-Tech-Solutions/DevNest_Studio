@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
+import Styles from '../styles/AboutPage.module.css';
 
 function AboutPage() {
   return (
