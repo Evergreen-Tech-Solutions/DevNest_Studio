@@ -10,7 +10,7 @@ module.exports = {
             'danger': '#FF5B5B',
             'light': '#F3F4F6',
             'dark': '#1F2937',
-            'bg': '#F9FAFB',
+            'bg': '#59cb91',
         },
         fontFamily: {
             'sans': ['Nunito', 'sans-serif'],
