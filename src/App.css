@@ -1,15 +1,24 @@
-
+/* App.css */
 .dark-mode {
+  --bg-color: #121212; /* Dark background */
+  --text-color: #ffffff; /* Light text */
+  --link-color: #bb86fc; /* For links */
+  --link-hover-color: #3700B3; /* For link hover state */
+}
 
+.dark-mode body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .dark-mode .nav-link {
-  
+  color: var(--link-color);
 }
 
 .dark-mode .nav-link:hover {
-
+  color: var(--link-hover-color);
 }
+
 
 
 .color-blind-mode {

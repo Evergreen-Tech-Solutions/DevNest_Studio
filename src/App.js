@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation';
@@ -13,15 +13,30 @@ import ContactPage from './pages/ContactPage';
 function App() {
 
   const [darkMode, setDarkMode] = useState(false);
-  const [colorBlindMode, setColorBlindMode] = useState(false);
-
   const toggleDarkMode = () => setDarkMode(!darkMode);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
+
+  const [colorBlindMode, setColorBlindMode] = useState(false);
   const toggleColorBlindMode = () => setColorBlindMode(!colorBlindMode);
 
+  useEffect(() => {
+    if (colorBlindMode) {
+      document.body.classList.add('color-blind-mode');
+    } else {
+      document.body.classList.remove('color-blind-mode');
+    }
+  }, [colorBlindMode]);
   return (
     <Router>
       <div className={`App flex flex-col min-h-screen ${darkMode ? 'dark' : 'light'} ${colorBlindMode ? 'color-blind' : ''}`}>
-      <Navigation darkMode={darkMode} onToggleDarkMode={toggleDarkMode} colorBlindMode={colorBlindMode} onToggleColorBlindMode={toggleColorBlindMode} />
+      <Navigation onToggleDarkMode={toggleDarkMode} onToggleColorBlindMode={toggleColorBlindMode} />
           <main className="flex-1 pt-[64px]">
             <Routes>
               <Route path="/" element={<HomePage />} />

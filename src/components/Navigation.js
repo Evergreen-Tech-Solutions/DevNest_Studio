@@ -28,10 +28,10 @@ function Navigation({ darkMode, toggleDarkMode, colorBlindMode, toggleColorBlind
           </div>
           <div className="flex items-center space-x-4">
             <button onClick={toggleDarkMode} className="p-2 rounded">
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
+              {darkMode ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
             </button>
             <button onClick={toggleColorBlindMode} className="p-2 rounded">
-              {colorBlindMode ? 'Normal Vision' : 'Color Blind Mode'}
+              {colorBlindMode ? <i className="fas fa-eye"></i> : <i className="fas fa-low-vision"></i>}
             </button>
           </div>
         </div>
