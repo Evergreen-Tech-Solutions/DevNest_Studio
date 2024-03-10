@@ -1,17 +1,17 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Styles from '../styles/HomePage.module.css';
+import logo from '../assets/logo.png';
 
 
 function HomePage() {
   return (
       <div className="bg-orng mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Welcome to Our Business</h1>
+          {/* image here */}
+          <img src={logo} alt="DevNest Studio Logo" className="h-96 w-96 mx-auto mb-5" />
+          <h1 className="text-6xl font-bold text-gray-800 mb-4">Coming Soon...</h1>
           <p className="text-lg text-gray-600">We offer top-notch services to meet your needs.</p>
-          <div className="mt-8">
-            <a href="#" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-md">Get Started</a>
-          </div>
         </div>
       </div>
   );
