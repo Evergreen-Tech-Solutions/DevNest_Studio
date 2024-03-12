@@ -8,47 +8,49 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
+import { amber, deepOrange, grey } from '@mui/material/colors';
 
 
 
 function App() {
-
-  // const [darkMode, setDarkMode] = useState(false);
-  // const toggleDarkMode = () => setDarkMode(!darkMode);
-
-  // const [colorBlindMode, setColorBlindMode] = useState(false);
-  // const toggleColorBlindMode = () => setColorBlindMode(!colorBlindMode);
-
-  // useEffect(() => {
-  //   if (darkMode) {
-  //     document.documentElement.classList.add('dark-mode');
-  //   } else {
-  //     document.documentElement.classList.remove('dark-mode');
-  //   }
-  // }, [darkMode]);
-
-  // useEffect(() => {
-  //   if (colorBlindMode) {
-  //     document.documentElement.classList.add('color-blind');
-  //   } else {
-  //     document.documentElement.classList.remove('color-blind');
-  //   }
-  // }, [colorBlindMode]);
-
-
   const [darkMode, setDarkMode] = useState(false);
-
+  const mode = darkMode ? 'dark' : 'light';
   const theme = createTheme({
     palette: {
-      mode: darkMode ? 'dark' : 'light',
-      // You can customize other theme properties here
-      // customize the colors here
-      primary: {
-        main: '#b6e1e0',
-      },
-      secondary: {
-        main: '#3f3f3f',
-      },
+      mode,
+      ...(mode === 'light'
+      ? {
+          // palette values for light mode
+          primary: { main: '#b6e1e0' },
+          divider: grey[700],
+          text: {
+            primary: grey[900],
+            secondary: grey[300],
+          },
+        }
+      : {
+          // palette values for dark mode
+          primary: { main: grey[900] },
+          divider: deepOrange[500],
+          background: {
+            default: grey[500],
+            paper: grey[900],
+          },
+          text: {
+            primary: '#fff',
+            secondary: grey[200],
+          },
+        }),
+      // primary: {
+      //   main: '#b6e1e0',
+      // },
+      // secondary: {
+      //   main: '#3f3f3f',
+      // },
+      // text: {
+      //   primary: grey[900],
+      //   secondary: grey[200],
+      // },
     },
   });
 

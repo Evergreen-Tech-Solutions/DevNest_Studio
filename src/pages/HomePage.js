@@ -6,7 +6,7 @@ import logo from '../assets/logo.png';
 
 function HomePage() {
   return (
-      <div className="bg-orng mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
           {/* image here */}
           <img src={logo} alt="DevNest Studio Logo" className="h-96 w-96 mx-auto mb-5" />
