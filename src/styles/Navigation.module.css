@@ -3,7 +3,7 @@
     margin-right: 1rem;
     font-size: 1.5rem;
     transition: all 0.2s ease-in-out;
-    color: #f7b633;
+    color: #fdb627;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
@@ -16,7 +16,6 @@
     margin-right: 1rem;
     font-size: 1.12rem;
     transition: all 0.2s ease-in-out infinite;
-    color: #3f3f3f;
     padding: 0.5rem 1rem;
     margin-top: 1.5rem;
 }

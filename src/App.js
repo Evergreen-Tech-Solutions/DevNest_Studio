@@ -25,7 +25,7 @@ function App() {
           divider: grey[700],
           text: {
             primary: grey[900],
-            secondary: grey[300],
+            secondary: grey[500],
           },
         }
       : {
@@ -34,23 +34,13 @@ function App() {
           divider: deepOrange[500],
           background: {
             default: grey[500],
-            paper: grey[900],
+            paper: grey[800],
           },
           text: {
             primary: '#fff',
             secondary: grey[200],
           },
         }),
-      // primary: {
-      //   main: '#b6e1e0',
-      // },
-      // secondary: {
-      //   main: '#3f3f3f',
-      // },
-      // text: {
-      //   primary: grey[900],
-      //   secondary: grey[200],
-      // },
     },
   });
 
