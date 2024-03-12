@@ -7,7 +7,8 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu'; // Hamburger menu icon
 import Brightness4Icon from '@mui/icons-material/Brightness4'; // Dark mode icon
 import Brightness7Icon from '@mui/icons-material/Brightness7'; // Light mode icon
-import logo from '../assets/logo.png';
+import darkLogo from '../assets/logo.png';
+import lightLogo from '../assets/logo_w.png';
 import '../tailwind.css';
 import style from '../styles/Navigation.module.css';
 
@@ -16,7 +17,7 @@ function Navigation({ onToggleDarkMode, darkMode }) {
     <AppBar position="fixed">
       <Toolbar className="w-full z-10">
         <NavLink to="/" className="flex items-center">
-          <img src={logo} alt="DevNest Studio Logo" className="h-28 w-28 mr-2" />
+          <img src={darkMode ? lightLogo : darkLogo } alt="DevNest Studio Logo" className="h-28 w-28 mr-2" />
           <Typography variant="h6" color="inherit" noWrap>
           </Typography>
         </NavLink>

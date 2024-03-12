@@ -63,7 +63,7 @@ function App() {
       <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App flex flex-col min-h-screen">
-      <Navigation onToggleDarkMode={toggleDarkMode} />
+      <Navigation onToggleDarkMode={toggleDarkMode} darkMode={darkMode} />
           <main className="flex-1 pt-[64px]">
             <Routes>
               <Route path="/" element={<HomePage />} />
