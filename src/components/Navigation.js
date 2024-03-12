@@ -17,7 +17,7 @@ function Navigation({ onToggleDarkMode, darkMode }) {
     <AppBar position="fixed">
       <Toolbar className="w-full z-10">
         <NavLink to="/" className="flex items-center">
-          <img src={darkMode ? lightLogo : darkLogo } alt="DevNest Studio Logo" className="h-28 w-28 mr-2" />
+          <img src={darkMode ? lightLogo : darkLogo} alt="DevNest Studio Logo" className="h-28 w-28 mr-2" />
           <Typography variant="h6" color="inherit" noWrap>
           </Typography>
         </NavLink>
@@ -29,11 +29,14 @@ function Navigation({ onToggleDarkMode, darkMode }) {
           <NavLink to="/projects" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Projects</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Contact</NavLink>
         </div>
-
-        {/* Dark Mode Toggle Button */}
-        <IconButton color="inherit" onClick={onToggleDarkMode}>
-          {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-        </IconButton>
+        <div className="flex items-center space-x-4 mt-4 ml-3">
+          <IconButton color="inherit" onClick={onToggleDarkMode}>
+            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
+          {/* <IconButton color="inherit">
+          <MenuIcon />
+        </IconButton> */}
+        </div>
       </Toolbar>
     </AppBar>
   );
