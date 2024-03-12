@@ -16,7 +16,6 @@
 .navItemInactive {
     display: inline-block;
     margin-right: 1rem;
-    font-size: 1.12rem;
     transition: all 0.2s ease-in-out infinite;
     padding: 0.5rem 1rem;
     margin-top: 1.5rem;

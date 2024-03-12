@@ -21,13 +21,14 @@ function Navigation({ onToggleDarkMode, darkMode }) {
           <Typography variant="h6" color="inherit" noWrap>
           </Typography>
         </NavLink>
-        <div className="flex-grow"></div>
-        <div className="ml-12 flex items-baseline align-middle">
-          <NavLink to="/" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Home</NavLink>
-          <NavLink to="/about" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>About</NavLink>
-          <NavLink to="/services" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Services</NavLink>
-          <NavLink to="/projects" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Projects</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Contact</NavLink>
+        <div className="flex-grow">
+          <div className="ml-12 text-lg flex items-baseline justify-center mr-5">
+            <NavLink to="/" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Home</NavLink>
+            <NavLink to="/about" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>About</NavLink>
+            <NavLink to="/services" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Services</NavLink>
+            <NavLink to="/projects" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Projects</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Contact</NavLink>
+          </div>
         </div>
         <div className="flex items-center space-x-4 mt-4 ml-3">
           <IconButton color="inherit" onClick={onToggleDarkMode}>
