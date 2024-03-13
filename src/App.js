@@ -33,11 +33,11 @@ function App() {
           primary: { main: grey[900] },
           divider: deepOrange[500],
           background: {
-            default: grey[500],
+            default: grey[600],
             paper: grey[800],
           },
           text: {
-            primary: '#fff',
+            primary: grey[300],
             secondary: grey[200],
           },
         }),
