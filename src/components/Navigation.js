@@ -22,11 +22,11 @@ function Navigation({ onToggleDarkMode, darkMode }) {
           </Typography>
         </NavLink>
         <div className="flex-grow">
-          <div className="ml-12 text-lg flex items-baseline justify-center mr-5">
+          <div className="text-lg flex items-baseline justify-center mr-8">
             <NavLink to="/" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Home</NavLink>
-            <NavLink to="/about" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>About</NavLink>
-            <NavLink to="/services" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Services</NavLink>
             <NavLink to="/projects" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Projects</NavLink>
+            <NavLink to="/services" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Services</NavLink>
+            <NavLink to="/about" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>About</NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? style.navItemActive : style.navItemInactive}>Contact</NavLink>
           </div>
         </div>
