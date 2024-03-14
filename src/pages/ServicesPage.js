@@ -2,8 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import Styles from '../styles/ServicesPage.module.css';
-
-// Import your Lottie animation JSON files
 import webAnimationData from '../assets/Web_lottie.json';
 import mobileAnimationData from '../assets/Mobile_lottie.json';
 

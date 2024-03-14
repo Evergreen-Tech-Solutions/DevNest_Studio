@@ -1,7 +1,5 @@
 import React from 'react';
 import Styles from '../../styles/services_styles/WebSrvc.module.css';
-
-// Import logos for each service
 import customWebDevelopmentLogo from '../../assets/logos/customWebDevelopmentLogo.png'; // Update paths as needed
 import eCommerceLogo from '../../assets/logos/eCommerceLogo.png';
 import cmsLogo from '../../assets/logos/cmsLogo.png';
@@ -12,7 +10,6 @@ import seoLogo from '../../assets/logos/seoLogo.png';
 
 
 function WebApplication() {
-  // List of services with their logos and descriptions
   const services = [
     {
       logo: customWebDevelopmentLogo,
