@@ -8,7 +8,9 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
-import { amber, deepOrange, grey } from '@mui/material/colors';
+import WebApplication from './pages/web_srvc/web-application';
+import MobileApplication from './pages/mob_srvc/mobile-application';
+import { deepOrange, grey } from '@mui/material/colors';
 
 
 
@@ -62,6 +64,8 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/web-application" element={<WebApplication />} />
+              <Route path="/mobile-application" element={<MobileApplication />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </main>
