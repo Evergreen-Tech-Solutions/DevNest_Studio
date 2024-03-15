@@ -1,0 +1,25 @@
+.title {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.bodyText {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.sectionBackground {
+  background-color: #278ea55a;
+  border-radius: 8px;
+  padding: 1.25rem; /* Adjust padding inside the background */
+  margin: 1.25rem -1.25rem; /* Adjusts the outer spacing to keep text aligned */
+}
+
+.introSection {
+  padding-bottom: 1rem; /* Reduced padding for less space */
+}
