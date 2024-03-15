@@ -1,30 +1,39 @@
 /* WebSrvc.module.css */
 .webServices {
-    padding: 40px 0;
-  }
-  
-  .serviceCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .serviceCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .serviceCard img {
-    margin-bottom: 20px;
-  }
-  
-  .serviceCard h5 {
-    margin-bottom: 15px;
-  }
-  
-  .serviceCard p {
-    font-size: 1rem;
-  }
-  
+  padding: 40px 0;
+}
+
+/* WebSrvc.module.css */
+.backButtonContainer {
+  position: -webkit-sticky;
+  /* For Safari */
+  position: sticky;
+  top: 150px;
+  z-index: 10;
+}
+
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.serviceCard img {
+  margin-bottom: 20px;
+}
+
+.serviceCard h5 {
+  margin-bottom: 15px;
+}
+
+.serviceCard p {
+  font-size: 1rem;
+}

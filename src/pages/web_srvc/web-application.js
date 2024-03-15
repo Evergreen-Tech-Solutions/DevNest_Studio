@@ -49,15 +49,20 @@ function WebApplication() {
   ];
 
   return (
-    <div className={`${Styles.webServices} min-h-screen flex flex-wrap justify-center items-center`}>
-      {services.map((service, index) => (
-        <div key={index} className={`${Styles.serviceCard} m-4 p-6 max-w-sm rounded-lg border border-gray-800 shadow-md`}>
-          <img className="mx-auto h-20 w-20" src={service.logo} alt={service.title} />
-          <h5 className="mb-2 text-2xl font-bold tracking-tight">{service.title}</h5>
-          <p className="font-normal">{service.description}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className={`${Styles.backButtonContainer} flex`}>
+        <a href="/services" className="text-dark bg-red-400 px-2 py-1 ml-4 rounded-md">Back</a>
+      </div>
+      <div className={`${Styles.webServices} min-h-screen flex flex-wrap justify-center items-center`}>
+        {services.map((service, index) => (
+          <div key={index} className={`${Styles.serviceCard} m-4 p-6 max-w-sm rounded-lg border border-gray-800 shadow-md`}>
+            <img className="mx-auto h-20 w-20" src={service.logo} alt={service.title} />
+            <h5 className="mb-2 text-2xl font-bold tracking-tight">{service.title}</h5>
+            <p className="font-normal">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
