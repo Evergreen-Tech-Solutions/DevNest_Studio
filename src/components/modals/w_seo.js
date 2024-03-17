@@ -1,8 +1,8 @@
-// src/components/modals/w_customWebDev.js
+// src/components/modals/w_seo.js
 import React from 'react';
 import { Modal, Box, Typography, Button } from '@mui/material';
 
-function CustomWebDevModal({ open, onClose, service }) {
+function Seo({ open, onClose, service }) {
   return (
     <Modal open={open} onClose={onClose} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Box style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px', maxWidth: '600px', width: '90%', outline: 'none' }}>
@@ -41,4 +41,4 @@ function CustomWebDevModal({ open, onClose, service }) {
   );
 }
 
-export default CustomWebDevModal;
+export default Seo;
