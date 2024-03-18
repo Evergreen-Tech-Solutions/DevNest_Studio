@@ -27,7 +27,7 @@ function App() {
           divider: grey[700],
           text: {
             primary: grey[900],
-            secondary: grey[500],
+            secondary: grey[800],
           },
         }
       : {
@@ -40,7 +40,7 @@ function App() {
           },
           text: {
             primary: grey[300],
-            secondary: grey[200],
+            secondary: grey[600],
           },
         }),
     },
