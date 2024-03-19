@@ -11,6 +11,7 @@ import ContactPage from './pages/ContactPage';
 import WebApplication from './pages/web_srvc/web-application';
 import MobileApplication from './pages/mob_srvc/mobile-application';
 import { deepOrange, grey } from '@mui/material/colors';
+import Footer from './components/Footer';
 
 
 
@@ -32,7 +33,7 @@ function App() {
         }
       : {
           // palette values for dark mode
-          primary: { main: grey[900] },
+          primary: { main: grey[800] },
           divider: deepOrange[500],
           background: {
             default: grey[600],
@@ -69,6 +70,7 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </main>
+          <Footer />
         </div>
         </ThemeProvider>
     </Router>
