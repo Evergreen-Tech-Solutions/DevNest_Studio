@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Modal, Box, Typography, Button, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Checkbox, TextField, MenuItem } from '@mui/material';
+import { styled } from '@mui/system';
 
 
-function CustomWebDevModal({ open, onClose, darkMode }) {
+function CustomWebDevModal({ open, onClose }) {
   const [websiteType, setWebsiteType] = useState('');
   const [numPages, setNumPages] = useState('');
   const [features, setFeatures] = useState({
@@ -44,16 +45,19 @@ function CustomWebDevModal({ open, onClose, darkMode }) {
   };
 
   const boxStyle = {
-    backgroundColor: '#b6e1e0', 
+    backgroundColor: '#b6e1e0',
     padding: '20px',
     borderRadius: '10px',
-    maxWidth: '600px',
-    width: '90%',
+    maxWidth: '80%',
+    maxHeight: '80%',
+    overflow: 'auto',
     outline: 'none',
   };
 
+
   const textStyle = {
-    color: darkMode ? '#59cb91' : '#3f3f3f',
+    color: '#3f3f3f',
+    marginBottom: '10px',
   };
 
   const radioStyles = {
@@ -65,8 +69,12 @@ function CustomWebDevModal({ open, onClose, darkMode }) {
   return (
     <Modal open={open} onClose={onClose} className="flex items-center justify-center p-4">
       <Box sx={boxStyle}>
-        <Typography variant="h6" component="h2" sx={{ ...textStyle }}>Custom Web Development</Typography>
-        
+        <div><a onClick={onClose} className="text-dark bg-red-400 px-2 py-1 rounded-md mb-10">X</a></div>
+        <div className="bg-lght rounded-md p-1 mt-3 mb-2">
+          <Typography variant="h6" component="h2" sx={{ ...textStyle }}>Custom Web Development</Typography>
+          <Typography variant="body3" sx={{ ...textStyle }}>We offer custom web development services to help you build a website that meets your unique needs. Our team of experienced developers will work with you to create a website that is tailored to your business goals and objectives.</Typography>
+        </div>
+        <Typography variant="body2" sx={{ ...textStyle }}>Please select the options that best describe your requirements.</Typography>
         <FormControl component="fieldset" className="mb-4">
           <FormLabel component="legend" sx={{ ...textStyle }}>Type of Website</FormLabel>
           <RadioGroup row value={websiteType} onChange={(e) => setWebsiteType(e.target.value)}>
@@ -82,7 +90,7 @@ function CustomWebDevModal({ open, onClose, darkMode }) {
           label="Number of Pages"
           value={numPages}
           onChange={(e) => setNumPages(e.target.value)}
-          className="mb-4 w-full"
+          className="mb-4 bg-lght w-full rounded-md"
           sx={{ ...textStyle }}
         >
           {[1, 5, 10, 15, 20].map((option) => (
@@ -92,7 +100,7 @@ function CustomWebDevModal({ open, onClose, darkMode }) {
           ))}
         </TextField>
 
-        <div className="mb-4" >
+        <div className=" bg-transparent-1 bg-lght rounded-md p-2 mb-2 mt-2" >
           <FormLabel component="legend">Features & Functionality</FormLabel>
           <FormControlLabel
             control={<Checkbox checked={features.responsiveDesign} onChange={handleFeatureChange} name="responsiveDesign" />}
@@ -121,14 +129,13 @@ function CustomWebDevModal({ open, onClose, darkMode }) {
           <RadioGroup row value={designComplexity} onChange={(e) => setDesignComplexity(e.target.value)}>
             <FormControlLabel value="basic" control={<Radio sx={radioStyles} />} label="Basic" />
             <FormControlLabel value="advanced" control={<Radio sx={radioStyles} />} label="Advanced" />
-            <FormControlLabel value="premium" control={<Radio  />} label="Premium" />
+            <FormControlLabel value="premium" control={<Radio sx={radioStyles} />} label="Premium" />
           </RadioGroup>
         </FormControl>
-
-        <Typography variant="subtitle1" component="h3" sx={{ ...textStyle }}>Estimated Total Cost: ${calculateTotal()}</Typography>
-        <Typography variant="body2" sx={{ ...textStyle }}>This is an estimated cost based on your selections. Please contact us for a detailed quote based on your specific requirements.</Typography>
-
-        <Button onClick={onClose} sx={{ ...textStyle }}>Close</Button>
+        <div className="bg-lght rounded-md p-2">
+          <Typography variant="subtitle1" component="h1" sx={{ ...textStyle }}>Estimated Total Cost: CA${calculateTotal()}</Typography>
+          <Typography variant="body2" sx={{ ...textStyle }}>This is an estimated cost based on your selections. Please contact us for a detailed quote based on your specific requirements.</Typography>
+        </div>
       </Box>
     </Modal>
   );

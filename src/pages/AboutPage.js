@@ -18,11 +18,10 @@ function AboutPage() {
           </Typography>
           <Typography
             variant="h5"
-            color="textSecondary"
             paragraph
             className={Styles.subtitle}
           >
-            where your digital aspirations become our mission.
+            Where your digital aspirations become our mission.
           </Typography>
         </Box>
         <Grid container spacing={5}>
@@ -104,7 +103,6 @@ function AboutPage() {
               </Typography>
               <Typography
                 variant="subtitle1"
-                color="textSecondary"
                 paragraph
                 className={Styles.bodyText}
               >

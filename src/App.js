@@ -25,7 +25,7 @@ function App() {
       ? {
           // palette values for light mode
           primary: { main: '#b6e1e0' },
-          divider: grey[700],
+          divider: deepOrange[500],
           text: {
             primary: grey[900],
             secondary: grey[800],
