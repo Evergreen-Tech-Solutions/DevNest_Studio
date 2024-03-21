@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -22,7 +22,7 @@ function App() {
     palette: {
       mode,
       ...(mode === 'light'
-      ? {
+        ? {
           // palette values for light mode
           primary: { main: '#b6e1e0' },
           divider: deepOrange[500],
@@ -31,7 +31,7 @@ function App() {
             secondary: grey[800],
           },
         }
-      : {
+        : {
           // palette values for dark mode
           primary: { main: grey[800] },
           divider: deepOrange[500],
@@ -52,16 +52,16 @@ function App() {
   };
 
 
-  
+
   return (
     <Router>
       <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <div className="App flex flex-col min-h-screen">
-      <Navigation onToggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+        <CssBaseline />
+        <div className="App flex flex-col min-h-screen">
+          <Navigation onToggleDarkMode={toggleDarkMode} darkMode={darkMode} />
           <main className="flex-1 pt-[64px]">
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<HomePage key={darkMode ? 'dark' : 'light'} darkMode={darkMode} />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
@@ -72,7 +72,7 @@ function App() {
           </main>
           <Footer />
         </div>
-        </ThemeProvider>
+      </ThemeProvider>
     </Router>
   );
 }
