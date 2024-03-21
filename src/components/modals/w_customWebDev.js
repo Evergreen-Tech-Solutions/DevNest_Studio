@@ -41,6 +41,7 @@ function CustomWebDevModal({ open, onClose }) {
     if (designComplexity === 'premium') {
       total += 5000;
     }
+    total += numPages * 200;
     return total;
   };
 
@@ -62,7 +63,7 @@ function CustomWebDevModal({ open, onClose }) {
 
   const radioStyles = {
     '&.Mui-checked': {
-      color: '#070d59',
+      color: '#e57373',
     }
   };
 
@@ -133,7 +134,7 @@ function CustomWebDevModal({ open, onClose }) {
           </RadioGroup>
         </FormControl>
         <div className="bg-lght rounded-md p-2">
-          <Typography variant="subtitle1" component="h1" sx={{ ...textStyle }}>Estimated Total Cost: CA${calculateTotal()}</Typography>
+          <Typography variant="subtitle3" component="h1" className='text-grey-800 text-2xl'>Estimated Total Cost: <span className='text-red-700'>CA${calculateTotal()}</span></Typography>
           <Typography variant="body2" sx={{ ...textStyle }}>This is an estimated cost based on your selections. Please contact us for a detailed quote based on your specific requirements.</Typography>
         </div>
       </Box>
