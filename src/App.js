@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
+import { useMediaQuery,createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation';
+import MobileNav from './components/MobileNav';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
@@ -51,6 +52,7 @@ function App() {
     setDarkMode(!darkMode);
   };
 
+  const isMobile = useMediaQuery('(max-width:600px)');
 
 
   return (
@@ -58,7 +60,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="App flex flex-col min-h-screen">
-          <Navigation onToggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+          {isMobile ? <MobileNav onToggleDarkMode={toggleDarkMode} darkMode={darkMode} /> : <Navigation onToggleDarkMode={toggleDarkMode} darkMode={darkMode} />}
           <main className="flex-1 pt-[64px]">
             <Routes>
               <Route path="/" element={<HomePage key={darkMode ? 'dark' : 'light'} darkMode={darkMode} />} />
