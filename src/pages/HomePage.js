@@ -1,6 +1,7 @@
 import React from 'react';
 import Styles from '../styles/HomePage.module.css';
-import logo from '../assets/logo.png';
+import darkLogo from '../assets/logo.png';
+import lightLogo from '../assets/logo_w.png';
 import darkModeVideo from '../assets/backgroundVids/darkMode_bg.mp4';
 import lightModeVideo from '../assets/backgroundVids/lightMode_bg.mp4';
 
@@ -16,9 +17,9 @@ function HomePage({ darkMode }) {
       </video>
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
-          <img src={logo} alt="DevNest Studio Logo" className="h-96 w-96 mx-auto mb-5" />
-          <h1 className="text-6xl font-bold text-white mb-4">Coming Soon...</h1>
-          <p className="text-lg text-gray-200">We offer top-notch services to meet your needs.</p>
+          <img src={darkMode ? lightLogo : darkLogo} alt="DevNest Studio Logo" className="h-96 w-96 mx-auto mb-5" />
+          <h1 className="text-6xl font-bold mb-4">Coming Soon...</h1>
+          <p className="text-lg ">We offer top-notch services to meet your needs.</p>
         </div>
       </div>
     </div>

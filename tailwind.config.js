@@ -11,6 +11,7 @@ module.exports = {
             'lghtblu': '#2b4353',
             'lght': '#defcfc',
             'grn': '#65c6c4',
+            'gry': '#3f3f3f',
         },
         fontFamily: {
             'sans': ['Nunito', 'sans-serif'],
