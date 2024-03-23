@@ -52,7 +52,7 @@ function App() {
     setDarkMode(!darkMode);
   };
 
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery('(max-width:648px)');
 
 
   return (
