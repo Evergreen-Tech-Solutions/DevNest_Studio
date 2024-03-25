@@ -12,7 +12,7 @@ function HomePage({ darkMode }) {
 
   return (
     <div className="relative">
-      <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
+      <video autoPlay loop muted className="absolute inset-0 w-full h-screen object-cover">
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 py-16">

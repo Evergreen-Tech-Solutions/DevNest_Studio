@@ -8,7 +8,7 @@ function Footer() {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
-        <Box component="footer" sx={{ backgroundColor: 'primary.main', py: 2 }}>
+        <Box component="footer" sx={{ backgroundColor: 'primary.main', py: 2, zIndex: 10 }}>
             <Container maxWidth="lg" sx={{
                 display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
