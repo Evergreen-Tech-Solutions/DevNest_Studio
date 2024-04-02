@@ -61,6 +61,21 @@ function CustomWebDevModal({ open, onClose }) {
     marginBottom: '10px',
   };
 
+  const labelStyle = {
+    color: '#3f3f3f',
+    marginBottom: '10px',
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+    fontSize: '1.5rem',
+  };
+
+  const subStyle = {
+    color: '#3f3f3f',
+    marginBottom: '10px',
+    fontSize: '1.25rem',
+    fontWeight: 'bold',
+  };
+
   const radioStyles = {
     '&.Mui-checked': {
       color: '#e57373',
@@ -73,46 +88,47 @@ function CustomWebDevModal({ open, onClose }) {
         <div><button onClick={onClose} className="text-dark bg-red-400 px-2 py-1 rounded-md mb-2">X</button></div>
         <Typography variant="h4" component="h2" className='text-gry text-center'>Custom Web Development</Typography>
         <div className="bg-lght rounded-md p-2 mt-3 mb-2">
-          <Typography variant="h6" sx={{ ...textStyle }}>Why Choose Custom Web Development?</Typography>
+          <Typography variant="body2" sx={{ ...textStyle }}>Please select the options that best describe your requirements.</Typography>
+          <Typography variant="h5" sx={{ ...labelStyle }}>Why Choose Custom Web Development?</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Tailored Solutions:</Typography>
+          <Typography sx={{ ...subStyle }}>Tailored Solutions:</Typography>
           <Typography sx={{ ...textStyle }}>Every business has unique requirements, and a custom web development service ensures that every aspect of your website is designed to fulfill those specific needs—from the overall layout and user experience to specialized functionalities and backend processes.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Scalability and Flexibility:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Scalability and Flexibility:</Typography>
           <Typography sx={{ ...textStyle }}>As your business evolves, your website should adapt to new challenges and opportunities. Custom websites are built with scalability in mind, allowing for seamless updates, feature additions, and integrations with other systems and applications.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Optimized Performance:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Optimized Performance:</Typography>
           <Typography sx={{ ...textStyle }}>Custom websites can be optimized for performance, with faster load times and a smoother user journey. This is crucial for keeping visitors engaged and can also contribute positively to your search engine rankings.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Enhanced Security:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Enhanced Security:</Typography>
           <Typography sx={{ ...textStyle }}>With custom web development, you get a site built with the latest security features, tailored to protect your specific content and data, which is especially important for e-commerce and sites handling sensitive user information.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Brand Consistency:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Brand Consistency:</Typography>
           <Typography sx={{ ...textStyle }}>Your website is a digital extension of your brand. Custom development ensures that your site accurately reflects your brand's aesthetics and ethos, creating a cohesive experience that reinforces your brand identity.</Typography>
 
-          <Typography variant="h6" sx={{ ...textStyle, mt: 4 }}>Our Custom Web Development Process</Typography>
+          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>Our Custom Web Development Process</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Discovery and Planning:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Discovery and Planning:</Typography>
           <Typography sx={{ ...textStyle }}>We gather all the necessary information, including your goals, target audience, and competitor analysis. This helps us create a strategic plan that aligns with your vision.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Design and User Experience:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Design and User Experience:</Typography>
           <Typography sx={{ ...textStyle }}>Our designers craft a unique look and feel for your site that enhances usability while keeping your users engaged.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Development:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Development:</Typography>
           <Typography sx={{ ...textStyle }}>Our developers bring the designs to life, coding the functionality that powers your site. We focus on clean, maintainable code that adheres to industry standards.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Testing and Quality Assurance:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Testing and Quality Assurance:</Typography>
           <Typography sx={{ ...textStyle }}>Rigorous testing ensures that every feature works as intended, with a seamless experience across all devices and browsers.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Launch and Beyond:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Launch and Beyond:</Typography>
           <Typography sx={{ ...textStyle }}>After the final checks, your website goes live. We offer ongoing support, maintenance, and updates to keep your site at the forefront of digital excellence.</Typography>
 
-          <Typography variant="subtitle1" sx={{ ...textStyle }}>Analytics and Optimization:</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Optimization:</Typography>
           <Typography sx={{ ...textStyle }}>Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.</Typography>
         </div>
-        <Typography variant="body2" sx={{ ...textStyle }}>Please select the options that best describe your requirements.</Typography>
         <FormControl component="fieldset" className="mb-4">
-          <FormLabel component="legend" sx={{ ...textStyle }}>Type of Website</FormLabel>
+          <FormLabel component="legend" sx={{ ...labelStyle }}>Quote Builder</FormLabel>
+          <FormLabel component="legend" className='text-gry mt-3'>Type of Website</FormLabel>
           <RadioGroup row value={websiteType} onChange={(e) => setWebsiteType(e.target.value)}>
             <FormControlLabel value="business" control={<Radio sx={radioStyles} />} label="Business Landing Page" sx={{ ...textStyle }} />
             <FormControlLabel value="ecommerce" control={<Radio sx={radioStyles} />} label="E-commerce & Online Shop" sx={{ ...textStyle }} />
@@ -127,7 +143,7 @@ function CustomWebDevModal({ open, onClose }) {
           value={numPages}
           onChange={(e) => setNumPages(e.target.value)}
           className="mb-4 bg-lght w-full rounded-md"
-          sx={{ ...textStyle }}
+          sx={{ ...subStyle }}
         >
           {[1, 5, 10, 15, 20].map((option) => (
             <MenuItem key={option} value={option}>
@@ -159,6 +175,12 @@ function CustomWebDevModal({ open, onClose }) {
             sx={{ ...textStyle }}
           />
         </div>
+
+        {/*
+        TODO: Add inputs field for additional user's contact information
+        TODO: Add a comment field for additional user's comments
+        TODO: Get the submit button to send the quote request
+         */}
 
         <FormControl component="fieldset" className="mb-4" sx={{ ...textStyle }}>
           <FormLabel component="legend">Design Complexity</FormLabel>
