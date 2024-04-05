@@ -33,29 +33,32 @@ function ServicesPage() {
       {/* <h1 className="text-4xl font-bold text-center mt-10">
         Please choose your service
       </h1> */}
-      <div className="min-h-screen flex justify-center items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex justify-between gap-16">
-          {/* Web Application Service Card */}
-          <div
-            className={`${Styles.serviceCard} flex-1`}
-            onClick={() => navigate('/web-application')}
-            role="button"
-            tabIndex={0}
-          >
-            <Lottie options={webAppOptions} height={400} width={400} />
-            <h2 className="text-2xl font-bold text-center">Web Applications</h2>
+      <div className={`${Styles.serviceOptions} min-h-screen flex justify-center items-center`}>
+        {/* Web Application Service Card */}
+        <div
+          className={`${Styles.serviceCard} flex-1`}
+          onClick={() => navigate('/web-application')}
+          role="button"
+          tabIndex={0}
+        >
+          <div className={Styles.lottie}>
+            <Lottie options={webAppOptions} height={380} width={380} />
           </div>
 
-          {/* Mobile Application Service Card */}
-          <div
-            className={`${Styles.serviceCard} flex-1`}
-            onClick={() => navigate('/mobile-application')}
-            role="button"
-            tabIndex={0}
-          >
-            <Lottie options={mobileAppOptions} height={400} width={400} />
-            <h2 className="text-2xl font-bold text-center">Mobile Applications</h2>
+          <h2 className="text-2xl font-thin text-center">Web Applications</h2>
+        </div>
+
+        {/* Mobile Application Service Card */}
+        <div
+          className={`${Styles.serviceCard} flex-1`}
+          onClick={() => navigate('/mobile-application')}
+          role="button"
+          tabIndex={0}
+        >
+          <div className={Styles.lottie}>
+            <Lottie options={mobileAppOptions} height={380} width={380} />
           </div>
+          <h2 className="text-2xl font-bold text-center">Mobile Applications</h2>
         </div>
       </div>
     </>
