@@ -8,7 +8,6 @@ module.exports = {
             'blu': '#b6e1e0',
             'orng': '#f7b633',
             'drkblu': '#070d59',
-            'lghtblu': '#2b4353',
             'lght': '#defcfc',
             'grn': '#65c6c4',
             'gry': '#3f3f3f',

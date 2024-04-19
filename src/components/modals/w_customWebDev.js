@@ -13,6 +13,7 @@ function CustomWebDevModal({ open, onClose }) {
     cmsIntegration: false,
   });
   const [designComplexity, setDesignComplexity] = useState('');
+  const [showContactForm, setShowContactForm] = useState(false);
 
   const handleFeatureChange = (event) => {
     setFeatures({ ...features, [event.target.name]: event.target.checked });
@@ -43,6 +44,9 @@ function CustomWebDevModal({ open, onClose }) {
     }
     total += numPages * 200;
     return total;
+  };
+  const toggleContactForm = () => {
+    setShowContactForm(!showContactForm);
   };
 
   const boxStyle = {
@@ -177,7 +181,6 @@ function CustomWebDevModal({ open, onClose }) {
         </div>
 
         {/*
-        TODO: Add inputs field for additional user's contact information
         TODO: Add a comment field for additional user's comments
         TODO: Get the submit button to send the quote request
          */}
@@ -194,9 +197,69 @@ function CustomWebDevModal({ open, onClose }) {
           <Typography variant="subtitle3" component="h1" className='text-gry text-2xl'>Estimated Total Cost: <span className='text-red-700'>CA${calculateTotal()}</span></Typography>
           <Typography variant="body2" sx={{ ...textStyle }}>This is an estimated cost based on your selections. Please contact us for a detailed quote based on your specific requirements.</Typography>
         </div>
-        <div className="rounded-md mt-5 w-full">
-          <button href="/contact" className="bg-drkblu text-white text-xl px-4 py-2 hover:bg-red-400 rounded-md w-full">Get a Quote</button>
+        <div className="bg-drkblu text-xl px-4 py-2 mt-3 mb-2 hover:bg-red-400 rounded-md w-full text-center">
+          <Button onClick={toggleContactForm} className="w-full">
+            {showContactForm ? 'Hide Contact Form' : 'Get a Quote'}
+          </Button>
         </div>
+        {showContactForm && (
+          <Box
+            component="form"
+            noValidate
+            autoComplete="off"
+            sx={{
+              mt: 2,
+              mb: 2,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%'
+            }}
+          >
+            <TextField
+              fullWidth
+              label="Name"
+              required
+              variant="outlined"
+              sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px'}}
+            />
+            <TextField
+              fullWidth
+              label="Email"
+              required
+              variant="outlined"
+              sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px' }}
+            />
+            <TextField
+              fullWidth
+              label="Phone Number"
+              variant="outlined"
+              sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px' }}
+            />
+            <TextField
+              fullWidth
+              label="Message"
+              variant="outlined"
+              sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px' }}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                width: '200px',
+                color: '#defcfc',
+                mt: 3,
+                bgcolor: 'rgb(7 13 89)',
+                '&:hover': {
+                  bgcolor: 'rgb(248 113 113)',
+                }
+              }}
+            >
+              Submit
+            </Button>
+          </Box>
+        )}
       </Box>
     </Modal>
   );
