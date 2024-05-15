@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { Modal, Box, Typography, Button, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Checkbox, TextField, MenuItem } from '@mui/material';
 import { styled } from '@mui/system';
 
@@ -13,6 +14,12 @@ function CustomWebDevModal({ open, onClose }) {
     cmsIntegration: false,
   });
   const [designComplexity, setDesignComplexity] = useState('');
+  const [contactDetails, setContactDetails] = useState({
+    name: '',
+    email: '',
+    phoneNumber: '',
+    message: '',
+  });
   const [showContactForm, setShowContactForm] = useState(false);
 
   const handleFeatureChange = (event) => {
@@ -45,6 +52,30 @@ function CustomWebDevModal({ open, onClose }) {
     total += numPages * 200;
     return total;
   };
+
+  // Handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const submissionData = {
+      websiteType,
+      numPages,
+      features,
+      designComplexity,
+      ...contactDetails,
+      estimatedCost: calculateTotal()
+    };
+    console.log('Form Submission:', submissionData);
+    // Send the data using EmailJS
+    emailjs.send('service_kqj97nd', 'template_1fsd2fr', submissionData, 'devnest_user')
+      .then((result) => {
+        console.log('Email successfully sent!', result.text);
+        onClose(); // Optionally close the modal after sending
+      }, (error) => {
+        console.log('Failed to send email:', error.text);
+      });
+
+  };
+
   const toggleContactForm = () => {
     setShowContactForm(!showContactForm);
   };
@@ -130,7 +161,7 @@ function CustomWebDevModal({ open, onClose }) {
           <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Optimization:</Typography>
           <Typography sx={{ ...textStyle }}>Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.</Typography>
         </div>
-        <FormControl component="fieldset" className="mb-4">
+        <FormControl component="fieldset" onSubmit={handleSubmit} className="mb-4">
           <FormLabel component="legend" sx={{ ...labelStyle }}>Quote Builder</FormLabel>
           <FormLabel component="legend" className='text-gry mt-3'>Type of Website</FormLabel>
           <RadioGroup row value={websiteType} onChange={(e) => setWebsiteType(e.target.value)}>
@@ -181,7 +212,6 @@ function CustomWebDevModal({ open, onClose }) {
         </div>
 
         {/*
-        TODO: Add a comment field for additional user's comments
         TODO: Get the submit button to send the quote request
          */}
 
@@ -222,7 +252,7 @@ function CustomWebDevModal({ open, onClose }) {
               label="Name"
               required
               variant="outlined"
-              sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px'}}
+              sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px' }}
             />
             <TextField
               fullWidth
