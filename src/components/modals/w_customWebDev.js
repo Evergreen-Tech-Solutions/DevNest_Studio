@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Modal, Box, Typography, Button, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Checkbox, TextField, MenuItem } from '@mui/material';
-import { styled } from '@mui/system';
+
 
 
 function CustomWebDevModal({ open, onClose }) {
@@ -24,6 +24,11 @@ function CustomWebDevModal({ open, onClose }) {
 
   const handleFeatureChange = (event) => {
     setFeatures({ ...features, [event.target.name]: event.target.checked });
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setContactDetails(prevDetails => ({ ...prevDetails, [name]: value }));
   };
 
   const calculateTotal = () => {
@@ -65,15 +70,14 @@ function CustomWebDevModal({ open, onClose }) {
       estimatedCost: calculateTotal()
     };
     console.log('Form Submission:', submissionData);
-    // Send the data using EmailJS
+    
     emailjs.send('service_kqj97nd', 'template_1fsd2fr', submissionData, 'devnest_user')
       .then((result) => {
         console.log('Email successfully sent!', result.text);
-        onClose(); // Optionally close the modal after sending
+        onClose(); 
       }, (error) => {
         console.log('Failed to send email:', error.text);
       });
-
   };
 
   const toggleContactForm = () => {
@@ -161,7 +165,7 @@ function CustomWebDevModal({ open, onClose }) {
           <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Optimization:</Typography>
           <Typography sx={{ ...textStyle }}>Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.</Typography>
         </div>
-        <FormControl component="fieldset" onSubmit={handleSubmit} className="mb-4">
+        <FormControl component="fieldset" className="mb-4">
           <FormLabel component="legend" sx={{ ...labelStyle }}>Quote Builder</FormLabel>
           <FormLabel component="legend" className='text-gry mt-3'>Type of Website</FormLabel>
           <RadioGroup row value={websiteType} onChange={(e) => setWebsiteType(e.target.value)}>
@@ -237,6 +241,7 @@ function CustomWebDevModal({ open, onClose }) {
             component="form"
             noValidate
             autoComplete="off"
+            onSubmit={handleSubmit}
             sx={{
               mt: 2,
               mb: 2,
@@ -252,6 +257,8 @@ function CustomWebDevModal({ open, onClose }) {
               label="Name"
               required
               variant="outlined"
+              value={contactDetails.name}
+              onChange={handleInputChange}
               sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px' }}
             />
             <TextField
@@ -259,18 +266,24 @@ function CustomWebDevModal({ open, onClose }) {
               label="Email"
               required
               variant="outlined"
+              value={contactDetails.email}
+              onChange={handleInputChange}
               sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px' }}
             />
             <TextField
               fullWidth
               label="Phone Number"
               variant="outlined"
+              value={contactDetails.phoneNumber}
+              onChange={handleInputChange}
               sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px' }}
             />
             <TextField
               fullWidth
               label="Message"
               variant="outlined"
+              value={contactDetails.message}
+              onChange={handleInputChange}
               sx={{ mb: 2, backgroundColor: '#defcfc', borderRadius: '8px' }}
             />
             <Button
