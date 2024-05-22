@@ -71,7 +71,7 @@ function CustomWebDevModal({ open, onClose }) {
     };
     console.log('Form Submission:', submissionData);
     
-    emailjs.send('service_kqj97nd', 'template_1fsd2fr', submissionData, 'devnest_user')
+    emailjs.send('service_kqj97nd', 'template_1fsd2fr', submissionData, 'ZuAY0cJ381FVYv2Oz')
       .then((result) => {
         console.log('Email successfully sent!', result.text);
         onClose(); 
@@ -215,10 +215,6 @@ function CustomWebDevModal({ open, onClose }) {
           />
         </div>
 
-        {/*
-        TODO: Get the submit button to send the quote request
-         */}
-
         <FormControl component="fieldset" className="mb-4" sx={{ ...textStyle }}>
           <FormLabel component="legend">Design Complexity</FormLabel>
           <RadioGroup row value={designComplexity} onChange={(e) => setDesignComplexity(e.target.value)}>
@@ -255,6 +251,7 @@ function CustomWebDevModal({ open, onClose }) {
             <TextField
               fullWidth
               label="Name"
+              name="name"
               required
               variant="outlined"
               value={contactDetails.name}
@@ -264,6 +261,7 @@ function CustomWebDevModal({ open, onClose }) {
             <TextField
               fullWidth
               label="Email"
+              name="email"
               required
               variant="outlined"
               value={contactDetails.email}
@@ -273,6 +271,7 @@ function CustomWebDevModal({ open, onClose }) {
             <TextField
               fullWidth
               label="Phone Number"
+              name="phoneNumber"
               variant="outlined"
               value={contactDetails.phoneNumber}
               onChange={handleInputChange}
@@ -281,6 +280,7 @@ function CustomWebDevModal({ open, onClose }) {
             <TextField
               fullWidth
               label="Message"
+              name="message"
               variant="outlined"
               value={contactDetails.message}
               onChange={handleInputChange}
