@@ -64,10 +64,13 @@ function CustomWebDevModal({ open, onClose }) {
     const submissionData = {
       websiteType,
       numPages,
-      features,
+      features: JSON.stringify(features), // Convert features object to a JSON string
       designComplexity,
-      ...contactDetails,
-      estimatedCost: calculateTotal()
+      name: contactDetails.name,
+      email: contactDetails.email,
+      phoneNumber: contactDetails.phoneNumber,
+      message: contactDetails.message,
+      estimatedCost: calculateTotal().toString() // Ensure the estimated cost is sent as a string
     };
     console.log('Form Submission:', submissionData);
     
@@ -165,6 +168,7 @@ function CustomWebDevModal({ open, onClose }) {
           <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Optimization:</Typography>
           <Typography sx={{ ...textStyle }}>Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.</Typography>
         </div>
+      <form onSubmit={handleSubmit}>
         <FormControl component="fieldset" className="mb-4">
           <FormLabel component="legend" sx={{ ...labelStyle }}>Quote Builder</FormLabel>
           <FormLabel component="legend" className='text-gry mt-3'>Type of Website</FormLabel>
@@ -234,10 +238,6 @@ function CustomWebDevModal({ open, onClose }) {
         </div>
         {showContactForm && (
           <Box
-            component="form"
-            noValidate
-            autoComplete="off"
-            onSubmit={handleSubmit}
             sx={{
               mt: 2,
               mb: 2,
@@ -303,6 +303,7 @@ function CustomWebDevModal({ open, onClose }) {
             </Button>
           </Box>
         )}
+      </form>
       </Box>
     </Modal>
   );

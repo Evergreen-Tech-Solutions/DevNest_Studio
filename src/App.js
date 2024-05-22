@@ -13,6 +13,7 @@ import WebApplication from './pages/web_srvc/web-application';
 import MobileApplication from './pages/mob_srvc/mobile-application';
 import { deepOrange, grey } from '@mui/material/colors';
 import Footer from './components/Footer';
+import './styles/global.css';
 
 
 

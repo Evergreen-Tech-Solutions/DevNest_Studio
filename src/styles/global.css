@@ -1,16 +1,27 @@
 /* global.css */
-body, html {
-    height: 100%;
-    margin: 0;
-  }
-  
-  #root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  main {
-    flex: 1;
-  }
-  
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+@font-face {
+  font-family: 'Knewave';
+  src: url('/src/assets/fonts/Knewave-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-knewave {
+  font-family: 'Knewave', 'ui-sans-serif', 'system-ui';
+}

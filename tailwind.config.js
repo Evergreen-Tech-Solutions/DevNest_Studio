@@ -13,7 +13,7 @@ module.exports = {
             'gry': '#3f3f3f',
         },
         fontFamily: {
-            'sans': ['Nunito', 'sans-serif'],
+            'sans': ['Knewave', 'ui-sans-serif', 'system-ui'],
         },
     },
   },
