@@ -33,7 +33,7 @@ function Navigation({ onToggleDarkMode, darkMode }) {
           />
           <Typography variant="h6" color="inherit" noWrap></Typography>
         </NavLink>
-        <div className="flex-grow font-sans">
+        <div className="flex-grow font-sans font-semibold">
           <div className="text-lg flex items-baseline justify-center mr-8">
             <NavLink
               to="/"

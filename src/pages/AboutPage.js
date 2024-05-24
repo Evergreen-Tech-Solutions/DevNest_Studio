@@ -1,11 +1,20 @@
 import React from "react";
 import Styles from "../styles/AboutPage.module.css";
 import aboutImage from "../images/aboutImage.png";
-import { Typography, Container, Box, Grid } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Box,
+  Grid,
+  Button,
+  useTheme,
+} from "@mui/material";
 
 function AboutPage() {
+  const theme = useTheme();
+
   return (
-    <div className={Styles.aboutPage}>
+    <div className={theme.palette.mode === "dark" ? Styles.darkMode : ""}>
       <Container maxWidth="lg">
         <Box py={8} textAlign="center" className={Styles.introSection}>
           <Typography
@@ -16,21 +25,13 @@ function AboutPage() {
           >
             Welcome to DevNest Studio
           </Typography>
-          <Typography
-            variant="h5"
-            paragraph
-            className={Styles.subtitle}
-          >
+          <Typography variant="h5" paragraph className={Styles.subtitle}>
             Where your digital aspirations become our mission.
           </Typography>
         </Box>
         <Grid container spacing={5}>
           <Grid item md={6}>
-            <Typography
-              paragraph
-              color="textPrimary"
-              className={Styles.bodyText}
-            >
+            <Typography paragraph className={Styles.bodyText}>
               Rooted in the vibrant landscapes of British Columbia, our
               collective spans from the scenic shores of Vancouver Island to the
               bustling streets of the Lower Mainland. We are a collective of
@@ -39,12 +40,7 @@ function AboutPage() {
               web and app solutions.
             </Typography>
             <Box className={Styles.sectionBackground}>
-              <Typography
-                variant="body1"
-                paragraph
-                color="textPrimary"
-                className={Styles.bodyText}
-              >
+              <Typography variant="body1" paragraph className={Styles.bodyText}>
                 Our team is adept in a wide spectrum of technologies, employing
                 various programming languages and adhering to industry-leading
                 practices such as object-oriented programming, relational
@@ -57,12 +53,7 @@ function AboutPage() {
                 with solutions that are both innovative and reliable.
               </Typography>
             </Box>
-            <Typography
-              variant="body1"
-              paragraph
-              color="textPrimary"
-              className={Styles.bodyText}
-            >
+            <Typography variant="body1" paragraph className={Styles.bodyText}>
               At DevNest Studio, collaboration is the cornerstone of our
               success. Recognizing that every small business has its unique
               story and set of challenges, we dedicate time to understanding
@@ -72,11 +63,11 @@ function AboutPage() {
           <Grid item md={6}>
             <Box
               sx={{
-                display: "flex", // Enables the use of Flexbox
-                alignItems: "center", // Centers the content vertically
-                justifyContent: "center", // Centers the content horizontally
-                height: "100%", // Ensures the Box takes full height of its parent
-                width: "100%", // Ensures the Box takes full width of its parent
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "100%",
+                width: "100%",
                 mt: "-5.5rem",
               }}
             >
@@ -84,18 +75,16 @@ function AboutPage() {
                 src={aboutImage}
                 alt="Description"
                 style={{
-                  maxHeight: "75%", // Limits the image height to 75% of the Box
-                  maxWidth: "75%", // Limits the image width to 75% of the Box
+                  maxHeight: "75%",
+                  maxWidth: "75%",
                   borderRadius: "12px",
                   objectFit: "cover",
                 }}
               />
             </Box>
             <Box textAlign="center" sx={{ width: "100%", marginTop: "auto" }}>
-              {/* Adjusts to fit below the image */}
               <Typography
                 variant="h6"
-                color="textPrimary"
                 gutterBottom
                 className={Styles.bodySubtitle}
               >
@@ -111,6 +100,33 @@ function AboutPage() {
             </Box>
           </Grid>
         </Grid>
+
+        {/* Call to Action Section */}
+        <Box
+          mt={8}
+          textAlign="center"
+          className={Styles.ctaSection}
+          sx={{
+            backgroundColor: theme.palette.background.ctaSection,
+            color: theme.palette.text.primary,
+          }}
+        >
+          <Typography variant="h4" gutterBottom>
+            Ready to Transform Your Business?
+          </Typography>
+          <Typography variant="h6" paragraph>
+            Contact us today to start your digital transformation journey.
+          </Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            href="/contact"
+            sx={{ fontWeight: "bold" }}
+          >
+            Get in Touch
+          </Button>
+        </Box>
       </Container>
     </div>
   );
