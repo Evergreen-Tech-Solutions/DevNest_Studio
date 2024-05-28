@@ -45,7 +45,7 @@ function ServicesPage() {
             <Lottie options={webAppOptions} height={380} width={380} />
           </div>
 
-          <h2 className="text-2xl font-thin text-center">Web Applications</h2>
+          <h2 className="text-3xl font-thin text-center">Web Applications</h2>
         </div>
 
         {/* Mobile Application Service Card */}
@@ -58,7 +58,7 @@ function ServicesPage() {
           <div className={Styles.lottie}>
             <Lottie options={mobileAppOptions} height={380} width={380} />
           </div>
-          <h2 className="text-2xl font-bold text-center">Mobile Applications</h2>
+          <h2 className="text-3xl font-thin text-center">Mobile Applications</h2>
         </div>
       </div>
     </>
