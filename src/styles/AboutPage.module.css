@@ -23,3 +23,16 @@
 .introSection {
   padding-bottom: 1rem; /* Reduced padding for less space */
 }
+
+/* New styles for the CTA section */
+.ctaSection {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButton {
+  margin-top: 1rem;
+}
