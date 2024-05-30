@@ -56,6 +56,7 @@ async function processIssue(event) {
 
 // Entry point of the GitHub Action
 async function run() {
+  console.log("GITHUB_EVENT_PATH:", process.env.GITHUB_EVENT_PATH); // Log the content of GITHUB_EVENT_PATH
   const event = JSON.parse(process.env.GITHUB_EVENT_PATH);
 
   if (event && event.issue) {
