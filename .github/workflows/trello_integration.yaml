@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Run Trello script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
