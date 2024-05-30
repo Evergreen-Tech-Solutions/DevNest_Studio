@@ -1,4 +1,5 @@
 const Trello = require("node-trello");
+const fs = require("fs");
 
 // Initialize Trello API client
 const trello = new Trello(process.env.TRELLO_KEY, process.env.TRELLO_TOKEN);
@@ -56,8 +57,11 @@ async function processIssue(event) {
 
 // Entry point of the GitHub Action
 async function run() {
-  console.log("GITHUB_EVENT_PATH:", process.env.GITHUB_EVENT_PATH); // Log the content of GITHUB_EVENT_PATH
-  const event = JSON.parse(process.env.GITHUB_EVENT_PATH);
+  // Read the content of the event file
+  const eventContent = fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8");
+
+  // Parse the event content as JSON
+  const event = JSON.parse(eventContent);
 
   if (event && event.issue) {
     await processIssue(event);
