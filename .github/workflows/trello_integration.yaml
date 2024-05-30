@@ -1,0 +1,21 @@
+name: Trello Integration
+
+on:
+  issues:
+    types: [opened, assigned, closed]
+
+jobs:
+  syncWithTrello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Trello script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
+          TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
+        run: |
+          node trelloScript.js
