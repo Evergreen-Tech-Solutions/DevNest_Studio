@@ -93,7 +93,7 @@ function ServicesPage() {
   return (
     <>
       <div
-        className={`${Styles.servicesPage} min-h-screen flex flex-wrap justify-center items-center`}
+        className={`${Styles.serviceOptions} min-h-screen flex flex-wrap justify-center items-center`}
       >
         {services.map((service) => (
           <div
