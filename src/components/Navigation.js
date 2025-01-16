@@ -44,22 +44,14 @@ function Navigation({ onToggleDarkMode, darkMode }) {
               Home
             </NavLink>
             <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                isActive ? style.navItemActive : style.navItemInactive
-              }
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/services"
+              to="/quotebuilder"
               className={() =>
                 checkIsActive(location.pathname)
                   ? style.navItemActive
                   : style.navItemInactive
               }
             >
-              Services
+              Quote Builder
             </NavLink>
             <NavLink
               to="/about"

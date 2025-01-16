@@ -11,8 +11,7 @@ import Navigation from "./components/Navigation";
 import MobileNav from "./components/MobileNav";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import ServicesPage from "./pages/ServicesPage";
-import ProjectsPage from "./pages/ProjectsPage";
+import QuoteBuilderPage from "./pages/QuoteBuilderPage";
 import ContactPage from "./pages/ContactPage";
 import { deepOrange, grey } from "@mui/material/colors";
 import Footer from "./components/Footer";
@@ -102,8 +101,7 @@ function App() {
                 }
               />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/quotebuilder" element={<QuoteBuilderPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </main>

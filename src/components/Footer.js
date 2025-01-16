@@ -1,23 +1,37 @@
-import React from 'react';
-import { Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import React from "react";
+import {
+  Box,
+  Container,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 function Footer() {
-    const currentYear = new Date().getFullYear();
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const currentYear = new Date().getFullYear();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    return (
-        <Box component="footer" sx={{ backgroundColor: 'primary.main', py: 2, zIndex: 10 }}>
-            <Container maxWidth="lg" sx={{
-                display: 'flex',
-                flexDirection: isMobile ? 'column' : 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                textAlign: isMobile ? 'center' : 'left'
-            }}>
-                <Typography variant="body1" sx={{ mb: isMobile ? 2 : 0 }}>© {currentYear} DevNest Studio</Typography>
-                <div>
+  return (
+    <Box
+      component="footer"
+      sx={{ backgroundColor: "primary.main", py: 2, zIndex: 10 }}
+    >
+      <Container
+        maxWidth="lg"
+        sx={{
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          textAlign: isMobile ? "center" : "left",
+        }}
+      >
+        <Typography variant="body1" sx={{ mb: isMobile ? 2 : 0 }}>
+          © {currentYear} DevNest Studio
+        </Typography>
+        {/* <div>
                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="inline-block mx-2">
                         <FaFacebookF />
                     </a>
@@ -27,10 +41,10 @@ function Footer() {
                     <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="inline-block mx-2">
                         <FaInstagram />
                     </a>
-                </div>
-            </Container>
-        </Box>
-    );
+                </div> */}
+      </Container>
+    </Box>
+  );
 }
 
 export default Footer;
