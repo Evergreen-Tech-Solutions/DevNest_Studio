@@ -12,9 +12,12 @@ import {
   Checkbox,
   TextField,
   MenuItem,
+  useTheme,
 } from "@mui/material";
+import Styles from "../styles/QuoteBuilderPage.module.css";
 
 function QuoteBuilderPage() {
+  const theme = useTheme();
   const [websiteType, setWebsiteType] = useState("");
   const [numPages, setNumPages] = useState("");
   const [features, setFeatures] = useState({
@@ -42,28 +45,14 @@ function QuoteBuilderPage() {
   };
 
   const calculateTotal = () => {
-    let total = 5000; // Starting base price
-    if (websiteType === "ecommerce") {
-      total += 2000;
-    }
-    if (features.responsiveDesign) {
-      total += 1000;
-    }
-    if (features.ecomIntegration) {
-      total += 1500;
-    }
-    if (features.seoService) {
-      total += 500;
-    }
-    if (features.cmsIntegration) {
-      total += 1000;
-    }
-    if (designComplexity === "advanced") {
-      total += 2000;
-    }
-    if (designComplexity === "premium") {
-      total += 5000;
-    }
+    let total = 5000;
+    if (websiteType === "ecommerce") total += 2000;
+    if (features.responsiveDesign) total += 1000;
+    if (features.ecomIntegration) total += 1500;
+    if (features.seoService) total += 500;
+    if (features.cmsIntegration) total += 1000;
+    if (designComplexity === "advanced") total += 2000;
+    if (designComplexity === "premium") total += 5000;
     total += numPages * 200;
     return total;
   };
@@ -75,10 +64,7 @@ function QuoteBuilderPage() {
       numPages,
       features: JSON.stringify(features),
       designComplexity,
-      name: contactDetails.name,
-      email: contactDetails.email,
-      phoneNumber: contactDetails.phoneNumber,
-      message: contactDetails.message,
+      ...contactDetails,
       estimatedCost: calculateTotal().toString(),
     };
 
@@ -104,178 +90,188 @@ function QuoteBuilderPage() {
   };
 
   return (
-    <Box
-      sx={{ padding: "20px", backgroundColor: "#f9f9f9", minHeight: "100vh" }}
-    >
-      <Typography
-        variant="h3"
-        component="h1"
-        textAlign="center"
-        marginBottom="20px"
-      >
-        Quote Builder
-      </Typography>
-      <form onSubmit={handleSubmit}>
-        <FormControl component="fieldset" fullWidth margin="normal">
-          <FormLabel component="legend">Type of Website</FormLabel>
-          <RadioGroup
-            row
-            value={websiteType}
-            onChange={(e) => setWebsiteType(e.target.value)}
+    <div className={theme.palette.mode === "dark" ? Styles.darkMode : ""}>
+      <Box className={Styles.container}>
+        <form onSubmit={handleSubmit}>
+          <FormControl component="fieldset" fullWidth margin="normal">
+            <FormLabel component="legend">Type of Website</FormLabel>
+            <RadioGroup
+              row
+              value={websiteType}
+              onChange={(e) => setWebsiteType(e.target.value)}
+            >
+              <FormControlLabel
+                value="business"
+                control={<Radio />}
+                label="Business Landing Page"
+              />
+              <FormControlLabel
+                value="ecommerce"
+                control={<Radio />}
+                label="E-commerce & Online Shop"
+              />
+              <FormControlLabel
+                value="portfolio"
+                control={<Radio />}
+                label="Portfolio"
+              />
+              <FormControlLabel value="blog" control={<Radio />} label="Blog" />
+            </RadioGroup>
+          </FormControl>
+
+          <TextField
+            select
+            label="Number of Pages"
+            value={numPages}
+            onChange={(e) => setNumPages(e.target.value)}
+            fullWidth
+            margin="normal"
+            className={Styles.textField}
           >
+            {[1, 5, 10, 15, 20].map((option) => (
+              <MenuItem key={option} value={option}>
+                {option}
+              </MenuItem>
+            ))}
+          </TextField>
+
+          <FormControl component="fieldset" fullWidth margin="normal">
+            <FormLabel component="legend">Features & Functionality</FormLabel>
             <FormControlLabel
-              value="business"
-              control={<Radio />}
-              label="Business Landing Page"
+              control={
+                <Checkbox
+                  checked={features.responsiveDesign}
+                  onChange={handleFeatureChange}
+                  name="responsiveDesign"
+                />
+              }
+              label="Responsive Design"
             />
             <FormControlLabel
-              value="ecommerce"
-              control={<Radio />}
-              label="E-commerce & Online Shop"
+              control={
+                <Checkbox
+                  checked={features.ecomIntegration}
+                  onChange={handleFeatureChange}
+                  name="ecomIntegration"
+                />
+              }
+              label="E-commerce Integration"
             />
             <FormControlLabel
-              value="portfolio"
-              control={<Radio />}
-              label="Portfolio"
+              control={
+                <Checkbox
+                  checked={features.seoService}
+                  onChange={handleFeatureChange}
+                  name="seoService"
+                />
+              }
+              label="SEO Services"
             />
-            <FormControlLabel value="blog" control={<Radio />} label="Blog" />
-          </RadioGroup>
-        </FormControl>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={features.cmsIntegration}
+                  onChange={handleFeatureChange}
+                  name="cmsIntegration"
+                />
+              }
+              label="CMS Integration"
+            />
+          </FormControl>
 
-        <TextField
-          select
-          label="Number of Pages"
-          value={numPages}
-          onChange={(e) => setNumPages(e.target.value)}
-          fullWidth
-          margin="normal"
-        >
-          {[1, 5, 10, 15, 20].map((option) => (
-            <MenuItem key={option} value={option}>
-              {option}
-            </MenuItem>
-          ))}
-        </TextField>
+          <FormControl component="fieldset" fullWidth margin="normal">
+            <FormLabel component="legend">Design Complexity</FormLabel>
+            <RadioGroup
+              row
+              value={designComplexity}
+              onChange={(e) => setDesignComplexity(e.target.value)}
+            >
+              <FormControlLabel
+                value="basic"
+                control={<Radio />}
+                label="Basic"
+              />
+              <FormControlLabel
+                value="advanced"
+                control={<Radio />}
+                label="Advanced"
+              />
+              <FormControlLabel
+                value="premium"
+                control={<Radio />}
+                label="Premium"
+              />
+            </RadioGroup>
+          </FormControl>
 
-        <FormControl component="fieldset" fullWidth margin="normal">
-          <FormLabel component="legend">Features & Functionality</FormLabel>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={features.responsiveDesign}
-                onChange={handleFeatureChange}
-                name="responsiveDesign"
-              />
-            }
-            label="Responsive Design"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={features.ecomIntegration}
-                onChange={handleFeatureChange}
-                name="ecomIntegration"
-              />
-            }
-            label="E-commerce Integration"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={features.seoService}
-                onChange={handleFeatureChange}
-                name="seoService"
-              />
-            }
-            label="SEO Services"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={features.cmsIntegration}
-                onChange={handleFeatureChange}
-                name="cmsIntegration"
-              />
-            }
-            label="CMS Integration"
-          />
-        </FormControl>
-
-        <FormControl component="fieldset" fullWidth margin="normal">
-          <FormLabel component="legend">Design Complexity</FormLabel>
-          <RadioGroup
-            row
-            value={designComplexity}
-            onChange={(e) => setDesignComplexity(e.target.value)}
+          <Typography
+            variant="h5"
+            marginTop="20px"
+            className={Styles.estimatedCost}
           >
-            <FormControlLabel value="basic" control={<Radio />} label="Basic" />
-            <FormControlLabel
-              value="advanced"
-              control={<Radio />}
-              label="Advanced"
-            />
-            <FormControlLabel
-              value="premium"
-              control={<Radio />}
-              label="Premium"
-            />
-          </RadioGroup>
-        </FormControl>
+            Estimated Total Cost: CA${calculateTotal()}
+          </Typography>
 
-        <Typography variant="h5" marginTop="20px">
-          Estimated Total Cost: CA${calculateTotal()}
-        </Typography>
+          <Button
+            onClick={toggleContactForm}
+            variant="contained"
+            fullWidth
+            className={Styles.button}
+          >
+            {showContactForm ? "Hide Contact Form" : "Get a Quote"}
+          </Button>
 
-        <Button
-          onClick={toggleContactForm}
-          variant="contained"
-          fullWidth
-          margin="normal"
-        >
-          {showContactForm ? "Hide Contact Form" : "Get a Quote"}
-        </Button>
-
-        {showContactForm && (
-          <Box marginTop="20px">
-            <TextField
-              fullWidth
-              label="Name"
-              name="name"
-              value={contactDetails.name}
-              onChange={handleInputChange}
-              margin="normal"
-            />
-            <TextField
-              fullWidth
-              label="Email"
-              name="email"
-              value={contactDetails.email}
-              onChange={handleInputChange}
-              margin="normal"
-            />
-            <TextField
-              fullWidth
-              label="Phone Number"
-              name="phoneNumber"
-              value={contactDetails.phoneNumber}
-              onChange={handleInputChange}
-              margin="normal"
-            />
-            <TextField
-              fullWidth
-              label="Message"
-              name="message"
-              value={contactDetails.message}
-              onChange={handleInputChange}
-              margin="normal"
-            />
-            <Button type="submit" variant="contained" fullWidth>
-              Submit
-            </Button>
-          </Box>
-        )}
-      </form>
-    </Box>
+          {showContactForm && (
+            <Box marginTop="20px">
+              <TextField
+                fullWidth
+                label="Name"
+                name="name"
+                value={contactDetails.name}
+                onChange={handleInputChange}
+                margin="normal"
+                className={Styles.textField}
+              />
+              <TextField
+                fullWidth
+                label="Email"
+                name="email"
+                value={contactDetails.email}
+                onChange={handleInputChange}
+                margin="normal"
+                className={Styles.textField}
+              />
+              <TextField
+                fullWidth
+                label="Phone Number"
+                name="phoneNumber"
+                value={contactDetails.phoneNumber}
+                onChange={handleInputChange}
+                margin="normal"
+                className={Styles.textField}
+              />
+              <TextField
+                fullWidth
+                label="Message"
+                name="message"
+                value={contactDetails.message}
+                onChange={handleInputChange}
+                margin="normal"
+                className={Styles.textField}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                className={Styles.button}
+              >
+                Submit
+              </Button>
+            </Box>
+          )}
+        </form>
+      </Box>
+    </div>
   );
 }
 
