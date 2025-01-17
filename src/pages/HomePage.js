@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Styles from "../styles/HomePage.module.css";
 import darkLogo from "../assets/logo.png";
 import lightLogo from "../assets/logo_w.png";
@@ -14,52 +14,84 @@ import placeholderLogo from "../assets/logos/placeholder.png";
 import ContactForm from "../components/ContactForm";
 import { useTheme, Box } from "@mui/material";
 
+import CustomWebDev from "../components/modals/w_customWebDev";
+import Ecommerce from "../components/modals/w_eCommerce";
+import CrossPlatform from "../components/modals/m_crossPlatform";
+import UiUx from "../components/modals/m_uiUx";
+import TestingQa from "../components/modals/m_testingQa";
+import MarketingPromotion from "../components/modals/m_marketingPromotion";
+import BusinessAutomation from "../components/modals/w_businessAutomation";
+import AiIntegration from "../components/modals/w_aiIntegration";
+
 function HomePage({ darkMode }) {
   const theme = useTheme();
+  const [activeModal, setActiveModal] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
 
   const services = [
     {
+      id: "customWebDev",
       logo: customWebDevelopmentLogo,
       title: "Custom Web Development",
       description: "Tailored web solutions to fit your unique business needs.",
     },
     {
+      id: "eCommerce",
       logo: eCommerceLogo,
       title: "E-commerce Solutions",
       description: "Robust online stores with seamless shopping experiences.",
     },
     {
+      id: "crossPlatform",
       logo: crossPlatformLogo,
       title: "Cross-Platform Development",
       description:
         "Create apps that work seamlessly across Web, iOS, and Android.",
     },
     {
+      id: "uiUx",
       logo: uiUxLogo,
       title: "UI/UX Design",
       description: "Visually stunning and user-friendly interfaces.",
     },
     {
+      id: "testingQa",
       logo: testingQALogo,
       title: "Testing, Q/A, Deployment & Maintenance",
       description: "Ensure smooth deployment and provide ongoing maintenance.",
     },
     {
+      id: "marketingPromotion",
       logo: marketingPromotionLogo,
       title: "Marketing & Promotion",
       description: "Increase app visibility and grow your user base.",
     },
     {
+      id: "businessAutomation",
       logo: placeholderLogo,
       title: "Business Process Automation",
       description: "Automate operations to save time and reduce costs.",
     },
     {
+      id: "aiIntegration",
       logo: placeholderLogo,
       title: "AI Integration",
       description: "Enhance applications with AI capabilities.",
     },
   ];
+
+  const handleOpenModal = (id) => {
+    const service = services.find((service) => service.id === id);
+    setSelectedService(service);
+    setActiveModal(id);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setActiveModal(null);
+    setModalOpen(false);
+  };
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -129,11 +161,12 @@ function HomePage({ darkMode }) {
           {services.map((service, index) => (
             <div
               key={index}
-              className="max-w-xs m-4 p-6 rounded-lg shadow-lg flex flex-col items-center"
+              className="max-w-xs m-4 p-6 rounded-lg shadow-lg flex flex-col items-center cursor-pointer"
               style={{
                 backgroundColor: darkMode ? "#999999" : "#ffffff",
                 color: darkMode ? "#ffffff" : "#000000",
               }}
+              onClick={() => handleOpenModal(service.id)}
             >
               <img
                 src={service.logo}
@@ -146,6 +179,64 @@ function HomePage({ darkMode }) {
           ))}
         </div>
       </Box>
+
+      {/* Modals */}
+      {activeModal === "customWebDev" && (
+        <CustomWebDev
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "eCommerce" && (
+        <Ecommerce
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "crossPlatform" && (
+        <CrossPlatform
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "uiUx" && (
+        <UiUx
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "testingQa" && (
+        <TestingQa
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "marketingPromotion" && (
+        <MarketingPromotion
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "businessAutomation" && (
+        <BusinessAutomation
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "aiIntegration" && (
+        <AiIntegration
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
 
       {/* Testimonials Section */}
       <div
