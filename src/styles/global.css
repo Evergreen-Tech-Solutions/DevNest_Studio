@@ -16,12 +16,23 @@ main {
 }
 
 @font-face {
-  font-family: 'Knewave';
-  src: url('/src/assets/fonts/Knewave-Regular.ttf') format('truetype');
+  font-family: "Knewave";
+  src: url("/src/assets/fonts/Knewave-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .font-knewave {
-  font-family: 'Knewave', 'ui-sans-serif', 'system-ui';
+  font-family: "Knewave", "ui-sans-serif", "system-ui";
+}
+
+.link {
+  color: inherit; /* Default text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.link:hover {
+  color: #278ea5; /* Change this to your desired hover color */
+  text-decoration: underline; /* Optional: add underline on hover */
 }

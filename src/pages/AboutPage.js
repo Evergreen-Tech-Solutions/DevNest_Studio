@@ -9,6 +9,7 @@ import {
   Button,
   useTheme,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function AboutPage() {
   const theme = useTheme();
@@ -118,7 +119,18 @@ function AboutPage() {
                 paragraph
                 className={Styles.bodyText}
               >
-                A photo of our Founders, Jameson and Milad in Cathedral Grove
+                <Link to="/ourteam#top" className="link">
+                  Our Founders
+                </Link>
+                ,{" "}
+                <Link to="/ourteam#jameson" className="link">
+                  Jameson
+                </Link>{" "}
+                and{" "}
+                <Link to="/ourteam#milad" className="link">
+                  Milad
+                </Link>{" "}
+                in Cathedral Grove.
               </Typography>
             </Box>
           </Grid>

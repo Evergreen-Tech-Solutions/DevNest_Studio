@@ -1,0 +1,27 @@
+.acknowledgements {
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
