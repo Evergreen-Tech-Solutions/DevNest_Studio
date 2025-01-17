@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "../styles/AboutPage.module.css";
-import aboutImage from "../images/aboutImage.png";
+import aboutImage from "../images/aboutImage.jpg";
 import {
   Typography,
   Container,
@@ -59,8 +59,20 @@ function AboutPage() {
               story and set of challenges, we dedicate time to understanding
               your specific needs.
             </Typography>
+
+            <Typography
+              variant="h6"
+              gutterBottom
+              className={Styles.bodySubtitle}
+            >
+              Begin your digital journey with DevNest Studio
+            </Typography>
           </Grid>
-          <Grid item md={6}>
+          <Grid
+            item
+            md={6}
+            xs={12} // Ensures full width on smaller screens
+          >
             <Box
               sx={{
                 display: "flex",
@@ -68,34 +80,45 @@ function AboutPage() {
                 justifyContent: "center",
                 height: "100%",
                 width: "100%",
-                mt: "-5.5rem",
+                margin: "0 auto", // Ensures centering for all screen sizes
+                textAlign: "center", // Keeps text alignment centered
               }}
             >
-              <img
-                src={aboutImage}
-                alt="Description"
-                style={{
-                  maxHeight: "75%",
-                  maxWidth: "75%",
+              <Box
+                sx={{
+                  width: "100%",
+                  maxWidth: "350px",
+                  aspectRatio: "3 / 5",
+                  overflow: "hidden",
                   borderRadius: "12px",
-                  objectFit: "cover",
+                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                  backgroundColor: theme.palette.background.paper,
                 }}
-              />
-            </Box>
-            <Box textAlign="center" sx={{ width: "100%", marginTop: "auto" }}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                className={Styles.bodySubtitle}
               >
-                Begin your digital journey with DevNest Studio
-              </Typography>
+                <img
+                  src={aboutImage}
+                  alt="Description"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
+            </Box>
+            <Box
+              textAlign="center"
+              sx={{
+                width: "100%",
+                marginTop: "-1rem",
+              }}
+            >
               <Typography
                 variant="subtitle1"
                 paragraph
                 className={Styles.bodyText}
               >
-                Let's partner together to create something truly remarkable.
+                A photo of our Founders, Jameson and Milad in Cathedral Grove
               </Typography>
             </Box>
           </Grid>
