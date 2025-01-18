@@ -21,6 +21,7 @@ function QuoteBuilderPage() {
   const [projectType, setProjectType] = useState("");
   const [numPages, setNumPages] = useState("");
   const [numViews, setNumViews] = useState("");
+  const [designComplexity, setDesignComplexity] = useState("");
   const [services, setServices] = useState({
     aiIntegration: false,
     ecomCmsIntegration: false,
