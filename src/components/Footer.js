@@ -6,7 +6,8 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,14 +17,19 @@ function Footer() {
   return (
     <Box
       component="footer"
-      sx={{ backgroundColor: "primary.main", py: 2, zIndex: 10 }}
+      sx={{
+        backgroundColor: "primary.main",
+        py: 2,
+        color: theme.palette.text.primary,
+        zIndex: 10,
+      }}
     >
       <Container
         maxWidth="lg"
         sx={{
           display: "flex",
           flexDirection: isMobile ? "column" : "row",
-          justifyContent: "space-between",
+          justifyContent: isMobile ? "center" : "space-between",
           alignItems: "center",
           textAlign: isMobile ? "center" : "left",
         }}
@@ -31,17 +37,6 @@ function Footer() {
         <Typography variant="body1" sx={{ mb: isMobile ? 2 : 0, fontFamily: "Quicksand, serif",}}>
           © {currentYear} DevNest Studio
         </Typography>
-        {/* <div>
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="inline-block mx-2">
-                        <FaFacebookF />
-                    </a>
-                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="inline-block mx-2">
-                        <FaTwitter />
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="inline-block mx-2">
-                        <FaInstagram />
-                    </a>
-                </div> */}
       </Container>
     </Box>
   );

@@ -13,6 +13,11 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import QuoteBuilderPage from "./pages/QuoteBuilderPage";
 import ContactPage from "./pages/ContactPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
+import AcknowledgementsPage from "./pages/AcknowledgementsPage";
+import FAQPage from "./pages/FAQPage";
+import OurTeamPage from "./pages/OurTeamPage";
 import { deepOrange, grey } from "@mui/material/colors";
 import Footer from "./components/Footer";
 import "./styles/global.css";
@@ -103,9 +108,18 @@ function App() {
                   />
                 }
               />
+              <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/quotebuilder" element={<QuoteBuilderPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsAndConditionsPage />} />
+              <Route
+                path="/acknowledgements"
+                element={<AcknowledgementsPage />}
+              />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/ourteam" element={<OurTeamPage />} />
             </Routes>
           </main>
           <Footer />

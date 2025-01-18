@@ -18,25 +18,25 @@ import Styles from "../styles/QuoteBuilderPage.module.css";
 
 function QuoteBuilderPage() {
   const theme = useTheme();
-  const [websiteType, setWebsiteType] = useState("");
+  const [projectType, setProjectType] = useState("");
   const [numPages, setNumPages] = useState("");
-  const [features, setFeatures] = useState({
-    responsiveDesign: false,
-    ecomIntegration: false,
-    seoService: false,
-    cmsIntegration: false,
+  const [numViews, setNumViews] = useState("");
+  const [services, setServices] = useState({
+    aiIntegration: false,
+    ecomCmsIntegration: false,
+    seo: false,
+    marketingPromotion: false,
+    businessAutomation: false,
   });
-  const [designComplexity, setDesignComplexity] = useState("");
   const [contactDetails, setContactDetails] = useState({
     name: "",
     email: "",
     phoneNumber: "",
     message: "",
   });
-  const [showContactForm, setShowContactForm] = useState(false);
 
-  const handleFeatureChange = (event) => {
-    setFeatures({ ...features, [event.target.name]: event.target.checked });
+  const handleServicesChange = (event) => {
+    setServices({ ...services, [event.target.name]: event.target.checked });
   };
 
   const handleInputChange = (event) => {
@@ -45,25 +45,28 @@ function QuoteBuilderPage() {
   };
 
   const calculateTotal = () => {
-    let total = 5000;
-    if (websiteType === "ecommerce") total += 2000;
-    if (features.responsiveDesign) total += 1000;
-    if (features.ecomIntegration) total += 1500;
-    if (features.seoService) total += 500;
-    if (features.cmsIntegration) total += 1000;
-    if (designComplexity === "advanced") total += 2000;
-    if (designComplexity === "premium") total += 5000;
-    total += numPages * 200;
+    let total = 5000; // Starting base price
+    if (projectType === "website") total += numPages * 200;
+    if (projectType === "mobileApp") total += numViews * 300;
+    if (projectType === "crossPlatform")
+      total += numPages * 200 + numViews * 300;
+
+    if (services.aiIntegration) total += 5000;
+    if (services.ecomCmsIntegration) total += 2000;
+    if (services.seo) total += 1000;
+    if (services.marketingPromotion) total += 3000;
+    if (services.businessAutomation) total += 4000;
+
     return total;
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const submissionData = {
-      websiteType,
-      numPages,
-      features: JSON.stringify(features),
-      designComplexity,
+      projectType,
+      numPages: projectType !== "mobileApp" ? numPages : null,
+      numViews: projectType !== "website" ? numViews : null,
+      services: JSON.stringify(services),
       ...contactDetails,
       estimatedCost: calculateTotal().toString(),
     };
@@ -85,23 +88,20 @@ function QuoteBuilderPage() {
       );
   };
 
-  const toggleContactForm = () => {
-    setShowContactForm(!showContactForm);
-  };
-
   return (
     <div className={theme.palette.mode === "dark" ? Styles.darkMode : ""}>
       <Box className={Styles.container}>
         <form onSubmit={handleSubmit}>
+          {/* Project Type Selection */}
           <FormControl component="fieldset" fullWidth margin="normal">
             <FormLabel component="legend" sx={{ fontFamily: '"Quicksand", serif', fontWeight: 'Bold' }}>Type of Website</FormLabel>
             <RadioGroup
               row
-              value={websiteType}
-              onChange={(e) => setWebsiteType(e.target.value)}
+              value={projectType}
+              onChange={(e) => setProjectType(e.target.value)}
             >
               <FormControlLabel
-                value="business"
+                value="website"
                 control={<Radio />}
                 label="Business Landing Page"
                 componentsProps={{
@@ -109,7 +109,7 @@ function QuoteBuilderPage() {
                 }}
               />
               <FormControlLabel
-                value="ecommerce"
+                value="mobileApp"
                 control={<Radio />}
                 label="E-commerce & Online Shop"
                 componentsProps={{
@@ -117,7 +117,7 @@ function QuoteBuilderPage() {
                 }}
               />
               <FormControlLabel
-                value="portfolio"
+                value="crossPlatform"
                 control={<Radio />}
                 label="Portfolio"
                 componentsProps={{
@@ -152,9 +152,9 @@ function QuoteBuilderPage() {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={features.responsiveDesign}
-                  onChange={handleFeatureChange}
-                  name="responsiveDesign"
+                  checked={services.aiIntegration}
+                  onChange={handleServicesChange}
+                  name="aiIntegration"
                 />
               }
               label="Responsive Design"
@@ -165,9 +165,9 @@ function QuoteBuilderPage() {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={features.ecomIntegration}
-                  onChange={handleFeatureChange}
-                  name="ecomIntegration"
+                  checked={services.ecomCmsIntegration}
+                  onChange={handleServicesChange}
+                  name="ecomCmsIntegration"
                 />
               }
               label="E-commerce Integration"
@@ -178,9 +178,9 @@ function QuoteBuilderPage() {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={features.seoService}
-                  onChange={handleFeatureChange}
-                  name="seoService"
+                  checked={services.seo}
+                  onChange={handleServicesChange}
+                  name="seo"
                 />
               }
               label="SEO Services"
@@ -191,9 +191,9 @@ function QuoteBuilderPage() {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={features.cmsIntegration}
-                  onChange={handleFeatureChange}
-                  name="cmsIntegration"
+                  checked={services.marketingPromotion}
+                  onChange={handleServicesChange}
+                  name="marketingPromotion"
                 />
               }
               label="CMS Integration"
@@ -237,6 +237,50 @@ function QuoteBuilderPage() {
             </RadioGroup>
           </FormControl>
 
+          {/* Contact Form */}
+          <Box marginTop="20px">
+            <Typography variant="h6" gutterBottom>
+              Contact Details
+            </Typography>
+            <TextField
+              fullWidth
+              label="Name"
+              name="name"
+              value={contactDetails.name}
+              onChange={handleInputChange}
+              margin="normal"
+              className={Styles.textField}
+            />
+            <TextField
+              fullWidth
+              label="Email"
+              name="email"
+              value={contactDetails.email}
+              onChange={handleInputChange}
+              margin="normal"
+              className={Styles.textField}
+            />
+            <TextField
+              fullWidth
+              label="Phone Number"
+              name="phoneNumber"
+              value={contactDetails.phoneNumber}
+              onChange={handleInputChange}
+              margin="normal"
+              className={Styles.textField}
+            />
+            <TextField
+              fullWidth
+              label="Message"
+              name="message"
+              value={contactDetails.message}
+              onChange={handleInputChange}
+              margin="normal"
+              className={Styles.textField}
+            />
+          </Box>
+
+          {/* Estimated Cost */}
           <Typography
             variant="h5"
             marginTop="20px"
@@ -245,63 +289,15 @@ function QuoteBuilderPage() {
             Estimated Total Cost: CA${calculateTotal()}
           </Typography>
 
+          {/* Submit Button */}
           <Button
-            onClick={toggleContactForm}
+            type="submit"
             variant="contained"
             fullWidth
             className={Styles.button}
           >
-            {showContactForm ? "Hide Contact Form" : "Get a Quote"}
+            Submit
           </Button>
-
-          {showContactForm && (
-            <Box marginTop="20px">
-              <TextField
-                fullWidth
-                label="Name"
-                name="name"
-                value={contactDetails.name}
-                onChange={handleInputChange}
-                margin="normal"
-                className={Styles.textField}
-              />
-              <TextField
-                fullWidth
-                label="Email"
-                name="email"
-                value={contactDetails.email}
-                onChange={handleInputChange}
-                margin="normal"
-                className={Styles.textField}
-              />
-              <TextField
-                fullWidth
-                label="Phone Number"
-                name="phoneNumber"
-                value={contactDetails.phoneNumber}
-                onChange={handleInputChange}
-                margin="normal"
-                className={Styles.textField}
-              />
-              <TextField
-                fullWidth
-                label="Message"
-                name="message"
-                value={contactDetails.message}
-                onChange={handleInputChange}
-                margin="normal"
-                className={Styles.textField}
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                fullWidth
-                className={Styles.button}
-              >
-                Submit
-              </Button>
-            </Box>
-          )}
         </form>
       </Box>
     </div>
