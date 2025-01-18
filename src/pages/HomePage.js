@@ -22,6 +22,7 @@ import TestingQa from "../components/modals/m_testingQa";
 import MarketingPromotion from "../components/modals/m_marketingPromotion";
 import BusinessAutomation from "../components/modals/w_businessAutomation";
 import AiIntegration from "../components/modals/w_aiIntegration";
+import "../styles/global.css";
 
 function HomePage({ darkMode }) {
   const theme = useTheme();
@@ -139,18 +140,18 @@ function HomePage({ darkMode }) {
             We offer top-notch services to meet your needs. From custom web
             development to AI integration, we have you covered.
           </p>
-          <a
+          {/* <a
             href="#contact"
             className="bg-blue-500 text-white px-6 py-3 rounded-md text-lg font-medium"
           >
             Get a Free Quote
-          </a>
+          </a> */}
         </div>
       </div>
 
       {/* Services Section */}
       <Box
-        className="relative px-4 sm:px-6 lg:px-8 py-16"
+        className="relative px-4 sm:px-6 lg:px-8 py-16 text-center"
         sx={{
           backgroundColor: darkMode ? "#787474" : "#ffffff",
           color: darkMode ? "#000000" : "#000000",

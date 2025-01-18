@@ -28,7 +28,7 @@ function Footer() {
           textAlign: isMobile ? "center" : "left",
         }}
       >
-        <Typography variant="body1" sx={{ mb: isMobile ? 2 : 0 }}>
+        <Typography variant="body1" sx={{ mb: isMobile ? 2 : 0, fontFamily: "Quicksand, serif",}}>
           © {currentYear} DevNest Studio
         </Typography>
         {/* <div>

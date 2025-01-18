@@ -30,31 +30,34 @@ function App() {
       mode,
       ...(mode === "light"
         ? {
-            // palette values for light mode
-            primary: { main: "#b6e1e0" },
-            divider: deepOrange[500],
-            text: {
-              primary: grey[900],
-              secondary: grey[800],
-            },
-            background: {
-              ctaSection: "#ffffff", // Add custom property for light mode
-            },
-          }
+          // palette values for light mode
+          primary: { main: "#b6e1e0" },
+          divider: deepOrange[500],
+          text: {
+            primary: grey[900],
+            secondary: grey[800],
+          },
+          background: {
+            ctaSection: "#ffffff", // Add custom property for light mode
+          },
+        }
         : {
-            // palette values for dark mode
-            primary: { main: grey[800] },
-            divider: deepOrange[500],
-            background: {
-              default: grey[600],
-              paper: grey[800],
-              ctaSection: "#333333", // Add custom property for dark mode
-            },
-            text: {
-              primary: grey[300],
-              secondary: grey[600],
-            },
-          }),
+          // palette values for dark mode
+          primary: { main: grey[800] },
+          divider: deepOrange[500],
+          background: {
+            default: grey[600],
+            paper: grey[800],
+            ctaSection: "#333333", // Add custom property for dark mode
+          },
+          text: {
+            primary: grey[300],
+            secondary: grey[600],
+          },
+        }),
+      typography: {
+        fontFamily: `"Quicksand", serif`,
+      },
     },
   });
 
