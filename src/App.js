@@ -51,7 +51,7 @@ function App() {
             primary: { main: grey[800] },
             divider: deepOrange[500],
             background: {
-              default: grey[600],
+              default: grey[800],
               paper: grey[800],
               ctaSection: "#333333", // Add custom property for dark mode
             },

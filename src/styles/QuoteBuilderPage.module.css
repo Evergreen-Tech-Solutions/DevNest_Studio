@@ -1,11 +1,13 @@
 .container {
-  padding: 2rem;
-
+  width: 70%; /* Maintain width */
+  max-width: 1200px;
+  margin: 0 auto; /* Center horizontally and remove vertical margin */
+  padding: 1.5rem; /* Adjust padding for content */
   background-color: var(--background-color);
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-height: 75vh;
-  margin: 5%;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: calc(100vh - 4rem); /* Reduce the space for header and footer */
 }
 
 .darkMode {
@@ -16,6 +18,11 @@
 .textField {
   background-color: #ffffff;
   border-radius: 8px;
+}
+
+.darkMode .textField {
+  background-color: #4f4f4f;
+  color: white;
 }
 
 .estimatedCost {
@@ -33,9 +40,4 @@
 
 .darkMode .button {
   background-color: #278ea5;
-}
-
-.darkMode .textField {
-  background-color: #4f4f4f;
-  color: white;
 }
