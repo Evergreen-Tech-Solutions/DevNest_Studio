@@ -10,7 +10,8 @@ import crossPlatformLogo from "../assets/logos/crossPlatformLogo.png";
 import uiUxLogo from "../assets/logos/uiUxLogo.png";
 import testingQALogo from "../assets/logos/testingQALogo.png";
 import marketingPromotionLogo from "../assets/logos/marketingPromotionLogo.png";
-import placeholderLogo from "../assets/logos/placeholder.png";
+import businessAutomationLogo from "../assets/logos/businessProcessaAtomationLogo.png";
+import AiIntegrationLogo from "../assets/logos/aiIntegrationLogo.png";
 import ContactForm from "../components/ContactForm";
 import { useTheme, Box } from "@mui/material";
 
@@ -70,13 +71,13 @@ function HomePage({ darkMode }) {
     },
     {
       id: "businessAutomation",
-      logo: placeholderLogo,
+      logo: businessAutomationLogo,
       title: "Business Process Automation",
       description: "Automate operations to save time and reduce costs.",
     },
     {
       id: "aiIntegration",
-      logo: placeholderLogo,
+      logo: AiIntegrationLogo,
       title: "AI Integration",
       description: "Enhance applications with AI capabilities.",
     },
