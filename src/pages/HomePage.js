@@ -158,14 +158,14 @@ function HomePage({ darkMode }) {
           color: darkMode ? "#000000" : "#000000",
         }}
       >
-        <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
-        <div className="flex flex-wrap justify-center">
+        <h2 className="text-4xl font-bold text-center mb-12">What we do</h2>
+        <div className="flex flex-wrap justify-center shadow-lg pb-5">
           {services.map((service, index) => (
             <div
               key={index}
-              className="max-w-xs m-4 p-6 rounded-lg shadow-lg flex flex-col items-center cursor-pointer"
+              className="max-w-xs m-4 p-6 rounded-lg shadow-2xl flex flex-col items-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
               style={{
-                backgroundColor: darkMode ? "#999999" : "#ffffff",
+                backgroundColor: darkMode ? "#999999" : "#e1fff5",
                 color: darkMode ? "#ffffff" : "#000000",
               }}
               onClick={() => handleOpenModal(service.id)}
