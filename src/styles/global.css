@@ -3,12 +3,16 @@ body,
 html {
   height: 100%;
   margin: 0;
+  
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: "Quicksand", serif;
+  font-weight: 400; /* Default weight, can be overridden */
+  font-optical-sizing: auto;
 }
 
 main {
@@ -16,12 +20,21 @@ main {
 }
 
 @font-face {
-  font-family: 'Knewave';
-  src: url('/src/assets/fonts/Knewave-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+    font-family: "Quicksand";
+    src: url("../assets/fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 300 700;
+  }
 
-.font-knewave {
-  font-family: 'Knewave', 'ui-sans-serif', 'system-ui';
-}
+
+  .quicksand-heading {
+    font-family: "Quicksand", serif;
+    font-weight: 700;
+  }
+  
+  .quicksand-body {
+    font-family: "Quicksand", serif;
+    font-weight: 400;
+  }
+  

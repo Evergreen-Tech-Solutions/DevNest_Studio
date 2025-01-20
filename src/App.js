@@ -11,9 +11,13 @@ import Navigation from "./components/Navigation";
 import MobileNav from "./components/MobileNav";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import ServicesPage from "./pages/ServicesPage";
-import ProjectsPage from "./pages/ProjectsPage";
+import QuoteBuilderPage from "./pages/QuoteBuilderPage";
 import ContactPage from "./pages/ContactPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
+import AcknowledgementsPage from "./pages/AcknowledgementsPage";
+import FAQPage from "./pages/FAQPage";
+import OurTeamPage from "./pages/OurTeamPage";
 import { deepOrange, grey } from "@mui/material/colors";
 import Footer from "./components/Footer";
 import "./styles/global.css";
@@ -31,31 +35,34 @@ function App() {
       mode,
       ...(mode === "light"
         ? {
-            // palette values for light mode
-            primary: { main: "#b6e1e0" },
-            divider: deepOrange[500],
-            text: {
-              primary: grey[900],
-              secondary: grey[800],
-            },
-            background: {
-              ctaSection: "#ffffff", // Add custom property for light mode
-            },
-          }
+          // palette values for light mode
+          primary: { main: "#b6e1e0" },
+          divider: deepOrange[500],
+          text: {
+            primary: grey[900],
+            secondary: grey[800],
+          },
+          background: {
+            ctaSection: "#ffffff", // Add custom property for light mode
+          },
+        }
         : {
-            // palette values for dark mode
-            primary: { main: grey[800] },
-            divider: deepOrange[500],
-            background: {
-              default: grey[600],
-              paper: grey[800],
-              ctaSection: "#333333", // Add custom property for dark mode
-            },
-            text: {
-              primary: grey[300],
-              secondary: grey[600],
-            },
-          }),
+          // palette values for dark mode
+          primary: { main: grey[800] },
+          divider: deepOrange[500],
+          background: {
+            default: grey[600],
+            paper: grey[800],
+            ctaSection: "#333333", // Add custom property for dark mode
+          },
+          text: {
+            primary: grey[300],
+            secondary: grey[600],
+          },
+        }),
+      typography: {
+        fontFamily: `"Quicksand", serif`,
+      },
     },
   });
 
@@ -101,10 +108,18 @@ function App() {
                   />
                 }
               />
+              <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/quotebuilder" element={<QuoteBuilderPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsAndConditionsPage />} />
+              <Route
+                path="/acknowledgements"
+                element={<AcknowledgementsPage />}
+              />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/ourteam" element={<OurTeamPage />} />
             </Routes>
           </main>
           <Footer />

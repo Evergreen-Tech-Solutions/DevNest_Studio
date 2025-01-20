@@ -1,14 +1,17 @@
 .title {
+  font-family: "Quicksand", serif !important;
   font-weight: bold;
   font-size: 2.5rem;
 }
 
 .subtitle {
+  font-family: "Quicksand", serif !important;
   font-weight: 600;
   font-size: 1.25rem;
 }
 
 .bodyText {
+  font-family: "Quicksand", serif !important;
   font-weight: 500;
   font-size: 1.1rem;
 }
@@ -35,4 +38,19 @@
 
 .ctaButton {
   margin-top: 1rem;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 3 / 5; /* Keeps a proportional aspect ratio */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

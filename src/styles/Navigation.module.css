@@ -2,6 +2,7 @@
     display: inline-block;
     margin-right: 1rem;
     font-size: 1.5rem;
+    font-family: "Quicksand", serif;
     transition: all 0.2s ease-in-out;
     background-color: #278ea55a;
     padding-top: 0.5rem;
@@ -15,8 +16,12 @@
 
 .navItemInactive {
     display: inline-block;
+    font-family: "Quicksand", serif;
     margin-right: 1rem;
     transition: all 0.2s ease-in-out infinite;
     padding: 0.5rem 1rem;
     margin-top: 1.5rem;
 }
+
+
+  

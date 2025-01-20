@@ -1,10 +1,9 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu"; // Hamburger menu icon
 import Brightness4Icon from "@mui/icons-material/Brightness4"; // Dark mode icon
 import Brightness7Icon from "@mui/icons-material/Brightness7"; // Light mode icon
 import darkLogo from "../assets/logo.png";
@@ -13,15 +12,6 @@ import "../tailwind.css";
 import style from "../styles/Navigation.module.css";
 
 function Navigation({ onToggleDarkMode, darkMode }) {
-  const location = useLocation();
-
-  // Custom isActive checker for the "Services" NavLink
-  const checkIsActive = (path) => {
-    // You can add more paths here as needed
-    const paths = ["/services", "/web-application", "/mobile-application"];
-    return paths.includes(path);
-  };
-
   return (
     <AppBar position="fixed">
       <Toolbar className="w-full z-10">
@@ -44,22 +34,12 @@ function Navigation({ onToggleDarkMode, darkMode }) {
               Home
             </NavLink>
             <NavLink
-              to="/projects"
+              to="/quotebuilder"
               className={({ isActive }) =>
                 isActive ? style.navItemActive : style.navItemInactive
               }
             >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/services"
-              className={() =>
-                checkIsActive(location.pathname)
-                  ? style.navItemActive
-                  : style.navItemInactive
-              }
-            >
-              Services
+              Quote Builder
             </NavLink>
             <NavLink
               to="/about"
