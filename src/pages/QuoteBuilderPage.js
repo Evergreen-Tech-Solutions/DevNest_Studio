@@ -95,7 +95,12 @@ function QuoteBuilderPage() {
         <form onSubmit={handleSubmit}>
           {/* Project Type Selection */}
           <FormControl component="fieldset" fullWidth margin="normal">
-            <FormLabel component="legend" sx={{ fontFamily: '"Quicksand", serif', fontWeight: 'Bold' }}>Type of Website</FormLabel>
+            <FormLabel
+              component="legend"
+              sx={{ fontFamily: '"Quicksand", serif', fontWeight: "Bold" }}
+            >
+              Type of Website
+            </FormLabel>
             <RadioGroup
               row
               value={projectType}
@@ -106,7 +111,12 @@ function QuoteBuilderPage() {
                 control={<Radio />}
                 label="Business Landing Page"
                 componentsProps={{
-                  typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                  typography: {
+                    sx: {
+                      fontFamily: '"Quicksand", serif',
+                      fontWeight: "bold",
+                    },
+                  },
                 }}
               />
               <FormControlLabel
@@ -114,7 +124,12 @@ function QuoteBuilderPage() {
                 control={<Radio />}
                 label="E-commerce & Online Shop"
                 componentsProps={{
-                  typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                  typography: {
+                    sx: {
+                      fontFamily: '"Quicksand", serif',
+                      fontWeight: "bold",
+                    },
+                  },
                 }}
               />
               <FormControlLabel
@@ -122,12 +137,27 @@ function QuoteBuilderPage() {
                 control={<Radio />}
                 label="Portfolio"
                 componentsProps={{
-                  typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                  typography: {
+                    sx: {
+                      fontFamily: '"Quicksand", serif',
+                      fontWeight: "bold",
+                    },
+                  },
                 }}
               />
-              <FormControlLabel value="blog" control={<Radio />} label="Blog" componentsProps={{
-                typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
-              }} />
+              <FormControlLabel
+                value="blog"
+                control={<Radio />}
+                label="Blog"
+                componentsProps={{
+                  typography: {
+                    sx: {
+                      fontFamily: '"Quicksand", serif',
+                      fontWeight: "bold",
+                    },
+                  },
+                }}
+              />
             </RadioGroup>
           </FormControl>
 
@@ -139,7 +169,6 @@ function QuoteBuilderPage() {
             fullWidth
             margin="normal"
             className={Styles.textField}
-            
           >
             {[1, 5, 10, 15, 20].map((option) => (
               <MenuItem key={option} value={option}>
@@ -149,7 +178,12 @@ function QuoteBuilderPage() {
           </TextField>
 
           <FormControl component="fieldset" fullWidth margin="normal">
-            <FormLabel component="legend" sx={{ fontFamily: '"Quicksand", serif', fontWeight: 'Bold' }}>Features & Functionality</FormLabel>
+            <FormLabel
+              component="legend"
+              sx={{ fontFamily: '"Quicksand", serif', fontWeight: "Bold" }}
+            >
+              Features & Functionality
+            </FormLabel>
             <FormControlLabel
               control={
                 <Checkbox
@@ -160,7 +194,9 @@ function QuoteBuilderPage() {
               }
               label="Responsive Design"
               componentsProps={{
-                typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                typography: {
+                  sx: { fontFamily: '"Quicksand", serif', fontWeight: "bold" },
+                },
               }}
             />
             <FormControlLabel
@@ -173,7 +209,9 @@ function QuoteBuilderPage() {
               }
               label="E-commerce Integration"
               componentsProps={{
-                typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                typography: {
+                  sx: { fontFamily: '"Quicksand", serif', fontWeight: "bold" },
+                },
               }}
             />
             <FormControlLabel
@@ -186,7 +224,9 @@ function QuoteBuilderPage() {
               }
               label="SEO Services"
               componentsProps={{
-                typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                typography: {
+                  sx: { fontFamily: '"Quicksand", serif', fontWeight: "bold" },
+                },
               }}
             />
             <FormControlLabel
@@ -199,13 +239,20 @@ function QuoteBuilderPage() {
               }
               label="CMS Integration"
               componentsProps={{
-                typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                typography: {
+                  sx: { fontFamily: '"Quicksand", serif', fontWeight: "bold" },
+                },
               }}
             />
           </FormControl>
 
           <FormControl component="fieldset" fullWidth margin="normal">
-            <FormLabel component="legend" sx={{ fontFamily: '"Quicksand", serif', fontWeight: 'Bold' }}>Design Complexity</FormLabel>
+            <FormLabel
+              component="legend"
+              sx={{ fontFamily: '"Quicksand", serif', fontWeight: "Bold" }}
+            >
+              Design Complexity
+            </FormLabel>
             <RadioGroup
               row
               value={designComplexity}
@@ -216,7 +263,12 @@ function QuoteBuilderPage() {
                 control={<Radio />}
                 label="Basic"
                 componentsProps={{
-                  typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                  typography: {
+                    sx: {
+                      fontFamily: '"Quicksand", serif',
+                      fontWeight: "bold",
+                    },
+                  },
                 }}
               />
               <FormControlLabel
@@ -224,7 +276,12 @@ function QuoteBuilderPage() {
                 control={<Radio />}
                 label="Advanced"
                 componentsProps={{
-                  typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                  typography: {
+                    sx: {
+                      fontFamily: '"Quicksand", serif',
+                      fontWeight: "bold",
+                    },
+                  },
                 }}
               />
               <FormControlLabel
@@ -232,7 +289,12 @@ function QuoteBuilderPage() {
                 control={<Radio />}
                 label="Premium"
                 componentsProps={{
-                  typography: { sx: { fontFamily: '"Quicksand", serif', fontWeight: 'bold' } },
+                  typography: {
+                    sx: {
+                      fontFamily: '"Quicksand", serif',
+                      fontWeight: "bold",
+                    },
+                  },
                 }}
               />
             </RadioGroup>
