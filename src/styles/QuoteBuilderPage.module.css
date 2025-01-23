@@ -1,11 +1,12 @@
 .container {
   padding: 2rem;
-
-  background-color: var(--background-color);
+  background-color: #1f2937;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   min-height: 75vh;
-  margin: 5%;
+  margin-top:2.5%;
+  margin-right:15%;
+  margin-left:15%;
 }
 
 .darkMode {

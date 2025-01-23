@@ -288,7 +288,7 @@ function HomePage({ darkMode }) {
       >
         <h2 className="text-4xl font-bold text-center mb-12">Get in Touch</h2>
         <div
-          className="max-w-md mx-auto p-6 rounded-lg shadow-lg"
+          className="max-w-md mx-auto p-6 rounded-lg shadow-2xl"
           style={{
             backgroundColor: darkMode ? "#999999" : "#ffffff",
             color: darkMode ? "#ffffff" : "#000000",
