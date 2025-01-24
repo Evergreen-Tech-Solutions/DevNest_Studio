@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function AboutPage() {
+function AboutPage({ darkMode }) {
   const theme = useTheme();
 
   return (
@@ -20,13 +20,20 @@ function AboutPage() {
         <Box py={8} textAlign="center" className={Styles.introSection}>
           <Typography
             variant="h2"
-            color="primary"
             gutterBottom
             className={Styles.title}
+            sx={{
+              color: theme.palette.text.primary, // Adjust title color dynamically
+            }}
           >
-            Welcome to DevNest Studio
+            Welcome to The DevNest
           </Typography>
-          <Typography variant="h5" paragraph className={Styles.subtitle}>
+          <Typography
+            variant="h5"
+            paragraph
+            className={Styles.subtitle}
+            sx={{ color: theme.palette.text.secondary }} // Adjust subtitle for better contrast
+          >
             Where your digital aspirations become our mission.
           </Typography>
         </Box>
@@ -55,10 +62,10 @@ function AboutPage() {
               </Typography>
             </Box>
             <Typography variant="body1" paragraph className={Styles.bodyText}>
-              At DevNest Studio, collaboration is the cornerstone of our
-              success. Recognizing that every small business has its unique
-              story and set of challenges, we dedicate time to understanding
-              your specific needs.
+              At The DevNest, collaboration is the cornerstone of our success.
+              Recognizing that every small business has its unique story and set
+              of challenges, we dedicate time to understanding your specific
+              needs.
             </Typography>
 
             <Typography
@@ -66,7 +73,7 @@ function AboutPage() {
               gutterBottom
               className={Styles.bodySubtitle}
             >
-              Begin your digital journey with DevNest Studio
+              Begin your digital journey with The DevNest
             </Typography>
           </Grid>
           <Grid
@@ -119,15 +126,57 @@ function AboutPage() {
                 paragraph
                 className={Styles.bodyText}
               >
-                <Link to="/ourteam#top" className="link">
+                <Link
+                  to="/ourteam#top"
+                  className="link"
+                  style={{
+                    textDecoration: "none",
+                    color:
+                      theme.palette.mode === "dark"
+                        ? "#90caf9"
+                        : theme.palette.primary.main, // Light blue for dark mode
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.target.style.textDecoration = "underline")
+                  }
+                  onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
+                >
                   Our Founders
                 </Link>
                 ,{" "}
-                <Link to="/ourteam#jameson" className="link">
+                <Link
+                  to="/ourteam#jameson"
+                  className="link"
+                  style={{
+                    textDecoration: "none",
+                    color:
+                      theme.palette.mode === "dark"
+                        ? "#90caf9"
+                        : theme.palette.primary.main, // Light blue for dark mode
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.target.style.textDecoration = "underline")
+                  }
+                  onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
+                >
                   Jameson
                 </Link>{" "}
                 and{" "}
-                <Link to="/ourteam#milad" className="link">
+                <Link
+                  to="/ourteam#milad"
+                  className="link"
+                  style={{
+                    textDecoration: "none",
+                    color:
+                      theme.palette.mode === "dark"
+                        ? "#90caf9"
+                        : theme.palette.primary.main, // Light blue for dark mode
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.target.style.textDecoration = "underline")
+                  }
+                  onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
+                >
                   Milad
                 </Link>{" "}
                 in Cathedral Grove.

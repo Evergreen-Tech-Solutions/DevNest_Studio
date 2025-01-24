@@ -108,18 +108,36 @@ function App() {
                   />
                 }
               />
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/quotebuilder" element={<QuoteBuilderPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/privacy" element={<PrivacyPolicyPage />} />
-              <Route path="/terms" element={<TermsAndConditionsPage />} />
+              <Route path="/" element={<HomePage darkMode={darkMode} />} />
+              <Route
+                path="/about"
+                element={<AboutPage darkMode={darkMode} />}
+              />
+              <Route
+                path="/quotebuilder"
+                element={<QuoteBuilderPage darkMode={darkMode} />}
+              />
+              <Route
+                path="/contact"
+                element={<ContactPage darkMode={darkMode} />}
+              />
+              <Route
+                path="/privacy"
+                element={<PrivacyPolicyPage darkMode={darkMode} />}
+              />
+              <Route
+                path="/terms"
+                element={<TermsAndConditionsPage darkMode={darkMode} />}
+              />
               <Route
                 path="/acknowledgements"
-                element={<AcknowledgementsPage />}
+                element={<AcknowledgementsPage darkMode={darkMode} />}
               />
-              <Route path="/faq" element={<FAQPage />} />
-              <Route path="/ourteam" element={<OurTeamPage />} />
+              <Route path="/faq" element={<FAQPage darkMode={darkMode} />} />
+              <Route
+                path="/ourteam"
+                element={<OurTeamPage darkMode={darkMode} />}
+              />
             </Routes>
           </main>
           <Footer />
