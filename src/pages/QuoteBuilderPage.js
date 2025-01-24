@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import Styles from "../styles/QuoteBuilderPage.module.css";
 
-function QuoteBuilderPage() {
+function QuoteBuilderPage({ darkMode }) {
   const theme = useTheme();
   const [projectType, setProjectType] = useState("");
   const [numPages, setNumPages] = useState("");
