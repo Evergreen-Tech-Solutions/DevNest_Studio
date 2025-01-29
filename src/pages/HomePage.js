@@ -131,7 +131,7 @@ function HomePage({ darkMode }) {
           <img
             src={darkMode ? lightLogo : darkLogo}
             alt="DevNest Studio Logo"
-            className="h-48 w-48 mx-auto mb-5"
+            className="h-60 w-60 mx-auto mb-5"
           />
           <h1 className="text-6xl font-bold mb-4">
             Transform Your Digital Presence

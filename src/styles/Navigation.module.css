@@ -6,7 +6,7 @@
     font-family: "Quicksand", serif;
     transition: all 0.15s ease-in-out;
     background-color: #278ea559;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border: 1px solid aquamarine;
     border-radius: 10px;
     transform: scale(1.1); /* Slightly enlarges on hover */
