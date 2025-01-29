@@ -278,28 +278,30 @@ function HomePage({ darkMode }) {
       </div>
 
       {/* Contact Section */}
-      <div
-        id="contact"
-        className={`py-16 ${darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
-          }`}
-      >
-        <h2 className="text-4xl font-bold text-center mb-12">Get in Touch</h2>
-        <div className="w-3/4 mx-auto">
-          <p className="text-lg text-center mb-6">
-            We’re here to answer your questions, discuss your ideas, and help you get started with what you need. Whether you're curious about our services, have feedback to share, or just want to say hello, we’re always happy to hear from you.
-          </p>
-          <p className="text-lg text-center mb-6">
-            Feel free to reach out to us by visiting our
-            <a
-              href="/contact"
-              className="text-blue-500 underline hover:text-blue-700 mx-1"
-            >
-              Contact Page
-            </a>. You’ll find a simple form to send us your message, and we’ll get back to you as soon as possible!
-          </p>
-          <p className="text-lg text-center">
-            Let’s connect and explore how we can work together to achieve your goals. Your journey starts with a conversation—don’t hesitate to get in touch today.
-          </p>
+      <div className="flex flex-wrap justify-center mb-5">
+        <div
+          id="contact"
+          className={`w-1/2 m-2 p-6 rounded-lg shadow-xl ${darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+            }`}
+        >
+          <h2 className="text-4xl font-bold text-center mb-12">Get in Touch</h2>
+          <div className="">
+            <p className="text-lg text-center mb-6">  
+              We're here to answer your questions, discuss your ideas, and help you get started with what you need. Whether you're curious about our services, have feedback to share, or just want to say hello, we're always happy to hear from you.
+            </p>
+            <p className="text-lg text-center mb-6">
+              Feel free to reach out to us by visiting our
+              <a
+                href="/contact"
+                className="text-blue-500 underline hover:text-red-500 mx-1"
+              >
+                Contact Page
+              </a>. You'll find a simple form to send us your message, and we'll get back to you as soon as possible!
+            </p>
+            <p className="text-lg text-center">
+              Let's connect and explore how we can work together to achieve your goals. Your journey starts with a conversation—don't hesitate to get in touch today.
+            </p>
+          </div>
         </div>
       </div>
     </div>
