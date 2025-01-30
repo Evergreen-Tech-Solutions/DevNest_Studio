@@ -43,6 +43,13 @@ function Footer() {
             flexWrap: "wrap",
             gap: 2,
             justifyContent: "center",
+            "& a": {
+              color: "inherit",
+              transition: "color 0.3s ease-in-out",
+              "&:hover": {
+                color: "#20b2aa",
+              },
+            },
           }}
         >
           <Link to="/faq" className="link">
@@ -71,33 +78,37 @@ function Footer() {
           <Box
             sx={{
               display: "flex",
-              gap: 1.5,
+              gap: 2,
               justifyContent: "center",
+              "& a": {
+                color: "inherit",
+                transition: "color 0.3s ease-in-out",
+                "&:hover": {
+                  color: "#20b2aa",
+                },
+              },
             }}
           >
             <a
               href="https://www.linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "inherit" }}
             >
-              <FaLinkedin size={20} />
+              <FaLinkedin size={22} />
             </a>
             <a
               href="https://www.github.com"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "inherit" }}
             >
-              <FaGithub size={20} />
+              <FaGithub size={22} />
             </a>
             <a
               href="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "inherit" }}
             >
-              <FaInstagram size={20} />
+              <FaInstagram size={22} />
             </a>
           </Box>
         </Box>
