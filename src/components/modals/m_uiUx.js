@@ -58,49 +58,82 @@ function UiUx({ open, onClose, service }) {
   return (
     <Modal open={open} onClose={onClose} className="flex items-center justify-center p-4">
       <Box sx={boxStyle}>
-        <div><button onClick={onClose} className="text-dark bg-red-400 px-2 py-1 rounded-md mb-2">X</button></div>
-        <Typography variant="h4" component="h2" className='text-gry text-center'>Custom Web Development</Typography>
+        <Typography variant="h4" component="h2" className="text-gry text-center">
+          UI/UX Design
+        </Typography>
         <div className="bg-lght rounded-md p-2 mt-3 mb-2">
-          <Typography variant="h5" sx={{ ...labelStyle }}>Why Choose Custom Web Development?</Typography>
+          <Typography variant="h5" sx={{ ...labelStyle }}>
+            Why Invest in UI/UX Design?
+          </Typography>
 
-          <Typography sx={{ ...subStyle }}>Tailored Solutions:</Typography>
-          <Typography sx={{ ...textStyle }}>Every business has unique requirements, and a custom web development service ensures that every aspect of your website is designed to fulfill those specific needs—from the overall layout and user experience to specialized functionalities and backend processes.</Typography>
+          <Typography sx={{ ...subStyle }}>Engaging and Intuitive User Experience:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            A well-designed interface ensures users can navigate your application effortlessly. We focus on **intuitive layouts, smooth interactions, and seamless navigation**, making every interaction enjoyable and efficient.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Scalability and Flexibility:</Typography>
-          <Typography sx={{ ...textStyle }}>As your business evolves, your website should adapt to new challenges and opportunities. Custom websites are built with scalability in mind, allowing for seamless updates, feature additions, and integrations with other systems and applications.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Visually Stunning Designs:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            First impressions matter. Our UI designs are **aesthetically pleasing, modern, and aligned with your brand identity**, ensuring a visually engaging experience that captivates users from the first interaction.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Optimized Performance:</Typography>
-          <Typography sx={{ ...textStyle }}>Custom websites can be optimized for performance, with faster load times and a smoother user journey. This is crucial for keeping visitors engaged and can also contribute positively to your search engine rankings.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>User-Centered Approach:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We prioritize **human-centered design** by analyzing user behavior, preferences, and pain points. Our process ensures that your product is tailored to the needs and expectations of your target audience.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Enhanced Security:</Typography>
-          <Typography sx={{ ...textStyle }}>With custom web development, you get a site built with the latest security features, tailored to protect your specific content and data, which is especially important for e-commerce and sites handling sensitive user information.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Cross-Platform Consistency:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Whether on **desktop, tablet, or mobile**, we design interfaces that offer a consistent and delightful experience across all devices and platforms.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Brand Consistency:</Typography>
-          <Typography sx={{ ...textStyle }}>Your website is a digital extension of your brand. Custom development ensures that your site accurately reflects your brand's aesthetics and ethos, creating a cohesive experience that reinforces your brand identity.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Accessibility and Inclusivity:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            A great UI/UX should be accessible to everyone. We implement **WCAG-compliant accessibility features**, ensuring inclusivity for users of all abilities.
+          </Typography>
 
-          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>Our Custom Web Development Process</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Performance-Optimized Interfaces:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            A slow or clunky UI can frustrate users. Our designs are **optimized for speed and efficiency**, reducing load times and enhancing the overall user journey.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Discovery and Planning:</Typography>
-          <Typography sx={{ ...textStyle }}>We gather all the necessary information, including your goals, target audience, and competitor analysis. This helps us create a strategic plan that aligns with your vision.</Typography>
+          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>
+            Our UI/UX Design Process
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Design and User Experience:</Typography>
-          <Typography sx={{ ...textStyle }}>Our designers craft a unique look and feel for your site that enhances usability while keeping your users engaged.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Research and User Insights:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We conduct **market research, competitor analysis, and user testing** to gather insights and define the best approach for your audience.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Development:</Typography>
-          <Typography sx={{ ...textStyle }}>Our developers bring the designs to life, coding the functionality that powers your site. We focus on clean, maintainable code that adheres to industry standards.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Wireframing and Prototyping:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Our team creates **low-fidelity wireframes and interactive prototypes**, allowing stakeholders to visualize and test the user journey before full-scale development.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Testing and Quality Assurance:</Typography>
-          <Typography sx={{ ...textStyle }}>Rigorous testing ensures that every feature works as intended, with a seamless experience across all devices and browsers.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>UI Design and Branding:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We craft **stunning UI elements, typography, color schemes, and iconography**, ensuring the final product aligns with your brand's identity.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Launch and Beyond:</Typography>
-          <Typography sx={{ ...textStyle }}>After the final checks, your website goes live. We offer ongoing support, maintenance, and updates to keep your site at the forefront of digital excellence.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>User Testing and Iteration:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Before launch, we conduct **A/B testing and usability tests** to gather feedback, refine designs, and improve the overall experience.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Optimization:</Typography>
-          <Typography sx={{ ...textStyle }}>Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Implementation and Handoff:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Our team collaborates closely with developers to ensure a **smooth design-to-code transition**, maintaining design integrity throughout development.
+          </Typography>
+
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Post-Launch Optimization:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Design is an ongoing process. We monitor user behavior post-launch and **iterate based on real-world data** to continuously enhance the experience.
+          </Typography>
         </div>
       </Box>
     </Modal>
   );
+
 }
 
 export default UiUx;

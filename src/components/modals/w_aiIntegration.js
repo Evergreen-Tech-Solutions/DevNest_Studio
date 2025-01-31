@@ -57,49 +57,82 @@ function AiIntegration({ open, onClose, service }) {
   return (
     <Modal open={open} onClose={onClose} className="flex items-center justify-center p-4">
       <Box sx={boxStyle}>
-        <div><button onClick={onClose} className="text-dark bg-red-400 px-2 py-1 rounded-md mb-2">X</button></div>
-        <Typography variant="h4" component="h2" className='text-gry text-center'>Custom Web Development</Typography>
+        <Typography variant="h4" component="h2" className="text-gry text-center">
+          AI Integration
+        </Typography>
         <div className="bg-lght rounded-md p-2 mt-3 mb-2">
-          <Typography variant="h5" sx={{ ...labelStyle }}>Why Choose Custom Web Development?</Typography>
+          <Typography variant="h5" sx={{ ...labelStyle }}>
+            Why Integrate AI into Your Applications?
+          </Typography>
 
-          <Typography sx={{ ...subStyle }}>Tailored Solutions:</Typography>
-          <Typography sx={{ ...textStyle }}>Every business has unique requirements, and a custom web development service ensures that every aspect of your website is designed to fulfill those specific needs—from the overall layout and user experience to specialized functionalities and backend processes.</Typography>
+          <Typography sx={{ ...subStyle }}>Enhanced Decision-Making and Automation:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            AI-driven systems enable **intelligent decision-making** by analyzing vast amounts of data, identifying patterns, and automating processes. This leads to **greater efficiency, cost savings, and reduced human error**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Scalability and Flexibility:</Typography>
-          <Typography sx={{ ...textStyle }}>As your business evolves, your website should adapt to new challenges and opportunities. Custom websites are built with scalability in mind, allowing for seamless updates, feature additions, and integrations with other systems and applications.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Personalized User Experience:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            AI can adapt to **user behavior and preferences**, providing **customized recommendations, dynamic content, and intelligent interactions** that enhance engagement and satisfaction.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Optimized Performance:</Typography>
-          <Typography sx={{ ...textStyle }}>Custom websites can be optimized for performance, with faster load times and a smoother user journey. This is crucial for keeping visitors engaged and can also contribute positively to your search engine rankings.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Advanced Data Analytics and Insights:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            With AI-powered **predictive analytics, machine learning models, and real-time data processing**, businesses can uncover **actionable insights**, anticipate trends, and make data-driven decisions faster.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Enhanced Security:</Typography>
-          <Typography sx={{ ...textStyle }}>With custom web development, you get a site built with the latest security features, tailored to protect your specific content and data, which is especially important for e-commerce and sites handling sensitive user information.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>AI-Powered Chatbots and Virtual Assistants:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Improve **customer service and support** with AI-driven chatbots and voice assistants that handle queries, automate responses, and provide **instant, human-like interactions** 24/7.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Brand Consistency:</Typography>
-          <Typography sx={{ ...textStyle }}>Your website is a digital extension of your brand. Custom development ensures that your site accurately reflects your brand's aesthetics and ethos, creating a cohesive experience that reinforces your brand identity.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Computer Vision and Image Recognition:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            AI integration allows applications to **analyze, process, and interpret images and videos**, enabling use cases such as **facial recognition, object detection, and automated surveillance**.
+          </Typography>
 
-          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>Our Custom Web Development Process</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Natural Language Processing (NLP):</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Empower your applications with **NLP-driven text processing, voice recognition, and sentiment analysis** for smarter search functionality, automated translations, and contextual understanding.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Discovery and Planning:</Typography>
-          <Typography sx={{ ...textStyle }}>We gather all the necessary information, including your goals, target audience, and competitor analysis. This helps us create a strategic plan that aligns with your vision.</Typography>
+          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>
+            Our AI Integration Process
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Design and User Experience:</Typography>
-          <Typography sx={{ ...textStyle }}>Our designers craft a unique look and feel for your site that enhances usability while keeping your users engaged.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>AI Strategy & Use Case Identification:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We assess your business needs and identify the best AI applications—whether it’s **automation, customer interaction, predictive analytics, or intelligent recommendations**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Development:</Typography>
-          <Typography sx={{ ...textStyle }}>Our developers bring the designs to life, coding the functionality that powers your site. We focus on clean, maintainable code that adheres to industry standards.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Machine Learning Model Development:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Our team designs, trains, and deploys **custom machine learning models** that continuously improve with real-world data, optimizing your business processes and user experience.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Testing and Quality Assurance:</Typography>
-          <Typography sx={{ ...textStyle }}>Rigorous testing ensures that every feature works as intended, with a seamless experience across all devices and browsers.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Integration with Existing Systems:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We seamlessly integrate **AI APIs, cloud-based AI services, and in-house AI models** into your existing applications, ensuring compatibility and scalability.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Launch and Beyond:</Typography>
-          <Typography sx={{ ...textStyle }}>After the final checks, your website goes live. We offer ongoing support, maintenance, and updates to keep your site at the forefront of digital excellence.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Testing & Validation:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            AI models are rigorously tested using **real-time data, simulations, and continuous feedback loops** to ensure **high accuracy and reliable performance**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Optimization:</Typography>
-          <Typography sx={{ ...textStyle }}>Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Deployment and Optimization:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We implement AI solutions in **cloud, edge, or on-premise environments**, ensuring real-time processing capabilities, **fast performance, and cost-effective scalability**.
+          </Typography>
+
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Ongoing Learning and AI Model Training:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            AI systems need to evolve. We provide **continuous model training, performance monitoring, and AI-driven insights** to keep your application ahead of the curve.
+          </Typography>
         </div>
       </Box>
     </Modal>
   );
+
 }
 
 export default AiIntegration;

@@ -58,49 +58,87 @@ function CrossPlatform({ open, onClose, service }) {
   return (
     <Modal open={open} onClose={onClose} className="flex items-center justify-center p-4">
       <Box sx={boxStyle}>
-        <div><button onClick={onClose} className="text-dark bg-red-400 px-2 py-1 rounded-md mb-2">X</button></div>
-        <Typography variant="h4" component="h2" className='text-gry text-center'>Custom Web Development</Typography>
+        <Typography variant="h4" component="h2" className="text-gry text-center">
+          Cross-Platform Development
+        </Typography>
         <div className="bg-lght rounded-md p-2 mt-3 mb-2">
-          <Typography variant="h5" sx={{ ...labelStyle }}>Why Choose Custom Web Development?</Typography>
+          <Typography variant="h5" sx={{ ...labelStyle }}>
+            Why Choose Cross-Platform Development?
+          </Typography>
 
-          <Typography sx={{ ...subStyle }}>Tailored Solutions:</Typography>
-          <Typography sx={{ ...textStyle }}>Every business has unique requirements, and a custom web development service ensures that every aspect of your website is designed to fulfill those specific needs—from the overall layout and user experience to specialized functionalities and backend processes.</Typography>
+          <Typography sx={{ ...subStyle }}>Seamless Multi-Device Experience:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Users expect apps that work effortlessly across different platforms. Our cross-platform development approach ensures a **consistent user experience** whether on **Web, iOS, or Android**, making your app accessible to a wider audience.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Scalability and Flexibility:</Typography>
-          <Typography sx={{ ...textStyle }}>As your business evolves, your website should adapt to new challenges and opportunities. Custom websites are built with scalability in mind, allowing for seamless updates, feature additions, and integrations with other systems and applications.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Cost-Effective and Faster Development:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Developing separate apps for each platform can be costly and time-consuming. Cross-platform solutions **reduce development time and cost** by using a **single codebase**, ensuring **faster deployment** without sacrificing quality.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Optimized Performance:</Typography>
-          <Typography sx={{ ...textStyle }}>Custom websites can be optimized for performance, with faster load times and a smoother user journey. This is crucial for keeping visitors engaged and can also contribute positively to your search engine rankings.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Performance Optimization:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            With modern cross-platform technologies like **React Native, Flutter, and Progressive Web Apps (PWAs)**, we build apps that **deliver near-native performance** with smooth animations and fast load times.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Enhanced Security:</Typography>
-          <Typography sx={{ ...textStyle }}>With custom web development, you get a site built with the latest security features, tailored to protect your specific content and data, which is especially important for e-commerce and sites handling sensitive user information.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Scalability and Future-Proofing:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            As your business grows, your app needs to evolve too. Our solutions are **scalable and easy to maintain**, allowing future updates and feature additions without requiring a complete rebuild for each platform.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Brand Consistency:</Typography>
-          <Typography sx={{ ...textStyle }}>Your website is a digital extension of your brand. Custom development ensures that your site accurately reflects your brand's aesthetics and ethos, creating a cohesive experience that reinforces your brand identity.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Cloud Integration and Data Synchronization:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Keep user data **synced in real-time** across all devices with **cloud-based storage and API integrations**. Whether users switch between devices or use multiple platforms, they will always have access to the latest data.
+          </Typography>
 
-          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>Our Custom Web Development Process</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Offline Functionality:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Ensure **seamless usability** even without an internet connection. Our cross-platform apps include **offline mode capabilities**, allowing users to access key features and sync data once they’re back online.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Discovery and Planning:</Typography>
-          <Typography sx={{ ...textStyle }}>We gather all the necessary information, including your goals, target audience, and competitor analysis. This helps us create a strategic plan that aligns with your vision.</Typography>
+          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>
+            Our Cross-Platform Development Process
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Design and User Experience:</Typography>
-          <Typography sx={{ ...textStyle }}>Our designers craft a unique look and feel for your site that enhances usability while keeping your users engaged.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Strategy and Planning:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We analyze your business needs, audience, and market trends to create a **strategic roadmap** for your cross-platform application.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Development:</Typography>
-          <Typography sx={{ ...textStyle }}>Our developers bring the designs to life, coding the functionality that powers your site. We focus on clean, maintainable code that adheres to industry standards.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>UI/UX Design:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Our designers craft **intuitive and visually appealing interfaces** that offer a smooth, engaging experience on every device.
+          </Typography>
+
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Development and Integration:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We use the latest **cross-platform frameworks** to build high-performance apps while integrating **third-party services, APIs, and cloud-based systems**.
+          </Typography>
 
           <Typography variant="subtitle1" sx={{ ...subStyle }}>Testing and Quality Assurance:</Typography>
-          <Typography sx={{ ...textStyle }}>Rigorous testing ensures that every feature works as intended, with a seamless experience across all devices and browsers.</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We rigorously test across multiple devices, operating systems, and screen sizes to **ensure consistency and stability**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Launch and Beyond:</Typography>
-          <Typography sx={{ ...textStyle }}>After the final checks, your website goes live. We offer ongoing support, maintenance, and updates to keep your site at the forefront of digital excellence.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Deployment and App Store Optimization:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We help publish your app on **Google Play, the Apple App Store, and the web**, following best practices for maximum visibility and engagement.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Optimization:</Typography>
-          <Typography sx={{ ...textStyle }}>Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Post-Launch Support and Updates:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Our work doesn’t stop after launch. We offer **continuous monitoring, updates, and improvements** to keep your app performing at its best.
+          </Typography>
+
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>User Analytics and Growth Optimization:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Using **advanced analytics**, we track user engagement, behavior, and performance metrics to refine and enhance the app over time.
+          </Typography>
         </div>
       </Box>
     </Modal>
   );
+
 }
 
 export default CrossPlatform;
