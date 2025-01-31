@@ -1,27 +1,31 @@
 .navItemActive {
     display: inline-block;
-    margin-right: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
     font-size: 1.5rem;
     font-family: "Quicksand", serif;
-    transition: all 0.2s ease-in-out;
-    background-color: #278ea55a;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border: 1px solid;
-    border-radius: 15px;
-    border-color: aquamarine;
+    transition: all 0.3s ease-in-out;
+    background-color: #278ea559;
+    padding: 0.5rem;
+    border-bottom: 1px solid aquamarine;
+    border-radius: 10px;
+    transform: scale(1.2); /* Slightly enlarges on hover */
+    background-color: #20b2ab8e; /* Darker aquamarine background */
+    box-shadow: 0px 4px 10px #3df3b6db;
 }
 
 .navItemInactive {
     display: inline-block;
     font-family: "Quicksand", serif;
     margin-right: 1rem;
-    transition: all 0.2s ease-in-out infinite;
+    transition: all 0.15s ease-in-out;
     padding: 0.5rem 1rem;
-    margin-top: 1.5rem;
 }
 
-
-  
+/* Hover effect for inactive items */
+.navItemInactive:hover {
+    transform: scale(1.2); /* Enlarges slightly on hover */
+    color: #20b2ab; /* Light red background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 0.2rem 0.6rem; /* Slightly larger padding */
+}

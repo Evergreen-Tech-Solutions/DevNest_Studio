@@ -59,7 +59,6 @@ function CustomWebDevModal({ open, onClose }) {
   return (
     <Modal open={open} onClose={onClose} className="flex items-center justify-center p-4">
       <Box sx={boxStyle}>
-        <div><button onClick={onClose} className="text-dark bg-red-400 px-2 py-1 rounded-md mb-2">X</button></div>
         <Typography variant="h4" component="h2" className='text-gry text-center'>Custom Web Development</Typography>
         <div className="bg-lght rounded-md p-2 mt-3 mb-2">
           <Typography variant="h5" sx={{ ...labelStyle }}>Why Choose Custom Web Development?</Typography>
