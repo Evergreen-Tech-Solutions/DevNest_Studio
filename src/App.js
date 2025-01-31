@@ -110,8 +110,8 @@ function App() {
               />
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/quotebuilder" element={<QuoteBuilderPage />} />
-              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/quotebuilder" element={<QuoteBuilderPage darkMode={darkMode} />} />
+              <Route path="/contact" element={<ContactPage darkMode={darkMode}/>} />
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
               <Route path="/terms" element={<TermsAndConditionsPage />} />
               <Route

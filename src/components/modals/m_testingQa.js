@@ -58,49 +58,82 @@ function TestingQa({ open, onClose, service }) {
   return (
     <Modal open={open} onClose={onClose} className="flex items-center justify-center p-4">
       <Box sx={boxStyle}>
-        <div><button onClick={onClose} className="text-dark bg-red-400 px-2 py-1 rounded-md mb-2">X</button></div>
-        <Typography variant="h4" component="h2" className='text-gry text-center'>Custom Web Development</Typography>
+        <Typography variant="h4" component="h2" className="text-gry text-center">
+          Testing, Q/A, Deployment & Maintenance
+        </Typography>
         <div className="bg-lght rounded-md p-2 mt-3 mb-2">
-          <Typography variant="h5" sx={{ ...labelStyle }}>Why Choose Custom Web Development?</Typography>
+          <Typography variant="h5" sx={{ ...labelStyle }}>
+            Why Are Testing, Deployment & Maintenance Essential?
+          </Typography>
 
-          <Typography sx={{ ...subStyle }}>Tailored Solutions:</Typography>
-          <Typography sx={{ ...textStyle }}>Every business has unique requirements, and a custom web development service ensures that every aspect of your website is designed to fulfill those specific needs—from the overall layout and user experience to specialized functionalities and backend processes.</Typography>
+          <Typography sx={{ ...subStyle }}>Flawless Performance Assurance:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Ensuring a bug-free and seamless experience is critical. Our **quality assurance (Q/A) process rigorously tests your application across different devices, browsers, and platforms** to identify and resolve any issues before launch.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Scalability and Flexibility:</Typography>
-          <Typography sx={{ ...textStyle }}>As your business evolves, your website should adapt to new challenges and opportunities. Custom websites are built with scalability in mind, allowing for seamless updates, feature additions, and integrations with other systems and applications.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Security and Stability Checks:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Security vulnerabilities can be a major risk. Our team conducts **penetration testing, encryption validation, and compliance audits** to ensure your platform is **safe from cyber threats and data breaches**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Optimized Performance:</Typography>
-          <Typography sx={{ ...textStyle }}>Custom websites can be optimized for performance, with faster load times and a smoother user journey. This is crucial for keeping visitors engaged and can also contribute positively to your search engine rankings.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Cross-Browser and Device Compatibility:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Every user interacts with your application differently. We perform **cross-browser testing and mobile responsiveness checks**, ensuring that your site or app functions **flawlessly on all devices and screen sizes**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Enhanced Security:</Typography>
-          <Typography sx={{ ...textStyle }}>With custom web development, you get a site built with the latest security features, tailored to protect your specific content and data, which is especially important for e-commerce and sites handling sensitive user information.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Performance Optimization:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Slow applications can drive users away. We run **load testing, stress testing, and performance optimizations** to **reduce load times, enhance speed, and ensure smooth functionality under high traffic conditions**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Brand Consistency:</Typography>
-          <Typography sx={{ ...textStyle }}>Your website is a digital extension of your brand. Custom development ensures that your site accurately reflects your brand's aesthetics and ethos, creating a cohesive experience that reinforces your brand identity.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Seamless Deployment Process:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We handle all aspects of deployment, ensuring a **smooth transition from development to production**. Whether launching on **web servers, cloud platforms, or app stores**, we manage all configurations and backend setups.
+          </Typography>
 
-          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>Our Custom Web Development Process</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Continuous Monitoring and Support:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Our job doesn’t stop at deployment. We offer **real-time monitoring, proactive issue resolution, and performance tracking** to ensure your system **runs efficiently with minimal downtime**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Discovery and Planning:</Typography>
-          <Typography sx={{ ...textStyle }}>We gather all the necessary information, including your goals, target audience, and competitor analysis. This helps us create a strategic plan that aligns with your vision.</Typography>
+          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>
+            Our Testing, Deployment & Maintenance Process
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Design and User Experience:</Typography>
-          <Typography sx={{ ...textStyle }}>Our designers craft a unique look and feel for your site that enhances usability while keeping your users engaged.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Automated and Manual Testing:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We combine **automated testing tools** (e.g., Selenium, Jest, Cypress) with **manual testing** to cover every possible use case and edge scenario.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Development:</Typography>
-          <Typography sx={{ ...textStyle }}>Our developers bring the designs to life, coding the functionality that powers your site. We focus on clean, maintainable code that adheres to industry standards.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>User Acceptance Testing (UAT):</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Before launch, we work closely with stakeholders and real users to perform **UAT sessions, ensuring the product meets all business and functional requirements**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Testing and Quality Assurance:</Typography>
-          <Typography sx={{ ...textStyle }}>Rigorous testing ensures that every feature works as intended, with a seamless experience across all devices and browsers.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Error Tracking and Debugging:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We integrate **real-time error tracking tools** (like Sentry or LogRocket) to capture bugs and unexpected behaviors, allowing us to **quickly fix issues post-launch**.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Launch and Beyond:</Typography>
-          <Typography sx={{ ...textStyle }}>After the final checks, your website goes live. We offer ongoing support, maintenance, and updates to keep your site at the forefront of digital excellence.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>CI/CD Pipeline Integration:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            We leverage **Continuous Integration/Continuous Deployment (CI/CD) pipelines** to automate deployments, making updates smoother and reducing manual errors.
+          </Typography>
 
-          <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Optimization:</Typography>
-          <Typography sx={{ ...textStyle }}>Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.</Typography>
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Ongoing Updates & Feature Enhancements:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Technology evolves, and so should your platform. Our **continuous maintenance services** ensure your application stays updated with the latest features, security patches, and performance optimizations.
+          </Typography>
+
+          <Typography variant="subtitle1" sx={{ ...subStyle }}>Analytics and Feedback-Based Improvements:</Typography>
+          <Typography sx={{ ...textStyle }}>
+            Post-launch, we use **user behavior analytics, heatmaps, and feedback tools** to analyze engagement and refine features, ensuring the **best possible experience for users**.
+          </Typography>
         </div>
       </Box>
     </Modal>
   );
+
 }
 
 export default TestingQa;

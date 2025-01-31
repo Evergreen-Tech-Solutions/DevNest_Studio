@@ -1,13 +1,11 @@
 .container {
-  width: 70%; /* Maintain width */
-  max-width: 1200px;
-  margin: 0 auto; /* Center horizontally and remove vertical margin */
-  padding: 1.5rem; /* Adjust padding for content */
+  padding: 2rem;
   background-color: var(--background-color);
   border-radius: 12px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-  overflow-y: auto;
-  max-height: calc(100vh - 4rem); /* Reduce the space for header and footer */
+  box-shadow: 0 0 10px #0000001a;
+  max-height: auto;
+  margin-right:15%;
+  margin-left:15%;
 }
 
 .darkMode {
