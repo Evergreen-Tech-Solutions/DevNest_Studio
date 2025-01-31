@@ -1,7 +1,7 @@
 import React from "react";
 import ContactForm from "../components/ContactForm";
 
-function ContactPage({ darkMode }) { // Accept darkMode as a prop
+function ContactPage({ darkMode }) {
   return (
     <div
       className={`min-h-screen ${
