@@ -2,9 +2,8 @@
   padding: 2rem;
   background-color: var(--background-color);
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-height: 75vh;
-  margin-top:2.5%;
+  box-shadow: 0 0 10px #0000001a;
+  max-height: auto;
   margin-right:15%;
   margin-left:15%;
 }
