@@ -11,7 +11,8 @@ import Navigation from "./components/Navigation";
 import MobileNav from "./components/MobileNav";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import QuoteBuilderPage from "./pages/QuoteBuilderPage";
+import PricingPage from "./pages/PricingPage"; // ✅ Add Pricing Page
+import QuoteBuilderPage from "./pages/QuoteBuilderPage"; // ✅ Still accessible, just not in navbar
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
@@ -35,7 +36,7 @@ function App() {
       mode,
       ...(mode === "light"
         ? {
-            // palette values for light mode
+            // Light mode colors
             primary: { main: "#b6e1e0" },
             divider: deepOrange[500],
             text: {
@@ -43,17 +44,17 @@ function App() {
               secondary: grey[800],
             },
             background: {
-              ctaSection: "#ffffff", // Add custom property for light mode
+              ctaSection: "#ffffff",
             },
           }
         : {
-            // palette values for dark mode
+            // Dark mode colors
             primary: { main: grey[800] },
             divider: deepOrange[500],
             background: {
-              default: grey[800],
+              default: grey[600],
               paper: grey[800],
-              ctaSection: "#333333", // Add custom property for dark mode
+              ctaSection: "#333333",
             },
             text: {
               primary: grey[300],
@@ -62,18 +63,17 @@ function App() {
           }),
     },
     typography: {
-      fontFamily: `"Quicksand", serif`, // Apply Quicksand globally
+      fontFamily: `"Quicksand", serif`,
     },
   });
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    setManualToggle(true); // Indicate that the toggle was manual
+    setManualToggle(true);
   };
 
   const isMobile = useMediaQuery("(max-width:648px)");
 
-  // Listen for changes to the user's preference and update state accordingly
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (e) => {
@@ -85,7 +85,7 @@ function App() {
     return () => {
       mediaQuery.removeEventListener("change", handleChange);
     };
-  }, [manualToggle]); // Depend on manualToggle
+  }, [manualToggle]);
 
   return (
     <Router>
@@ -108,36 +108,29 @@ function App() {
                   />
                 }
               />
-              <Route path="/" element={<HomePage darkMode={darkMode} />} />
               <Route
-                path="/about"
-                element={<AboutPage darkMode={darkMode} />}
-              />
+                path="/pricing"
+                element={<PricingPage darkMode={darkMode} />}
+              />{" "}
+              {/* ✅ New Route */}
+              <Route path="/about" element={<AboutPage />} />
               <Route
                 path="/quotebuilder"
                 element={<QuoteBuilderPage darkMode={darkMode} />}
-              />
+              />{" "}
+              {/* ✅ Still accessible */}
               <Route
                 path="/contact"
                 element={<ContactPage darkMode={darkMode} />}
               />
-              <Route
-                path="/privacy"
-                element={<PrivacyPolicyPage darkMode={darkMode} />}
-              />
-              <Route
-                path="/terms"
-                element={<TermsAndConditionsPage darkMode={darkMode} />}
-              />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsAndConditionsPage />} />
               <Route
                 path="/acknowledgements"
-                element={<AcknowledgementsPage darkMode={darkMode} />}
+                element={<AcknowledgementsPage />}
               />
-              <Route path="/faq" element={<FAQPage darkMode={darkMode} />} />
-              <Route
-                path="/ourteam"
-                element={<OurTeamPage darkMode={darkMode} />}
-              />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/ourteam" element={<OurTeamPage />} />
             </Routes>
           </main>
           <Footer />
