@@ -11,7 +11,7 @@
     border-radius: 10px;
     transform: scale(1.2); /* Slightly enlarges on hover */
     background-color: #20b2ab8e; /* Darker aquamarine background */
-    box-shadow: 0px 6px 15px #3df3b6db;
+    box-shadow: 0px 4px 10px #3df3b6db;
 }
 
 .navItemInactive {
