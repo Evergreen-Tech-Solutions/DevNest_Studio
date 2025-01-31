@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Box, Typography } from "@mui/material";
 import ContactForm from "../ContactForm"; // Reusing the existing ContactForm
 
-function CustomPackageModal({ open, onClose }) {
+function CustomPackageModal({ open, onClose, darkMode }) {
   return (
     <Modal open={open} onClose={onClose}>
       <Box
@@ -25,7 +25,7 @@ function CustomPackageModal({ open, onClose }) {
           Let us know your requirements, and we’ll craft a solution tailored to
           your needs.
         </Typography>
-        <ContactForm />
+        <ContactForm darkMode={darkMode} />
       </Box>
     </Modal>
   );
