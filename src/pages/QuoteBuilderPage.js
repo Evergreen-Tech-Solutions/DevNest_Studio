@@ -90,278 +90,255 @@ function QuoteBuilderPage() {
   };
 
   return (
-    <div className={theme.palette.mode === "dark" ? Styles.darkMode : ""}>
-      <Box className={Styles.container}>
-        <form onSubmit={handleSubmit}>
-          {/* Project Type Selection */}
-          <FormControl component="fieldset" fullWidth margin="normal">
-            <FormLabel
-              component="legend"
-              sx={{ fontFamily: '"Quicksand", serif', fontWeight: "Bold" }}
-            >
-              Type of Website
-            </FormLabel>
-            <RadioGroup
-              row
-              value={projectType}
-              onChange={(e) => setProjectType(e.target.value)}
-            >
-              <FormControlLabel
-                value="website"
-                control={<Radio />}
-                label="Business Landing Page"
-                componentsProps={{
-                  typography: {
-                    sx: {
-                      fontFamily: '"Quicksand", serif',
-                      fontWeight: "bold",
-                    },
-                  },
-                }}
-              />
-              <FormControlLabel
-                value="mobileApp"
-                control={<Radio />}
-                label="E-commerce & Online Shop"
-                componentsProps={{
-                  typography: {
-                    sx: {
-                      fontFamily: '"Quicksand", serif',
-                      fontWeight: "bold",
-                    },
-                  },
-                }}
-              />
-              <FormControlLabel
-                value="crossPlatform"
-                control={<Radio />}
-                label="Portfolio"
-                componentsProps={{
-                  typography: {
-                    sx: {
-                      fontFamily: '"Quicksand", serif',
-                      fontWeight: "bold",
-                    },
-                  },
-                }}
-              />
-              <FormControlLabel
-                value="blog"
-                control={<Radio />}
-                label="Blog"
-                componentsProps={{
-                  typography: {
-                    sx: {
-                      fontFamily: '"Quicksand", serif',
-                      fontWeight: "bold",
-                    },
-                  },
-                }}
-              />
-            </RadioGroup>
-          </FormControl>
-
-          <TextField
-            select
-            label="Number of Pages"
-            value={numPages}
-            onChange={(e) => setNumPages(e.target.value)}
-            fullWidth
-            margin="normal"
-            className={Styles.textField}
-          >
-            {[1, 5, 10, 15, 20].map((option) => (
-              <MenuItem key={option} value={option}>
-                {option}
-              </MenuItem>
-            ))}
-          </TextField>
-
-          <FormControl component="fieldset" fullWidth margin="normal">
-            <FormLabel
-              component="legend"
-              sx={{ fontFamily: '"Quicksand", serif', fontWeight: "Bold" }}
-            >
-              Features & Functionality
-            </FormLabel>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={services.aiIntegration}
-                  onChange={handleServicesChange}
-                  name="aiIntegration"
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh", // Make it exactly the height of the viewport
+        margin: "0",
+        padding: "0",
+      }}
+    >
+      <Box
+        style={{
+          flex: "0 0 auto", // Prevent unnecessary growth
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          margin: "0", // Remove any margin
+        }}
+      >
+        <Box className={Styles.container}>
+          <form onSubmit={handleSubmit}>
+            {/* Project Type Selection */}
+            <FormControl component="fieldset" fullWidth margin="normal">
+              <FormLabel
+                component="legend"
+                sx={{ fontFamily: '"Quicksand", serif', fontWeight: "Bold" }}
+              >
+                Project Type
+              </FormLabel>
+              <RadioGroup
+                row
+                value={projectType}
+                onChange={(e) => setProjectType(e.target.value)}
+              >
+                <FormControlLabel
+                  value="website"
+                  control={<Radio />}
+                  label="Website"
                 />
-              }
-              label="Responsive Design"
-              componentsProps={{
-                typography: {
-                  sx: { fontFamily: '"Quicksand", serif', fontWeight: "bold" },
-                },
-              }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={services.ecomCmsIntegration}
-                  onChange={handleServicesChange}
-                  name="ecomCmsIntegration"
+                <FormControlLabel
+                  value="mobileApp"
+                  control={<Radio />}
+                  label="Mobile App"
                 />
-              }
-              label="E-commerce Integration"
-              componentsProps={{
-                typography: {
-                  sx: { fontFamily: '"Quicksand", serif', fontWeight: "bold" },
-                },
-              }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={services.seo}
-                  onChange={handleServicesChange}
-                  name="seo"
+                <FormControlLabel
+                  value="crossPlatform"
+                  control={<Radio />}
+                  label="Cross Platform"
                 />
-              }
-              label="SEO Services"
-              componentsProps={{
-                typography: {
-                  sx: { fontFamily: '"Quicksand", serif', fontWeight: "bold" },
-                },
-              }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={services.marketingPromotion}
-                  onChange={handleServicesChange}
-                  name="marketingPromotion"
-                />
-              }
-              label="CMS Integration"
-              componentsProps={{
-                typography: {
-                  sx: { fontFamily: '"Quicksand", serif', fontWeight: "bold" },
-                },
-              }}
-            />
-          </FormControl>
+              </RadioGroup>
+            </FormControl>
 
-          <FormControl component="fieldset" fullWidth margin="normal">
-            <FormLabel
-              component="legend"
-              sx={{ fontFamily: '"Quicksand", serif', fontWeight: "Bold" }}
-            >
-              Design Complexity
-            </FormLabel>
-            <RadioGroup
-              row
-              value={designComplexity}
-              onChange={(e) => setDesignComplexity(e.target.value)}
-            >
-              <FormControlLabel
-                value="basic"
-                control={<Radio />}
-                label="Basic"
-                componentsProps={{
-                  typography: {
-                    sx: {
-                      fontFamily: '"Quicksand", serif',
-                      fontWeight: "bold",
-                    },
-                  },
-                }}
-              />
-              <FormControlLabel
-                value="advanced"
-                control={<Radio />}
-                label="Advanced"
-                componentsProps={{
-                  typography: {
-                    sx: {
-                      fontFamily: '"Quicksand", serif',
-                      fontWeight: "bold",
-                    },
-                  },
-                }}
-              />
-              <FormControlLabel
-                value="premium"
-                control={<Radio />}
-                label="Premium"
-                componentsProps={{
-                  typography: {
-                    sx: {
-                      fontFamily: '"Quicksand", serif',
-                      fontWeight: "bold",
-                    },
-                  },
-                }}
-              />
-            </RadioGroup>
-          </FormControl>
+            {/* Conditional Input Fields */}
+            {projectType === "website" && (
+              <TextField
+                select
+                label="Number of Pages"
+                value={numPages}
+                onChange={(e) => setNumPages(e.target.value)}
+                fullWidth
+                margin="normal"
+                className={Styles.textField}
+              >
+                {[1, 5, 10, 15, 20].map((option) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
 
-          {/* Contact Form */}
-          <Box marginTop="20px">
-            <Typography variant="h6" gutterBottom>
-              Contact Details
+            {projectType === "mobileApp" && (
+              <TextField
+                select
+                label="Number of Views"
+                value={numViews}
+                onChange={(e) => setNumViews(e.target.value)}
+                fullWidth
+                margin="normal"
+                className={Styles.textField}
+              >
+                {[1, 5, 10, 15, 20].map((option) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+
+            {projectType === "crossPlatform" && (
+              <>
+                <TextField
+                  select
+                  label="Number of Pages"
+                  value={numPages}
+                  onChange={(e) => setNumPages(e.target.value)}
+                  fullWidth
+                  margin="normal"
+                  className={Styles.textField}
+                >
+                  {[1, 5, 10, 15, 20].map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {option}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                <TextField
+                  select
+                  label="Number of Views"
+                  value={numViews}
+                  onChange={(e) => setNumViews(e.target.value)}
+                  fullWidth
+                  margin="normal"
+                  className={Styles.textField}
+                >
+                  {[1, 5, 10, 15, 20].map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {option}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </>
+            )}
+
+            {/* Services Requested */}
+            <FormControl component="fieldset" fullWidth margin="normal">
+              <FormLabel
+                component="legend"
+                sx={{ fontFamily: '"Quicksand", serif', fontWeight: "Bold" }}
+              >
+                Services Requested
+              </FormLabel>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={services.aiIntegration}
+                    onChange={handleServicesChange}
+                    name="aiIntegration"
+                  />
+                }
+                label="AI Integration"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={services.ecomCmsIntegration}
+                    onChange={handleServicesChange}
+                    name="ecomCmsIntegration"
+                  />
+                }
+                label="E-Commerce/CMS Integration"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={services.seo}
+                    onChange={handleServicesChange}
+                    name="seo"
+                  />
+                }
+                label="Search Engine Optimization"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={services.marketingPromotion}
+                    onChange={handleServicesChange}
+                    name="marketingPromotion"
+                  />
+                }
+                label="Marketing & Promotion"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={services.businessAutomation}
+                    onChange={handleServicesChange}
+                    name="businessAutomation"
+                  />
+                }
+                label="Business Process Automation"
+              />
+            </FormControl>
+
+            {/* Contact Form */}
+            <Box marginTop="20px">
+              <Typography variant="h6" gutterBottom>
+                Contact Details
+              </Typography>
+              <TextField
+                fullWidth
+                label="Name"
+                name="name"
+                value={contactDetails.name}
+                onChange={handleInputChange}
+                margin="normal"
+                className={Styles.textField}
+              />
+              <TextField
+                fullWidth
+                label="Email"
+                name="email"
+                value={contactDetails.email}
+                onChange={handleInputChange}
+                margin="normal"
+                className={Styles.textField}
+              />
+              <TextField
+                fullWidth
+                label="Phone Number"
+                name="phoneNumber"
+                value={contactDetails.phoneNumber}
+                onChange={handleInputChange}
+                margin="normal"
+                className={Styles.textField}
+              />
+              <TextField
+                fullWidth
+                label="Message"
+                name="message"
+                value={contactDetails.message}
+                onChange={handleInputChange}
+                margin="normal"
+                className={Styles.textField}
+              />
+            </Box>
+
+            {/* Estimated Cost */}
+            <Typography
+              variant="h5"
+              marginTop="20px"
+              className={Styles.estimatedCost}
+            >
+              Estimated Total Cost: CA${calculateTotal()}
             </Typography>
-            <TextField
-              fullWidth
-              label="Name"
-              name="name"
-              value={contactDetails.name}
-              onChange={handleInputChange}
-              margin="normal"
-              className={Styles.textField}
-            />
-            <TextField
-              fullWidth
-              label="Email"
-              name="email"
-              value={contactDetails.email}
-              onChange={handleInputChange}
-              margin="normal"
-              className={Styles.textField}
-            />
-            <TextField
-              fullWidth
-              label="Phone Number"
-              name="phoneNumber"
-              value={contactDetails.phoneNumber}
-              onChange={handleInputChange}
-              margin="normal"
-              className={Styles.textField}
-            />
-            <TextField
-              fullWidth
-              label="Message"
-              name="message"
-              value={contactDetails.message}
-              onChange={handleInputChange}
-              margin="normal"
-              className={Styles.textField}
-            />
-          </Box>
 
-          {/* Estimated Cost */}
-          <Typography
-            variant="h5"
-            marginTop="20px"
-            className={Styles.estimatedCost}
-          >
-            Estimated Total Cost: CA${calculateTotal()}
-          </Typography>
-
-          {/* Submit Button */}
-          <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            className={Styles.button}
-          >
-            Submit
-          </Button>
-        </form>
+            {/* Submit Button */}
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              className={Styles.button}
+            >
+              Submit
+            </Button>
+          </form>
+        </Box>
       </Box>
     </div>
   );

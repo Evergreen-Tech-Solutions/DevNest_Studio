@@ -21,6 +21,8 @@ function Footer() {
         backgroundColor: "primary.main",
         py: 2,
         color: theme.palette.text.primary,
+        position: "sticky", // Sticks the footer at the bottom
+        bottom: 0,
         zIndex: 10,
       }}
     >

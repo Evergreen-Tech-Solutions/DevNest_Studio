@@ -18,6 +18,11 @@
   border-radius: 8px;
 }
 
+.darkMode .textField {
+  background-color: #4f4f4f;
+  color: white;
+}
+
 .estimatedCost {
   margin-top: 20px;
   font-weight: bold;
@@ -33,9 +38,4 @@
 
 .darkMode .button {
   background-color: #278ea5;
-}
-
-.darkMode .textField {
-  background-color: #4f4f4f;
-  color: white;
 }
