@@ -21,7 +21,7 @@ function BusinessAutomation({ open, onClose, service }) {
     backgroundColor: '#b6e1e0',
     padding: '20px',
     borderRadius: '10px',
-    maxWidth: '85%',
+    maxWidth: '55%',
     maxHeight: '85%',
     overflow: 'auto',
     outline: 'none',

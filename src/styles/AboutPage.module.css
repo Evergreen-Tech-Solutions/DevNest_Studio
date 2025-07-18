@@ -21,12 +21,13 @@
 }
 
 .introSection {
-  padding-bottom: 1rem; /* Reduced padding for less space */
+  padding-bottom: 0.1rem;
 }
 
 /* New styles for the CTA section */
 .ctaSection {
-  margin-top: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 8px;
@@ -34,7 +35,8 @@
 }
 
 .ctaButton {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .imageContainer {

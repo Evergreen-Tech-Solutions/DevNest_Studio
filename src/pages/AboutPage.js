@@ -17,7 +17,7 @@ function AboutPage({ darkMode }) {
   return (
     <div className={theme.palette.mode === "dark" ? Styles.darkMode : ""}>
       <Container maxWidth="lg">
-        <Box py={8} textAlign="center" className={Styles.introSection}>
+        <Box py={3} textAlign="center" className={Styles.introSection}>
           <Typography
             variant="h2"
             gutterBottom
