@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Styles from "../styles/HomePage.module.css";
 import darkLogo from "../assets/logo.png";
 import lightLogo from "../assets/logo_w.png";
