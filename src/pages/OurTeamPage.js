@@ -201,55 +201,54 @@ function OurTeamPage({ darkMode }) {
             </Avatar>
           </Grid>
           <Grid item xs={12} md={8}>
-            <Typography variant="h4" gutterBottom>
-              Ladan Berg
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              gutterBottom
-              sx={{
-                fontWeight: "bold",
-                letterSpacing: 1.2,
-                fontSize: "1.2rem",
-              }}
-            >
-              Market Research & Business Strategy Lead
-            </Typography>
-            <Typography variant="body1" paragraph>
-              Ladan, originally from Shiraz, Iran, brings a wealth of expertise
-              in market research, consumer insights, and business strategy to
-              The DevNest. She holds an MBA in Marketing from the National
-              University of Malaysia and has built a dynamic career spanning
-              market research, strategic consulting, and business education. Now
-              based in British Columbia's Lower Mainland, Ladan is passionate
-              about helping businesses make data-driven decisions that fuel
-              sustainable growth.
-            </Typography>
-            <Typography variant="body1" paragraph>
-              Her professional journey includes serving as Manager of Marketing
-              Insights at Hootsuite, where she led strategic research
-              initiatives to guide marketing and product decisions. Currently,
-              she is a Research Director at Leger, overseeing competitive
-              intelligence, buyer persona development, and industry research for
-              top-tier clients. Her analytical approach and keen ability to
-              distill complex data into meaningful business insights make her an
-              invaluable asset to both startups and established enterprises.
-            </Typography>
-            <Typography variant="body1" paragraph>
-              Beyond research, Ladan is an educator and mentor, sharing her
-              expertise as an Instructor at Vancouver Community College and
-              University Canada West, where she teaches courses in Fundamentals
-              of Marketing, Business Communications, Business Management
-              Essentials, and Small Business Management for MBA students. Her
-              passion for education, combined with real-world industry
-              experience, equips her students with the tools they need to thrive
-              in the modern business landscape. Ladan enjoys exploring new
-              market trends, mentoring entrepreneurs, and discovering innovative
-              business models. Her deep expertise in consumer behavior, data
-              analysis, and marketing strategy ensures that The DevNest stays
-              ahead of the curve in delivering research-backed, strategic
-              solutions to its clients.
-            </Typography>
+<Typography variant="h4" gutterBottom>
+  Ladan Berg
+</Typography>
+<Typography
+  variant="subtitle1"
+  gutterBottom
+  sx={{
+    fontWeight: "bold",
+    letterSpacing: 1.2,
+    fontSize: "1.2rem",
+  }}
+>
+  Market Research & Business Strategy Lead
+</Typography>
+<Typography variant="body1" paragraph>
+  Ladan, originally from Shiraz, Iran, brings a wealth of expertise in market
+  research, consumer insights, and business strategy to The DevNest. She holds
+  an MBA in Marketing from the National University of Malaysia and has built a
+  dynamic career spanning market research, strategic consulting, and business
+  education. Now based in British Columbia's Lower Mainland, Ladan is
+  passionate about helping businesses make data-driven decisions that fuel
+  sustainable growth.
+</Typography>
+<Typography variant="body1" paragraph>
+  Her professional journey includes serving as Manager of Marketing Insights at
+  Hootsuite, where she led strategic research initiatives to guide marketing and
+  product decisions, and as Research Director at Leger, where she oversaw
+  competitive intelligence, buyer persona development, and industry research for
+  top-tier clients. Most recently, she joined Later as a Senior Market
+  Researcher at the forefront of social and influencer marketing. Her analytical
+  approach and keen ability to distill complex data into meaningful business
+  insights make her an invaluable asset to both startups and established
+  enterprises.
+</Typography>
+<Typography variant="body1" paragraph>
+  Beyond research, Ladan is an educator and mentor, sharing her expertise as an
+  Instructor at Vancouver Community College and University Canada West, where
+  she teaches courses in Fundamentals of Marketing, Business Communications,
+  Business Management Essentials, and Small Business Management for MBA
+  students. Her passion for education, combined with real-world industry
+  experience, equips her students with the tools they need to thrive in the
+  modern business landscape. Ladan enjoys exploring new market trends,
+  mentoring entrepreneurs, and discovering innovative business models. Her deep
+  expertise in consumer behavior, data analysis, and marketing strategy ensures
+  that The DevNest stays ahead of the curve in delivering research-backed,
+  strategic solutions to its clients.
+</Typography>
+
             <Box display="flex" gap={2} mt={2}>
               <Link
                 href="https://www.linkedin.com/in/ladanfotoohi/"
