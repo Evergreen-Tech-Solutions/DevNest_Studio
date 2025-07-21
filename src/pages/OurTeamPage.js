@@ -102,7 +102,7 @@ function OurTeamPage({ darkMode }) {
                 <FaLinkedin size={24} />
               </Link>
               <Link
-                href="https://jameson-portfolio.com"
+                href="https://jamstick.ca"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Jameson's Portfolio"
