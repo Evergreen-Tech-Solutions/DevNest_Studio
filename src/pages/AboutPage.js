@@ -75,6 +75,15 @@ function AboutPage({ darkMode }) {
             >
               Begin your digital journey with The DevNest
             </Typography>
+                      <Button
+            variant="contained"
+            color="secondary"
+            size="large"
+            href="/ourteam"
+            sx={{ fontWeight: "bold" }}
+          >
+            Meet Our Team
+          </Button>
           </Grid>
           <Grid
             item
