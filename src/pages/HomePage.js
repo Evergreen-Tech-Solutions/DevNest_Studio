@@ -14,7 +14,24 @@ import businessAutomationLogo from "../assets/logos/businessProcessaAtomationLog
 import AiIntegrationLogo from "../assets/logos/aiIntegrationLogo.png";
 import ContactForm from "../components/ContactForm";
 import { useTheme, Box } from "@mui/material";
-
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaGithub,
+  FaJs,
+  FaGitlab,
+  FaCss3,
+  FaHtml5,
+  FaJava,
+  FaBootstrap,
+  FaPython,
+  FaPhp,
+  FaGit,
+  FaWordpress,
+  FaDocker,
+  FaLaravel,
+} from "react-icons/fa";
 import CustomWebDev from "../components/modals/w_customWebDev";
 import Ecommerce from "../components/modals/w_eCommerce";
 import CrossPlatform from "../components/modals/m_crossPlatform";
@@ -24,6 +41,7 @@ import MarketingPromotion from "../components/modals/m_marketingPromotion";
 import BusinessAutomation from "../components/modals/w_businessAutomation";
 import AiIntegration from "../components/modals/w_aiIntegration";
 import "../styles/global.css";
+import { FaL } from "react-icons/fa6";
 
 function HomePage({ darkMode }) {
   const theme = useTheme();
@@ -122,10 +140,11 @@ function HomePage({ darkMode }) {
       </video>
 
       <div
-        className={`relative ${darkMode
-          ? "bg-opacity-50 bg-gray-800 text-white"
-          : "bg-opacity-50 bg-white text-gray-900"
-          } mx-auto px-4 sm:px-6 lg:px-8 py-16 ${Styles.overlay}`}
+        className={`relative ${
+          darkMode
+            ? "bg-opacity-50 bg-gray-800 text-white"
+            : "bg-opacity-50 bg-white text-gray-900"
+        } mx-auto px-4 sm:px-6 lg:px-8 py-16 ${Styles.overlay}`}
       >
         <div className="text-center">
           <img
@@ -157,14 +176,68 @@ function HomePage({ darkMode }) {
           color: darkMode ? "#000000" : "#000000",
         }}
       >
-        <h2 className="text-4xl font-bold text-center mb-12">What we do</h2>
-        <div className="flex flex-wrap justify-center shadow-lg pb-5">
+
+        <section>
+          <div className={`flex mb-8 justify-center space-x-10 ${
+              darkMode ? "text-blu" : "text-gray-900"
+            }`}>
+            <FaJs className="text-5xl logo" />
+            <FaReact className="text-5xl logo" />
+            <FaNodeJs className="text-5xl logo" />
+            <FaHtml5 className="text-5xl logo" />
+            <FaCss3 className="text-5xl logo" />
+            <FaBootstrap className="text-5xl logo" />
+            <FaJava className="text-5xl logo" />
+            <FaPython className="text-5xl logo" />
+            <FaPhp className="text-5xl logo" />
+            <FaLaravel className="text-5xl logo" />
+            <FaDatabase className="text-5xl logo" />
+            <FaGit className="text-5xl logo" />
+            <FaGithub className="text-5xl logo" />
+            <FaGitlab className="text-5xl logo" />
+            <FaDocker className="text-5xl logo" />
+            <FaWordpress className="text-5xl logo" />
+          </div>
+        </section>
+
+        {/* Who We Are Section */}
+        <div
+          className={`py-12 text-center rounded-lg shadow-2xl mt-5 mb-8 ${
+            darkMode ? "bg-gray-700 text-gray-100" : "bg-lght text-gray-900"
+          }`}
+        >
+          <h2 className="text-4xl font-bold mb-4">Who We Are</h2>
+          <h3 className="text-2xl font-semibold mb-4">From BC to the World</h3>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Rooted in British Columbia, we are a collective of developers,
+            designers, and marketing strategists crafting digital experiences
+            for the next generation of businesses. Whether it’s a custom app,
+            e-commerce site, or AI solution ... we tailor every project to your
+            vision.
+          </p>
+          <a
+            href="/about"
+            className={` p-3 text-center text-lg rounded-lg shadow-2xl ${
+              darkMode ? "bg-lght text-gray-900" : "bg-gray-700 text-gray-100"
+            }`}
+          >
+            Learn more about us
+          </a>
+        </div>
+
+        <h2 className="text-4xl font-bold text-center rounded-lg shadow-2xl mb-8 mt-16"
+        style={{
+                backgroundColor: darkMode ? "#999999" : "#defcfc",
+                color: darkMode ? "#ffffff" : "#000000",
+              }}
+        >Our Services</h2>
+        <div className="flex flex-wrap justify-center shadow-2xl pb-5">
           {services.map((service, index) => (
             <div
               key={index}
               className="max-w-xs m-4 p-6 rounded-lg shadow-2xl flex flex-col items-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
               style={{
-                backgroundColor: darkMode ? "#999999" : "#e1fff5",
+                backgroundColor: darkMode ? "#999999" : "#defcfc",
                 color: darkMode ? "#ffffff" : "#000000",
               }}
               onClick={() => handleOpenModal(service.id)}
@@ -240,7 +313,7 @@ function HomePage({ darkMode }) {
       )}
 
       {/* Testimonials Section */}
-      <div
+      {/* <div
         className={`py-16 ${darkMode ? "bg-gray-700 text-gray-100" : "bg-gray-100 text-gray-900"
           }`}
       >
@@ -275,19 +348,23 @@ function HomePage({ darkMode }) {
             <p className="text-right font-bold mt-4">- Client Name</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Contact Section */}
-      <div className="flex flex-wrap justify-center mb-5">
+      <div className="flex justify-center mb-5">
         <div
           id="contact"
-          className={`w-1/2 m-2 p-6 rounded-lg shadow-xl ${darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
-            }`}
+          className={`m-2 p-6 rounded-lg shadow-xl ${
+            darkMode ? "bg-gray-700 text-white" : "bg-white text-gray-900"
+          }`}
         >
           <h2 className="text-4xl font-bold text-center mb-12">Get in Touch</h2>
           <div className="">
-            <p className="text-lg text-center mb-6">  
-              We're here to answer your questions, discuss your ideas, and help you get started with what you need. Whether you're curious about our services, have feedback to share, or just want to say hello, we're always happy to hear from you.
+            <p className="text-lg text-center mb-6">
+              We're here to answer your questions, discuss your ideas, and help
+              you get started with what you need. Whether you're curious about
+              our services, have feedback to share, or just want to say hello,
+              we're always happy to hear from you.
             </p>
             <p className="text-lg text-center mb-6">
               Feel free to reach out to us by visiting our
@@ -296,10 +373,14 @@ function HomePage({ darkMode }) {
                 className="text-blue-500 underline hover:text-red-500 mx-1"
               >
                 Contact Page
-              </a>. You'll find a simple form to send us your message, and we'll get back to you as soon as possible!
+              </a>
+              . You'll find a simple form to send us your message, and we'll get
+              back to you as soon as possible!
             </p>
             <p className="text-lg text-center">
-              Let's connect and explore how we can work together to achieve your goals. Your journey starts with a conversation—don't hesitate to get in touch today.
+              Let's connect and explore how we can work together to achieve your
+              goals. Your journey starts with a conversation—don't hesitate to
+              get in touch today.
             </p>
           </div>
         </div>
