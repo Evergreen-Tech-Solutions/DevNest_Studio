@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Container, Grid, Avatar, Link } from "@mui/material";
 import { FaLinkedin, FaGithub, FaGlobe } from "react-icons/fa";
 // Import images
