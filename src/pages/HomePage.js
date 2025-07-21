@@ -240,7 +240,7 @@ function HomePage({ darkMode }) {
       )}
 
       {/* Testimonials Section */}
-      <div
+      {/* <div
         className={`py-16 ${darkMode ? "bg-gray-700 text-gray-100" : "bg-gray-100 text-gray-900"
           }`}
       >
@@ -275,7 +275,7 @@ function HomePage({ darkMode }) {
             <p className="text-right font-bold mt-4">- Client Name</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Contact Section */}
       <div className="flex flex-wrap justify-center mb-5">
