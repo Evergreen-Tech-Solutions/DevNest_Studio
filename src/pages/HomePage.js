@@ -32,12 +32,12 @@ import {
   FaDocker,
   FaLaravel,
 } from "react-icons/fa";
-import CustomWebDev from "../components/modals/w_customWebDev";
+import DigitalProductDevelopment from "../components/modals/DigitalProductDevelopment";
 import Ecommerce from "../components/modals/w_eCommerce";
 import CrossPlatform from "../components/modals/m_crossPlatform";
-import UiUx from "../components/modals/m_uiUx";
+import DesignQualityLifecycle from "../components/modals/ DesignQualityLifecycle";
 import TestingQa from "../components/modals/m_testingQa";
-import MarketingPromotion from "../components/modals/m_marketingPromotion";
+import BusinessOptimization from "../components/modals/ Business&Optimization";
 import BusinessAutomation from "../components/modals/w_businessAutomation";
 import AiIntegration from "../components/modals/w_aiIntegration";
 import "../styles/global.css";
@@ -51,54 +51,55 @@ function HomePage({ darkMode }) {
 
   const services = [
     {
-      id: "customWebDev",
+      id: "DigitalProductDevelopment",
       logo: customWebDevelopmentLogo,
-      title: "Custom Web Development",
-      description: "Tailored web solutions to fit your unique business needs.",
-    },
-    {
-      id: "eCommerce",
-      logo: eCommerceLogo,
-      title: "E-commerce Solutions",
-      description: "Robust online stores with seamless shopping experiences.",
-    },
-    {
-      id: "crossPlatform",
-      logo: crossPlatformLogo,
-      title: "Cross-Platform Development",
-      description:
-        "Create apps that work seamlessly across Web, iOS, and Android.",
-    },
-    {
-      id: "uiUx",
-      logo: uiUxLogo,
-      title: "UI/UX Design",
-      description: "Visually stunning and user-friendly interfaces.",
-    },
-    {
-      id: "testingQa",
-      logo: testingQALogo,
-      title: "Testing, Q/A, Deployment & Maintenance",
-      description: "Ensure smooth deployment and provide ongoing maintenance.",
-    },
-    {
-      id: "marketingPromotion",
-      logo: marketingPromotionLogo,
-      title: "Marketing & Promotion",
-      description: "Increase app visibility and grow your user base.",
-    },
-    {
-      id: "businessAutomation",
-      logo: businessAutomationLogo,
-      title: "Business Process Automation",
-      description: "Automate operations to save time and reduce costs.",
+      title: "Digital Product Development",
+      description: "Custom Web Development, Cross-Platform Development and E-commerce Solutions",
     },
     {
       id: "aiIntegration",
       logo: AiIntegrationLogo,
       title: "AI Integration",
-      description: "Enhance applications with AI capabilities.",
+      description: "Enhance applications with AI capabilities",
     },
+    {
+      id: "DesignQualityLifecycle",
+      logo: uiUxLogo,
+      title: "Design, Quality & Lifecycle Management",
+      description: "UI/UX Design, Testing, Q/A, Deployment & Maintenance",
+    },
+    {
+      id: "BusinessOptimization",
+      logo: marketingPromotionLogo,
+      title: "Business Growth & Optimization",
+      description: "Business Marketing & Promotion and Business Process Automation",
+    },
+    // {
+    //   id: "eCommerce",
+    //   logo: eCommerceLogo,
+    //   title: "E-commerce Solutions",
+    //   description: "Robust online stores with seamless shopping experiences.",
+    // },
+    // {
+    //   id: "crossPlatform",
+    //   logo: crossPlatformLogo,
+    //   title: "Cross-Platform Development",
+    //   description:
+    //     "Create apps that work seamlessly across Web, iOS, and Android.",
+    // },
+
+    // {
+    //   id: "testingQa",
+    //   logo: testingQALogo,
+    //   title: "Testing, Q/A, Deployment & Maintenance",
+    //   description: "Ensure smooth deployment and provide ongoing maintenance.",
+    // },
+    // {
+    //   id: "businessAutomation",
+    //   logo: businessAutomationLogo,
+    //   title: "",
+    //   description: "Automate operations to save time and reduce costs.",
+    // },
   ];
 
   const handleOpenModal = (id) => {
@@ -176,11 +177,12 @@ function HomePage({ darkMode }) {
           color: darkMode ? "#000000" : "#000000",
         }}
       >
-
         <section>
-          <div className={`flex mb-8 justify-center space-x-10 ${
+          <div
+            className={`flex mb-8 justify-center space-x-10 ${
               darkMode ? "text-blu" : "text-gray-900"
-            }`}>
+            }`}
+          >
             <FaJs className="text-5xl logo" />
             <FaReact className="text-5xl logo" />
             <FaNodeJs className="text-5xl logo" />
@@ -225,17 +227,20 @@ function HomePage({ darkMode }) {
           </a>
         </div>
 
-        <h2 className="text-4xl font-bold text-center rounded-lg shadow-2xl mb-8 mt-16"
-        style={{
-                backgroundColor: darkMode ? "#999999" : "#defcfc",
-                color: darkMode ? "#ffffff" : "#000000",
-              }}
-        >Our Services</h2>
+        <h2
+          className="text-4xl font-bold text-center rounded-lg shadow-2xl mb-8 mt-16"
+          style={{
+            backgroundColor: darkMode ? "#999999" : "#defcfc",
+            color: darkMode ? "#ffffff" : "#000000",
+          }}
+        >
+          Our Services
+        </h2>
         <div className="flex flex-wrap justify-center shadow-2xl pb-5">
           {services.map((service, index) => (
             <div
               key={index}
-              className="max-w-xs m-4 p-6 rounded-lg shadow-2xl flex flex-col items-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
+              className="w-[40vw] h-[40vh] overflow-y-auto m-4 p-6 rounded-lg shadow-2xl flex flex-col items-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
               style={{
                 backgroundColor: darkMode ? "#999999" : "#defcfc",
                 color: darkMode ? "#ffffff" : "#000000",
@@ -245,60 +250,18 @@ function HomePage({ darkMode }) {
               <img
                 src={service.logo}
                 alt={service.title}
-                className="h-20 w-20 mb-4"
+                className="h-28 w-28 mb-4"
               />
-              <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-              <p className="text-center">{service.description}</p>
+              <h3 className="text-3xl font-bold mt-2 mb-2">{service.title}</h3>
+              <p className="text-l text-center">{service.description}</p>
             </div>
           ))}
         </div>
       </Box>
 
       {/* Modals */}
-      {activeModal === "customWebDev" && (
-        <CustomWebDev
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )}
-      {activeModal === "eCommerce" && (
-        <Ecommerce
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )}
-      {activeModal === "crossPlatform" && (
-        <CrossPlatform
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )}
-      {activeModal === "uiUx" && (
-        <UiUx
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )}
-      {activeModal === "testingQa" && (
-        <TestingQa
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )}
-      {activeModal === "marketingPromotion" && (
-        <MarketingPromotion
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )}
-      {activeModal === "businessAutomation" && (
-        <BusinessAutomation
+      {activeModal === "DigitalProductDevelopment" && (
+        <DigitalProductDevelopment
           open={modalOpen}
           onClose={handleCloseModal}
           service={selectedService}
@@ -311,6 +274,48 @@ function HomePage({ darkMode }) {
           service={selectedService}
         />
       )}
+      {activeModal === "DesignQualityLifecycle" && (
+        <DesignQualityLifecycle
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "BusinessOptimization" && (
+        <BusinessOptimization
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {/* {activeModal === "eCommerce" && (
+        <Ecommerce
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )}
+      {activeModal === "crossPlatform" && (
+        <CrossPlatform
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )} */}
+      {/* {activeModal === "testingQa" && (
+        <TestingQa
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )} */} 
+      {/* {activeModal === "businessAutomation" && (
+        <BusinessAutomation
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      )} */}
 
       {/* Testimonials Section */}
       {/* <div
@@ -358,7 +363,7 @@ function HomePage({ darkMode }) {
             darkMode ? "bg-gray-700 text-white" : "bg-white text-gray-900"
           }`}
         >
-          <h2 className="text-4xl font-bold text-center mb-12">Get in Touch</h2>
+          <h2 className="text-4xl font-bold text-center mb-12">Get in touch with us</h2>
           <div className="">
             <p className="text-lg text-center mb-6">
               We're here to answer your questions, discuss your ideas, and help

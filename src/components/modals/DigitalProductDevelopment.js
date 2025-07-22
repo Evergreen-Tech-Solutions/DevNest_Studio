@@ -4,7 +4,7 @@ import { Modal, Box, Typography, Button, FormControl, FormLabel, RadioGroup, For
 
 
 
-function CustomWebDevModal({ open, onClose }) {
+function  DigitalProductDevelopment({ open, onClose }) {
   const [websiteType, setWebsiteType] = useState('');
   const [numPages, setNumPages] = useState('');
   const [features, setFeatures] = useState({
@@ -103,4 +103,4 @@ function CustomWebDevModal({ open, onClose }) {
   );
 }
 
-export default CustomWebDevModal;
+export default DigitalProductDevelopment;
