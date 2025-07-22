@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Modal, Box, Typography, Button, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Checkbox, TextField, MenuItem } from '@mui/material';
 
-function MarketingPromotion({ open, onClose, service }) {
+function  BusinessOptimization({ open, onClose, service }) {
   const [websiteType, setWebsiteType] = useState('');
   const [numPages, setNumPages] = useState('');
   const [features, setFeatures] = useState({
@@ -136,4 +136,4 @@ function MarketingPromotion({ open, onClose, service }) {
 
 }
 
-export default MarketingPromotion;
+export default BusinessOptimization;
