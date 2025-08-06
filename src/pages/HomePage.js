@@ -54,7 +54,8 @@ function HomePage({ darkMode }) {
       id: "DigitalProductDevelopment",
       logo: customWebDevelopmentLogo,
       title: "Digital Product Development",
-      description: "Custom Web Development, Cross-Platform Development and E-commerce Solutions",
+      description:
+        "Custom Web Development, Cross-Platform Development and E-commerce Solutions",
     },
     {
       id: "aiIntegration",
@@ -72,7 +73,8 @@ function HomePage({ darkMode }) {
       id: "BusinessOptimization",
       logo: marketingPromotionLogo,
       title: "Business Growth & Optimization",
-      description: "Business Marketing & Promotion and Business Process Automation",
+      description:
+        "Business Marketing & Promotion and Business Process Automation",
     },
     // {
     //   id: "eCommerce",
@@ -236,11 +238,11 @@ function HomePage({ darkMode }) {
         >
           Our Services
         </h2>
-        <div className="flex flex-wrap justify-center shadow-2xl pb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
           {services.map((service, index) => (
             <div
               key={index}
-              className="w-[40vw] h-[40vh] overflow-y-auto m-4 p-6 rounded-lg shadow-2xl flex flex-col items-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
+              className="rounded-lg p-4 shadow-md flex flex-col items-center text-center cursor-pointer transform transition-transform hover:scale-105"
               style={{
                 backgroundColor: darkMode ? "#999999" : "#defcfc",
                 color: darkMode ? "#ffffff" : "#000000",
@@ -250,10 +252,10 @@ function HomePage({ darkMode }) {
               <img
                 src={service.logo}
                 alt={service.title}
-                className="h-28 w-28 mb-4"
+                className="h-20 w-20 mb-3"
               />
-              <h3 className="text-3xl font-bold mt-2 mb-2">{service.title}</h3>
-              <p className="text-l text-center">{service.description}</p>
+              <h3 className="text-lg font-bold">{service.title}</h3>
+              <p className="text-sm mt-2">{service.description}</p>
             </div>
           ))}
         </div>
@@ -308,7 +310,7 @@ function HomePage({ darkMode }) {
           onClose={handleCloseModal}
           service={selectedService}
         />
-      )} */} 
+      )} */}
       {/* {activeModal === "businessAutomation" && (
         <BusinessAutomation
           open={modalOpen}
@@ -363,7 +365,9 @@ function HomePage({ darkMode }) {
             darkMode ? "bg-gray-700 text-white" : "bg-white text-gray-900"
           }`}
         >
-          <h2 className="text-4xl font-bold text-center mb-12">Get in touch with us</h2>
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Get in touch with us
+          </h2>
           <div className="">
             <p className="text-lg text-center mb-6">
               We're here to answer your questions, discuss your ideas, and help
