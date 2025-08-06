@@ -30,7 +30,7 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
 
   const menuItems = [
     { text: "Home", to: "/" },
-    { text: "Quote Builder", to: "/quotebuilder" },
+    { text: "Pricing", to: "/pricing" },
     { text: "About", to: "/about" },
     { text: "Contact", to: "/contact" },
   ];
