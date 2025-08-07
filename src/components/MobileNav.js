@@ -48,12 +48,9 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
           >
             <MenuIcon />
           </IconButton>
-          <NavLink to="/" className="flex items-center">
-            <img
-              src={darkMode ? lightLogo : darkLogo}
-              alt="DevNest Studio Logo"
-              className="h-28 w-28 mr-2"
-            />
+          <NavLink to="/" className="w-full flex justify-center items-center">
+            <p className="text-2xl">The DevNest</p>
+            <Typography variant="h6" color="inherit" noWrap></Typography>
           </NavLink>
           <Typography
             variant="h6"
@@ -77,7 +74,7 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
                 ))}
             </div>
           </div>
-          <div className="flex items-center space-x-4 mt-4 ml-3">
+          <div className="flex items-center space-x-4 ">
             <IconButton color="inherit" onClick={onToggleDarkMode}>
               {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
