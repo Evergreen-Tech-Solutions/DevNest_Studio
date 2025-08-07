@@ -38,7 +38,7 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
   return (
     <>
       <AppBar position="fixed">
-        <Toolbar className="w-full z-10">
+        <Toolbar className="w-full z-10 mb-2">
           <IconButton
             color="inherit"
             aria-label="open drawer"
