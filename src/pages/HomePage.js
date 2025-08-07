@@ -230,13 +230,29 @@ function HomePage({ darkMode }) {
         </div>
 
         <h2
-          className="text-4xl font-bold text-center rounded-lg shadow-2xl mb-8 mt-16"
+          className="text-4xl font-bold text-center rounded-lg shadow-2xl p-1 mb-16 mt-16"
           style={{
             backgroundColor: darkMode ? "#999999" : "#defcfc",
             color: darkMode ? "#ffffff" : "#000000",
           }}
         >
-          Our Services
+          <div
+            className="text-center rounded-lg shadow-2xl p-1 m-4"
+            style={{
+              backgroundColor: darkMode ? "#5C5C5C" : "#70d3e7",
+              color: darkMode ? "#ffffff" : "#000000",
+            }}
+          >
+            <div
+              className="text-center border-0 rounded-lg shadow-2xl p-1 m-4"
+              style={{
+                backgroundColor: darkMode ? "#3f3f3f" : "#109bb8",
+                color: darkMode ? "#ffffff" : "#ffffff",
+              }}
+            >
+              Our Services
+            </div>
+          </div>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
           {services.map((service, index) => (
