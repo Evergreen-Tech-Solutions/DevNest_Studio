@@ -58,6 +58,6 @@
 
 /* Optional hover effect */
 .navItemBase:hover {
-  color: #20b2ab;
+  color: #00a896;
   transform: scale(1.05);
 }
