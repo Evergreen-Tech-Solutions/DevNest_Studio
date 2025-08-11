@@ -24,7 +24,7 @@ function Navigation({ onToggleDarkMode, darkMode }) {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? style.navItemActive : style.navItemInactive
+                `${style.navItemBase} ${isActive ? style.navItemActive : ""}`
               }
             >
               Home
@@ -32,7 +32,7 @@ function Navigation({ onToggleDarkMode, darkMode }) {
             <NavLink
               to="/pricing"
               className={({ isActive }) =>
-                isActive ? style.navItemActive : style.navItemInactive
+                `${style.navItemBase} ${isActive ? style.navItemActive : ""}`
               }
             >
               Pricing
@@ -40,7 +40,7 @@ function Navigation({ onToggleDarkMode, darkMode }) {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive ? style.navItemActive : style.navItemInactive
+                `${style.navItemBase} ${isActive ? style.navItemActive : ""}`
               }
             >
               About
@@ -48,7 +48,7 @@ function Navigation({ onToggleDarkMode, darkMode }) {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                isActive ? style.navItemActive : style.navItemInactive
+                `${style.navItemBase} ${isActive ? style.navItemActive : ""}`
               }
             >
               Contact

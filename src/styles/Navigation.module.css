@@ -1,31 +1,63 @@
+@keyframes blinkLeft {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+@keyframes blinkRight {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+.navItemBase {
+  display: inline-block;
+  position: relative;
+  margin: 0 1.5rem;
+  font-size: 1.4rem;
+  font-family: "Quicksand", sans-serif;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Brackets default hidden */
+.navItemBase::before,
+.navItemBase::after {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  color: #00a896;
+  font-weight: bold;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+.navItemBase::before {
+  content: "<";
+  left: -1.2rem;
+}
+
+.navItemBase::after {
+  content: ">";
+  right: -1.2rem;
+}
+
+/* When active: show brackets smoothly */
 .navItemActive {
-    display: inline-block;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    font-size: 1.5rem;
-    font-family: "Quicksand", serif;
-    transition: all 0.3s ease-in-out;
-    background-color: #278ea559;
-    padding: 0.5rem;
-    border-bottom: 1px solid aquamarine;
-    border-radius: 10px;
-    transform: scale(1.2); /* Slightly enlarges on hover */
-    background-color: #20b2ab8e; /* Darker aquamarine background */
-    box-shadow: 0px 4px 10px #3df3b6db;
+  color: #00a896;
+  transform: scale(1.1);
+  font-weight: bold;
 }
 
-.navItemInactive {
-    display: inline-block;
-    font-family: "Quicksand", serif;
-    margin-right: 1rem;
-    transition: all 0.15s ease-in-out;
-    padding: 0.5rem 1rem;
+.navItemActive::before,
+.navItemActive::after {
+  opacity: 1;
+  animation: blinkLeft 1.6s infinite ease-in-out;
+  transform: translateY(0);
 }
 
-/* Hover effect for inactive items */
-.navItemInactive:hover {
-    transform: scale(1.2); /* Enlarges slightly on hover */
-    color: #20b2ab; /* Light red background */
-    border-radius: 10px; /* Rounded corners */
-    padding: 0.2rem 0.6rem; /* Slightly larger padding */
+/* Optional hover effect */
+.navItemBase:hover {
+  color: #20b2ab;
+  transform: scale(1.05);
 }
