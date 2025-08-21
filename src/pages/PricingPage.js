@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useTheme, Box, Typography, Container } from "@mui/material";
-import Styles from "../styles/PricingPage.module.css";
-
-// Import modals
 import StarterModal from "../components/modals/StarterPackageModal";
 import EcommerceModal from "../components/modals/EcommercePackageModal";
 import CustomModal from "../components/modals/CustomPackageModal";
+import AiIntegrationModal from "../components/modals/AiIntegrationModal";
+import CarouselPricingPage from "../components/CarouselPricingPage"; // your new carousel component
 
-// Import package icons
+// Package logos
 import starterIcon from "../assets/logos/starterPackageLogo.png";
 import ecommerceIcon from "../assets/logos/ecommercePackageLogo.png";
 import customIcon from "../assets/logos/customPackageLogo.png";
+import aiIcon from "../assets/logos/aiIntegrationLogo.png";
 
 function PricingPage({ darkMode }) {
   const theme = useTheme();
@@ -22,28 +22,51 @@ function PricingPage({ darkMode }) {
     {
       id: "starter",
       logo: starterIcon,
-      title: "Starter Package",
+      title: "Launch Your Brand Online",
       salePrice: "C$500",
       regularPrice: "C$1,500",
+      features: [
+        "Responsive 1–3 page website",
+        "Custom contact form",
+        "Mobile-friendly design",
+        "Deployed & domain-ready",
+      ],
+      tagline: "Perfect for small businesses or freelancers.",
+    },
+    {
+      id: "ai",
+      logo: aiIcon,
+      title: "AI Integration",
+      salePrice: "Starts at C$750",
       description:
-        "A simple, professional website to establish your online presence.",
+        "Automate tasks, create smart assistants, and gain insights with AI tailored to your business.",
     },
     {
       id: "ecommerce",
       logo: ecommerceIcon,
-      title: "E-Commerce Package",
+      title: "Sell Online with Ease",
       salePrice: "C$2,000",
       regularPrice: "C$4,000",
-      description:
-        "A full online store with payment processing, product management, and SEO.",
+      features: [
+        "Product listings with image galleries",
+        "Secure checkout & payment gateways",
+        "Inventory & order management",
+        "SEO & analytics tools",
+      ],
+      tagline: "Ideal for online stores or service providers.",
     },
     {
       id: "custom",
       logo: customIcon,
-      title: "Custom Package",
+      title: "Tailored to Your Vision",
       salePrice: "Pricing Upon Request",
-      description:
-        "Tailored solutions, AI automation, API integrations, and more.",
+      features: [
+        "Advanced web/app functionality",
+        "AI automation & smart features",
+        "Custom integrations & APIs",
+        "Built to scale as you grow",
+      ],
+      tagline: "Designed for startups and unique business models.",
     },
   ];
 
@@ -60,51 +83,13 @@ function PricingPage({ darkMode }) {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }}>
-      <Box textAlign="center" mb={4}>
-        <Typography variant="h3" gutterBottom>
-          Our Pricing
-        </Typography>
-        <Typography variant="h6" color="textSecondary">
-          Choose the package that best fits your business needs.
-        </Typography>
-      </Box>
-
-      {/* Pricing Cards */}
-      <Box className="flex flex-wrap justify-center">
-        {pricingPackages.map((pkg, index) => (
-          <div
-            key={index}
-            className="max-w-xs m-4 p-6 rounded-lg shadow-lg flex flex-col items-center text-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
-            style={{
-              backgroundColor: darkMode ? "#999999" : "#e1fff5",
-              color: darkMode ? "#ffffff" : "#000000",
-            }}
-            onClick={() => handleOpenModal(pkg.id)}
-          >
-            <img src={pkg.logo} alt={pkg.title} className="h-20 w-20 mb-4" />
-            <h3 className="text-2xl font-bold mb-2">{pkg.title}</h3>
-
-            {/* Only show pricing for Starter and E-Commerce */}
-            {pkg.id !== "custom" ? (
-              <>
-                <p className="text-lg font-semibold text-red-500">
-                  Sale Price: {pkg.salePrice}
-                </p>
-                <p className="text-gray-500 line-through">
-                  Regular Price: {pkg.regularPrice}
-                </p>
-              </>
-            ) : (
-              <p className="text-lg font-semibold text-blue-500">
-                Pricing Upon Request
-              </p>
-            )}
-
-            <p className="text-center">{pkg.description}</p>
-          </div>
-        ))}
-      </Box>
+    <>
+      {/* Carousel-based Pricing Cards */}
+      <CarouselPricingPage
+        pricingPackages={pricingPackages}
+        handleCardClick={handleOpenModal}
+        darkMode={darkMode}
+      />
 
       {/* Modals */}
       {activeModal === "starter" && (
@@ -113,6 +98,9 @@ function PricingPage({ darkMode }) {
           onClose={handleCloseModal}
           package={selectedPackage}
         />
+      )}
+      {activeModal === "ai" && (
+        <AiIntegrationModal open={modalOpen} onClose={handleCloseModal} />
       )}
       {activeModal === "ecommerce" && (
         <EcommerceModal
@@ -128,7 +116,7 @@ function PricingPage({ darkMode }) {
           darkMode={darkMode}
         />
       )}
-    </Container>
+    </>
   );
 }
 

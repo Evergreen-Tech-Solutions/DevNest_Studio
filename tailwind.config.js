@@ -7,7 +7,9 @@ module.exports = {
       colors: {
         blu: "#b6e1e0",
         orng: "#f7b633",
-        drkblu: "#070d59",
+        drkblu: "#0d1b2a",
+        nvy: "#1b263b",
+        lghtnvy: "#778da9",
         lght: "#defcfc",
         grn: "#65c6c4",
         gry: "#3f3f3f",

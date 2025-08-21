@@ -1,0 +1,246 @@
+// PricingPage.js
+
+import React, { useState } from "react";
+import { useTheme, Box, Typography, Container, IconButton } from "@mui/material";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import StarterModal from "../components/modals/StarterPackageModal";
+import EcommerceModal from "../components/modals/EcommercePackageModal";
+import CustomModal from "../components/modals/CustomPackageModal";
+import AiIntegrationModal from "../components/modals/AiIntegrationModal";
+
+import starterIcon from "../assets/logos/starterPackageLogo.png";
+import ecommerceIcon from "../assets/logos/ecommercePackageLogo.png";
+import customIcon from "../assets/logos/customPackageLogo.png";
+import aiIcon from "../assets/logos/aiIntegrationLogo.png";
+
+const pricingPackages = [
+  {
+    id: "starter",
+    logo: starterIcon,
+    title: "Launch Your Brand Online",
+    salePrice: "C$500",
+    regularPrice: "C$1,500",
+    features: [
+      "Responsive 1–3 page website",
+      "Custom contact form",
+      "Mobile-friendly design",
+      "Deployed & domain-ready",
+    ],
+    tagline: "Perfect for small businesses or freelancers.",
+  },
+  {
+    id: "ai",
+    logo: aiIcon,
+    title: "AI Integration",
+    salePrice: "Starts at C$750",
+    description:
+      "Automate tasks, create smart assistants, and gain insights with AI tailored to your business.",
+  },
+  {
+    id: "ecommerce",
+    logo: ecommerceIcon,
+    title: "Sell Online with Ease",
+    salePrice: "C$2,000",
+    regularPrice: "C$4,000",
+    features: [
+      "Product listings with image galleries",
+      "Secure checkout & payment gateways",
+      "Inventory & order management",
+      "SEO & analytics tools",
+    ],
+    tagline: "Ideal for online stores or service providers.",
+  },
+  {
+    id: "custom",
+    logo: customIcon,
+    title: "Tailored to Your Vision",
+    salePrice: "Pricing Upon Request",
+    features: [
+      "Advanced web/app functionality",
+      "AI automation & smart features",
+      "Custom integrations & APIs",
+      "Built to scale as you grow",
+    ],
+    tagline: "Designed for startups and unique business models.",
+  },
+];
+
+function PricingPage({ darkMode }) {
+  const theme = useTheme();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeModal, setActiveModal] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
+  };
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + pricingPackages.length) % pricingPackages.length);
+  };
+
+  const handleOpenModal = (id) => {
+    const selected = pricingPackages.find((pkg) => pkg.id === id);
+    setSelectedPackage(selected);
+    setActiveModal(id);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setActiveModal(null);
+    setModalOpen(false);
+  };
+
+  const getTransformStyle = (index) => {
+    const diff = index - activeIndex;
+    const total = pricingPackages.length;
+    const offset = ((index - activeIndex + total) % total);
+
+    if (offset === 0) {
+      return {
+        transform: "scale(1.1) translateZ(0)",
+        opacity: 1,
+        zIndex: 3,
+        boxShadow: theme.shadows[15],
+      };
+    } else if (offset === 1 || (activeIndex === total - 1 && index === 0)) {
+      return {
+        transform: "scale(0.9) translateX(80%)",
+        opacity: 0.4,
+        zIndex: 2,
+      };
+    } else if (offset === total - 1 || (activeIndex === 0 && index === total - 1)) {
+      return {
+        transform: "scale(0.9) translateX(-80%)",
+        opacity: 0.4,
+        zIndex: 2,
+      };
+    } else {
+      return {
+        transform: "scale(0.7)",
+        opacity: 0,
+        zIndex: 1,
+        pointerEvents: "none",
+      };
+    }
+  };
+
+  return (
+    <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          height: "550px",
+          overflow: "hidden",
+        }}
+      >
+        <IconButton
+          onClick={handlePrev}
+          sx={{ position: "absolute", left: 0, zIndex: 4 }}
+        >
+          <FaChevronLeft />
+        </IconButton>
+
+        {pricingPackages.map((pkg, index) => (
+          <Box
+            key={pkg.id}
+            onClick={() => handleOpenModal(pkg.id)}
+            sx={{
+              position: "absolute",
+              transition: "all 0.6s ease-in-out",
+              p: 4,
+              minHeight: "420px",
+              borderRadius: 3,
+              textAlign: "center",
+              width: "400px",
+              backgroundColor: theme.palette.background.paper,
+              color: darkMode ? "#fff" : "#000",
+              cursor: "pointer",
+              ...getTransformStyle(index),
+            }}
+          >
+            <img src={pkg.logo} alt={pkg.title} className="h-20 w-20 mb-4 mx-auto" />
+            <Typography variant="h6" gutterBottom>
+              {pkg.title}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ color: "#e63946", fontWeight: 600 }}
+              gutterBottom
+            >
+              {pkg.salePrice.includes("C$") ? `Sale Price: ${pkg.salePrice}` : pkg.salePrice}
+            </Typography>
+            {pkg.regularPrice && (
+              <Typography
+                variant="body2"
+                sx={{ textDecoration: "line-through", color: "gray" }}
+              >
+                Regular Price: {pkg.regularPrice}
+              </Typography>
+            )}
+            {pkg.features && (
+              <ul className="mt-4 mb-2 text-sm text-left space-y-1">
+                {pkg.features.map((feature, idx) => (
+                  <li key={idx}>• {feature}</li>
+                ))}
+              </ul>
+            )}
+            {pkg.description && (
+              <Typography variant="body2" sx={{ mt: 2 }}>
+                {pkg.description}
+              </Typography>
+            )}
+            {pkg.tagline && (
+              <Typography
+                variant="caption"
+                sx={{ fontStyle: "italic", color: "#888" }}
+              >
+                {pkg.tagline}
+              </Typography>
+            )}
+          </Box>
+        ))}
+
+        <IconButton
+          onClick={handleNext}
+          sx={{ position: "absolute", right: 0, zIndex: 4 }}
+        >
+          <FaChevronRight />
+        </IconButton>
+      </Box>
+
+      {/* Modals */}
+      {activeModal === "starter" && (
+        <StarterModal open={modalOpen} onClose={handleCloseModal} package={selectedPackage} />
+      )}
+      {activeModal === "ai" && (
+        <AiIntegrationModal open={modalOpen} onClose={handleCloseModal} />
+      )}
+      {activeModal === "ecommerce" && (
+        <EcommerceModal open={modalOpen} onClose={handleCloseModal} package={selectedPackage} />
+      )}
+      {activeModal === "custom" && (
+        <CustomModal open={modalOpen} onClose={handleCloseModal} />
+      )}
+
+      {/* Below Carousel: How to Choose Section */}
+      <Box sx={{ mt: 10, textAlign: "center" }}>
+        <Typography variant="h5" gutterBottom>
+          Not sure which package is right for you?
+        </Typography>
+        <Typography variant="body1" color="text.primary" maxWidth="600px" mx="auto">
+          Whether you're launching a brand-new website, integrating AI into operations,
+          building an e-commerce platform, or developing a fully custom solution,
+          our packages are designed to scale with your goals. Click on any package to
+          learn more or reach out to us for a free consultation to guide your decision.
+        </Typography>
+      </Box>
+    </Container>
+  );
+}
+
+export default PricingPage;
