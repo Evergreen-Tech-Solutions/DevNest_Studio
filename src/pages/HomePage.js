@@ -175,8 +175,8 @@ function HomePage({ darkMode }) {
       <Box
         className="relative px-4 sm:px-6 lg:px-8 py-16 text-center"
         sx={{
-          backgroundColor: darkMode ? "#787474" : "#ffffff",
-          color: darkMode ? "#000000" : "#000000",
+          backgroundColor: theme.palette.background.default,
+          color: theme.palette.text.primary,
         }}
       >
         <section>
@@ -232,35 +232,44 @@ function HomePage({ darkMode }) {
         <h2
           className="text-4xl font-bold text-center rounded-lg shadow-2xl p-1 mb-16 mt-16"
           style={{
-            backgroundColor: darkMode ? "#999999" : "#defcfc",
+            background: darkMode
+              ? "linear-gradient(135deg, #1e2a38, #2c3e50)"
+              : "#defcfc",
             color: darkMode ? "#ffffff" : "#000000",
           }}
         >
           <div
             className="text-center rounded-lg shadow-2xl p-1 m-4"
             style={{
-              backgroundColor: darkMode ? "#5C5C5C" : "#70d3e7",
+              background: darkMode
+                ? "linear-gradient(135deg, #263b4d, #1c2a3a)"
+                : "#70d3e7",
               color: darkMode ? "#ffffff" : "#000000",
             }}
           >
             <div
               className="text-center border-0 rounded-lg shadow-2xl p-1 m-4"
               style={{
-                backgroundColor: darkMode ? "#3f3f3f" : "#109bb8",
-                color: darkMode ? "#ffffff" : "#ffffff",
+                background: darkMode
+                  ? "linear-gradient(135deg, #13202d, #1b2d42)"
+                  : "#109bb8",
+                color: "#ffffff",
               }}
             >
               Our Services
             </div>
           </div>
         </h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
           {services.map((service, index) => (
             <div
               key={index}
               className="rounded-lg p-4 shadow-md flex flex-col items-center text-center cursor-pointer transform transition-transform hover:scale-105"
               style={{
-                backgroundColor: darkMode ? "#999999" : "#defcfc",
+                background: darkMode
+                  ? "linear-gradient(135deg, #263b4d, #1c2a3a)"
+                  : "#defcfc",
                 color: darkMode ? "#ffffff" : "#000000",
               }}
               onClick={() => handleOpenModal(service.id)}

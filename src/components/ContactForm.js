@@ -41,8 +41,8 @@ function ContactForm({ darkMode }) {
       onSubmit={handleSubmit}
       className={`${
         darkMode
-          ? "bg-drkblu text-lght" // Dark mode styles
-          : "bg-lght text-gray-700" // Light mode styles
+          ? "bg-nvy text-lght"
+          : "bg-lght text-gray-700"
       } shadow-md rounded px-8 pt-6 pb-8 mb-4`}
     >
       <div className="mb-4">

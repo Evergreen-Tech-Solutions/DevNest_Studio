@@ -11,8 +11,8 @@ import Navigation from "./components/Navigation";
 import MobileNav from "./components/MobileNav";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import PricingPage from "./pages/PricingPage"; // ✅ Add Pricing Page
-import QuoteBuilderPage from "./pages/QuoteBuilderPage"; // ✅ Still accessible, just not in navbar
+import PricingPage from "./pages/PricingPage";
+import QuoteBuilderPage from "./pages/QuoteBuilderPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
@@ -29,47 +29,52 @@ function App() {
     "(prefers-color-scheme: dark)"
   ).matches;
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
-  const [manualToggle, setManualToggle] = useState(false); // Track manual toggle
+  const [manualToggle, setManualToggle] = useState(false);
   const mode = darkMode ? "dark" : "light";
   const theme = createTheme({
-    palette: {
-      mode,
-      ...(mode === "light"
-        ? {
-            // Light mode colors
-            primary: { main: "#b6e1e0" },
-            divider: deepOrange[500],
-            text: {
-              primary: grey[900],
-              secondary: grey[800],
-            },
-            background: {
-              ctaSection: "#ffffff",
-            },
-          }
-        : {
-            // Dark mode colors
-            primary: { main: grey[800] },
-            divider: deepOrange[500],
-            background: {
-              default: grey[600],
-              paper: grey[800],
-              ctaSection: "#333333",
-            },
-            text: {
-              primary: grey[300],
-              secondary: grey[600],
-            },
-          }),
-    },
-    typography: {
-      fontFamily: `"Quicksand", serif`,
-    },
-  });
+  palette: {
+    mode,
+    ...(mode === "light"
+      ? {
+          // Light mode colors
+          primary: { main: "#b6e1e0" },
+          divider: "#00a896",
+          text: {
+            primary: grey[900],
+            secondary: grey[800],
+          },
+          background: {
+            default: "#ffffff",
+            paper: "#f5f5f5",
+            ctaSection: "#ffffff",
+          },
+        }
+      : {
+          // Navy/Dark Blue mode colors
+          primary: { main: "#0d1b2a" }, // deep navy
+          divider: "#00a896",
+          background: {
+            default: "#0d1b2a", // page background
+            paper: "#1b263b",   // cards, modals
+            ctaSection: "#1b263b",
+          },
+          text: {
+            primary: "#e0e1dd",  // soft light
+            secondary: "#778da9", // muted blue-gray
+          },
+        }),
+  },
+  typography: {
+    fontFamily: `"Quicksand", serif`,
+  },
+});
+
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    const newMode = !darkMode;
+    setDarkMode(newMode);
     setManualToggle(true);
+    localStorage.setItem("darkMode", newMode ? "true" : "false");
   };
 
   const isMobile = useMediaQuery("(max-width:648px)");
@@ -79,6 +84,7 @@ function App() {
     const handleChange = (e) => {
       if (!manualToggle) {
         setDarkMode(e.matches);
+        localStorage.setItem("darkMode", e.matches ? "true" : "false");
       }
     };
     mediaQuery.addEventListener("change", handleChange);
@@ -86,6 +92,13 @@ function App() {
       mediaQuery.removeEventListener("change", handleChange);
     };
   }, [manualToggle]);
+  useEffect(() => {
+    const storedPreference = localStorage.getItem("darkMode");
+    if (storedPreference !== null) {
+      setDarkMode(storedPreference === "true");
+      setManualToggle(true);
+    }
+  }, []);
 
   return (
     <Router>
@@ -112,13 +125,11 @@ function App() {
                 path="/pricing"
                 element={<PricingPage darkMode={darkMode} />}
               />{" "}
-              {/* ✅ New Route */}
               <Route path="/about" element={<AboutPage />} />
               <Route
                 path="/quotebuilder"
                 element={<QuoteBuilderPage darkMode={darkMode} />}
               />{" "}
-              {/* ✅ Still accessible */}
               <Route
                 path="/contact"
                 element={<ContactPage darkMode={darkMode} />}
