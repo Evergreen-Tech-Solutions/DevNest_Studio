@@ -45,6 +45,7 @@ function App() {
           },
           background: {
             default: "#ffffff",
+            green: "#00a896",
             paper: "#f5f5f5",
             ctaSection: "#ffffff",
           },

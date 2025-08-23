@@ -14,6 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.17",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.23.12",
     "postcss": "^8.4.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
