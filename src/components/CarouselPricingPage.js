@@ -152,6 +152,7 @@ function PricingPage({ darkMode }) {
       <Box
         sx={{
           display: "flex",
+          minHeight: "550px",
           alignItems: "center",
           justifyContent: "center",
           position: "relative",

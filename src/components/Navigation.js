@@ -16,7 +16,7 @@ function Navigation({ onToggleDarkMode, darkMode }) {
     <AppBar position="fixed">
       <Toolbar className="w-full z-10">
         <NavLink to="/" className="flex items-center">
-          <p className="text-2xl">The DevNest</p>
+          <p className="text-2xl">DevNest Studio</p>
           <Typography variant="h6" color="inherit" noWrap></Typography>
         </NavLink>
         <div className="flex-grow flex justify-center">

@@ -49,7 +49,7 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
             <MenuIcon />
           </IconButton>
           <NavLink to="/" className="w-full flex justify-center items-center">
-            <p className="text-2xl">The DevNest</p>
+            <p className="text-2xl">DevNest Studio</p>
             <Typography variant="h6" color="inherit" noWrap></Typography>
           </NavLink>
           <Typography
