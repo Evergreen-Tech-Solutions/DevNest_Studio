@@ -1,12 +1,20 @@
 // PricingPage.js
 
 import React, { useState } from "react";
-import { useTheme, Box, Typography, Container, IconButton } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
+import {
+  useTheme,
+  Box,
+  Typography,
+  Container,
+  IconButton,
+} from "@mui/material";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import StarterModal from "../components/modals/StarterPackageModal";
 import EcommerceModal from "../components/modals/EcommercePackageModal";
 import CustomModal from "../components/modals/CustomPackageModal";
 import AiIntegrationModal from "../components/modals/AiIntegrationModal";
+import WorkflowSteps from "../components/WorkflowSteps";
 
 import starterIcon from "../assets/logos/starterPackageLogo.png";
 import ecommerceIcon from "../assets/logos/ecommercePackageLogo.png";
@@ -35,6 +43,13 @@ const pricingPackages = [
     salePrice: "Starts at C$750",
     description:
       "Automate tasks, create smart assistants, and gain insights with AI tailored to your business.",
+    features: [
+      "Chatbots & virtual assistants",
+      "Data analysis & reporting",
+      "AI-driven content generation",
+      "Custom AI solutions",
+    ],
+    tagline: "Great for businesses looking to innovate with AI.",
   },
   {
     id: "ecommerce",
@@ -67,6 +82,7 @@ const pricingPackages = [
 
 function PricingPage({ darkMode }) {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeModal, setActiveModal] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
@@ -77,7 +93,9 @@ function PricingPage({ darkMode }) {
   };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + pricingPackages.length) % pricingPackages.length);
+    setActiveIndex(
+      (prev) => (prev - 1 + pricingPackages.length) % pricingPackages.length
+    );
   };
 
   const handleOpenModal = (id) => {
@@ -95,7 +113,7 @@ function PricingPage({ darkMode }) {
   const getTransformStyle = (index) => {
     const diff = index - activeIndex;
     const total = pricingPackages.length;
-    const offset = ((index - activeIndex + total) % total);
+    const offset = (index - activeIndex + total) % total;
 
     if (offset === 0) {
       return {
@@ -110,7 +128,10 @@ function PricingPage({ darkMode }) {
         opacity: 0.4,
         zIndex: 2,
       };
-    } else if (offset === total - 1 || (activeIndex === 0 && index === total - 1)) {
+    } else if (
+      offset === total - 1 ||
+      (activeIndex === 0 && index === total - 1)
+    ) {
       return {
         transform: "scale(0.9) translateX(-80%)",
         opacity: 0.4,
@@ -134,13 +155,23 @@ function PricingPage({ darkMode }) {
           alignItems: "center",
           justifyContent: "center",
           position: "relative",
-          height: "550px",
+          height: isMobile ? "460px" : "550px",
           overflow: "hidden",
         }}
       >
         <IconButton
           onClick={handlePrev}
-          sx={{ position: "absolute", left: 0, zIndex: 4 }}
+          sx={{
+            position: "absolute",
+            left: 0,
+            zIndex: 4,
+            backgroundColor: "rgba(0, 168, 150, 0.4)",
+            "&:hover": {
+              backgroundColor: "rgba(0, 168, 150, 0.6)",
+            },
+            color: "white",
+            borderRadius: "50%",
+          }}
         >
           <FaChevronLeft />
         </IconButton>
@@ -152,18 +183,22 @@ function PricingPage({ darkMode }) {
             sx={{
               position: "absolute",
               transition: "all 0.6s ease-in-out",
-              p: 4,
+              width: isMobile ? "300px" : "400px",
+              p: isMobile ? 2 : 4,
               minHeight: "420px",
               borderRadius: 3,
               textAlign: "center",
-              width: "400px",
               backgroundColor: theme.palette.background.paper,
               color: darkMode ? "#fff" : "#000",
               cursor: "pointer",
               ...getTransformStyle(index),
             }}
           >
-            <img src={pkg.logo} alt={pkg.title} className="h-20 w-20 mb-4 mx-auto" />
+            <img
+              src={pkg.logo}
+              alt={pkg.title}
+              className="h-20 w-20 mb-4 mx-auto"
+            />
             <Typography variant="h6" gutterBottom>
               {pkg.title}
             </Typography>
@@ -172,7 +207,9 @@ function PricingPage({ darkMode }) {
               sx={{ color: "#e63946", fontWeight: 600 }}
               gutterBottom
             >
-              {pkg.salePrice.includes("C$") ? `Sale Price: ${pkg.salePrice}` : pkg.salePrice}
+              {pkg.salePrice.includes("C$")
+                ? `Sale Price: ${pkg.salePrice}`
+                : pkg.salePrice}
             </Typography>
             {pkg.regularPrice && (
               <Typography
@@ -207,7 +244,17 @@ function PricingPage({ darkMode }) {
 
         <IconButton
           onClick={handleNext}
-          sx={{ position: "absolute", right: 0, zIndex: 4 }}
+          sx={{
+            position: "absolute",
+            right: 0,
+            zIndex: 4,
+            backgroundColor: "rgba(0, 168, 150, 0.4)",
+            "&:hover": {
+              backgroundColor: "rgba(0, 168, 150, 0.6)",
+            },
+            color: "white",
+            borderRadius: "50%",
+          }}
         >
           <FaChevronRight />
         </IconButton>
@@ -215,29 +262,46 @@ function PricingPage({ darkMode }) {
 
       {/* Modals */}
       {activeModal === "starter" && (
-        <StarterModal open={modalOpen} onClose={handleCloseModal} package={selectedPackage} />
+        <StarterModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          package={selectedPackage}
+        />
       )}
       {activeModal === "ai" && (
         <AiIntegrationModal open={modalOpen} onClose={handleCloseModal} />
       )}
       {activeModal === "ecommerce" && (
-        <EcommerceModal open={modalOpen} onClose={handleCloseModal} package={selectedPackage} />
+        <EcommerceModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          package={selectedPackage}
+        />
       )}
       {activeModal === "custom" && (
         <CustomModal open={modalOpen} onClose={handleCloseModal} />
       )}
 
-      {/* Below Carousel: How to Choose Section */}
-      <Box sx={{ mt: 10, textAlign: "center" }}>
+      {/* Below Carousel*/}
+      <Box sx={{ mt: 10, textAlign: "center", backgroundColor: theme.palette.background.paper, p: 4, borderRadius: 3 }}>
         <Typography variant="h5" gutterBottom>
           Not sure which package is right for you?
         </Typography>
-        <Typography variant="body1" color="text.primary" maxWidth="600px" mx="auto">
-          Whether you're launching a brand-new website, integrating AI into operations,
-          building an e-commerce platform, or developing a fully custom solution,
-          our packages are designed to scale with your goals. Click on any package to
-          learn more or reach out to us for a free consultation to guide your decision.
+        <Typography
+          variant="body1"
+          color="text.primary"
+          maxWidth="600px"
+          mx="auto"
+        >
+          Whether you're launching a brand-new website, integrating AI into
+          operations, building an e-commerce platform, or developing a fully
+          custom solution, our packages are designed to scale with your goals.
+          Click on any package to learn more or reach out to us for a free
+          consultation to guide your decision.
         </Typography>
+      </Box>
+      <Box sx={{ mt: 10 }}>
+        <WorkflowSteps />
       </Box>
     </Container>
   );
