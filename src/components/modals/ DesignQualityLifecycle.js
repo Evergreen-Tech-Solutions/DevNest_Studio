@@ -1,125 +1,118 @@
-import React from 'react';
+// DesignQualityLifecycleModal.js
+import React from "react";
 import {
-  Modal,
-  Box,
+  Dialog,
+  DialogContent,
+  DialogTitle,
   Typography,
-  useMediaQuery,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   useTheme,
-} from '@mui/material';
+  Button,
+  Box,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import PaletteIcon from "@mui/icons-material/Palette";
+import BugReportIcon from "@mui/icons-material/BugReport";
+import BuildIcon from "@mui/icons-material/Build";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
-function DesignQualityLifecycle({ open, onClose, service }) {
+function DesignQualityLifecycleModal({ open, onClose }) {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const navigate = useNavigate();
 
-  const boxStyle = {
-    backgroundColor: '#b6e1e0',
-    padding: '20px',
-    borderRadius: '10px',
-    width: isMobile ? '95vw' : '55%',
-    height: isMobile ? '90vh' : '85%',
-    overflowY: 'auto',
-    outline: 'none',
-  };
-
-  const textStyle = {
-    color: '#3f3f3f',
-    marginBottom: '10px',
-  };
-
-  const labelStyle = {
-    color: '#3f3f3f',
-    marginBottom: '10px',
-    fontWeight: 'bold',
-    textDecoration: 'underline',
-    fontSize: '1.5rem',
-  };
-
-  const subStyle = {
-    color: '#3f3f3f',
-    marginBottom: '10px',
-    fontSize: '1.25rem',
-    fontWeight: 'bold',
+  const handleNavigate = () => {
+    navigate("/pricing");
   };
 
   return (
-    <Modal open={open} onClose={onClose} className="flex items-center justify-center p-4">
-      <Box sx={boxStyle}>
-        <Typography variant="h4" component="h2" className="text-gry text-center">
-          UI/UX Design
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
+      <DialogTitle
+        sx={{
+          fontWeight: 600,
+          backgroundColor: theme.palette.background.default,
+          color: theme.palette.text.primary,
+          px: 4,
+          pt: 3,
+        }}
+      >
+        Design & Quality Lifecycle
+      </DialogTitle>
+
+      <DialogContent
+        dividers
+        sx={{
+          backgroundColor: theme.palette.background.default,
+          color: theme.palette.text.primary,
+          px: 4,
+          pb: 4,
+        }}
+      >
+        <Typography variant="body1" mb={3}>
+          Our commitment to quality spans the entire lifecycle of your product — from the first pixel to post-launch performance. Here's how we ensure every digital experience we build is top-tier:
         </Typography>
 
-        <div className="bg-lght rounded-md p-2 mt-3 mb-2">
-          <Typography variant="h5" sx={labelStyle}>
-            Why Invest in UI/UX Design?
-          </Typography>
+        {/* UI/UX Design */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <PaletteIcon color="primary" />
+              <Typography fontWeight={600}>UI/UX Design</Typography>
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="body2">
+              We design seamless, intuitive user interfaces that engage and convert. Using best practices in UX research and UI design, we focus on user journeys, visual hierarchy, accessibility, and responsiveness. Every design is tested to enhance usability and reflect your brand identity.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
-          <Typography sx={subStyle}>Engaging and Intuitive User Experience:</Typography>
-          <Typography sx={textStyle}>
-            A well-designed interface ensures users can navigate your application effortlessly. We focus on intuitive layouts, smooth interactions, and seamless navigation, making every interaction enjoyable and efficient.
-          </Typography>
+        {/* Testing & Quality Assurance */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <BugReportIcon color="primary" />
+              <Typography fontWeight={600}>Testing & Quality Assurance</Typography>
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="body2">
+              Our rigorous QA process includes functional testing, bug tracking, performance evaluation, and cross-device compatibility checks. We ensure every feature works as expected, and every user interaction is smooth and reliable — before anything goes live.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
-          <Typography sx={subStyle}>Visually Stunning Designs:</Typography>
-          <Typography sx={textStyle}>
-            First impressions matter. Our UI designs are aesthetically pleasing, modern, and aligned with your brand identity, ensuring a visually engaging experience that captivates users from the first interaction.
-          </Typography>
+        {/* Deployment & Maintenance */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <BuildIcon color="primary" />
+              <Typography fontWeight={600}>Deployment & Maintenance</Typography>
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="body2">
+              We handle smooth deployments to production, including hosting setup, domain configuration, and performance tuning. Post-launch, we offer maintenance services to fix issues, roll out updates, monitor uptime, and continuously improve your digital product.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
-          <Typography sx={subStyle}>User-Centered Approach:</Typography>
-          <Typography sx={textStyle}>
-            We prioritize human-centered design by analyzing user behavior, preferences, and pain points. Our process ensures that your product is tailored to the needs and expectations of your target audience.
-          </Typography>
-
-          <Typography sx={subStyle}>Cross-Platform Consistency:</Typography>
-          <Typography sx={textStyle}>
-            Whether on desktop, tablet, or mobile, we design interfaces that offer a consistent and delightful experience across all devices and platforms.
-          </Typography>
-
-          <Typography sx={subStyle}>Accessibility and Inclusivity:</Typography>
-          <Typography sx={textStyle}>
-            A great UI/UX should be accessible to everyone. We implement WCAG-compliant accessibility features, ensuring inclusivity for users of all abilities.
-          </Typography>
-
-          <Typography sx={subStyle}>Performance-Optimized Interfaces:</Typography>
-          <Typography sx={textStyle}>
-            A slow or clunky UI can frustrate users. Our designs are optimized for speed and efficiency, reducing load times and enhancing the overall user journey.
-          </Typography>
-
-          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>
-            Our UI/UX Design Process
-          </Typography>
-
-          <Typography sx={subStyle}>Research and User Insights:</Typography>
-          <Typography sx={textStyle}>
-            We conduct market research, competitor analysis, and user testing to gather insights and define the best approach for your audience.
-          </Typography>
-
-          <Typography sx={subStyle}>Wireframing and Prototyping:</Typography>
-          <Typography sx={textStyle}>
-            Our team creates low-fidelity wireframes and interactive prototypes, allowing stakeholders to visualize and test the user journey before full-scale development.
-          </Typography>
-
-          <Typography sx={subStyle}>UI Design and Branding:</Typography>
-          <Typography sx={textStyle}>
-            We craft stunning UI elements, typography, color schemes, and iconography, ensuring the final product aligns with your brand's identity.
-          </Typography>
-
-          <Typography sx={subStyle}>User Testing and Iteration:</Typography>
-          <Typography sx={textStyle}>
-            Before launch, we conduct A/B testing and usability tests to gather feedback, refine designs, and improve the overall experience.
-          </Typography>
-
-          <Typography sx={subStyle}>Implementation and Handoff:</Typography>
-          <Typography sx={textStyle}>
-            Our team collaborates closely with developers to ensure a smooth design-to-code transition, maintaining design integrity throughout development.
-          </Typography>
-
-          <Typography sx={subStyle}>Post-Launch Optimization:</Typography>
-          <Typography sx={textStyle}>
-            Design is an ongoing process. We monitor user behavior post-launch and iterate based on real-world data to continuously enhance the experience.
-          </Typography>
-        </div>
-      </Box>
-    </Modal>
+        {/* CTA */}
+        <Box textAlign="center" mt={4}>
+          <Button
+            onClick={handleNavigate}
+            variant="contained"
+            color="primary"
+            endIcon={<ArrowForwardIcon />}
+          >
+            View Pricing Packages
+          </Button>
+        </Box>
+      </DialogContent>
+    </Dialog>
   );
 }
 
-export default DesignQualityLifecycle;
+export default DesignQualityLifecycleModal;

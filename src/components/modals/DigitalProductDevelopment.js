@@ -1,132 +1,124 @@
-import React, { useState } from 'react';
+// DigitalProductDevelopment.js
+import React from "react";
 import {
-  Modal,
-  Box,
+  Dialog,
+  DialogContent,
+  DialogTitle,
   Typography,
-  useMediaQuery,
-  useTheme
-} from '@mui/material';
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  useTheme,
+  Button,
+  Box,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import WebIcon from "@mui/icons-material/LaptopMac";
+import AppIcon from "@mui/icons-material/PhoneIphone";
+import ShopIcon from "@mui/icons-material/ShoppingCart";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
-function DigitalProductDevelopment({ open, onClose }) {
+function DigitalProductDevelopmentModal({ open, onClose }) {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const navigate = useNavigate();
 
-  const [websiteType, setWebsiteType] = useState('');
-  const [numPages, setNumPages] = useState('');
-  const [features, setFeatures] = useState({
-    responsiveDesign: false,
-    ecomIntegration: false,
-    seoService: false,
-    cmsIntegration: false,
-  });
-  const [showContactForm, setShowContactForm] = useState(false);
-
-  const toggleContactForm = () => {
-    setShowContactForm(!showContactForm);
-  };
-
-  const boxStyle = {
-    backgroundColor: '#b6e1e0',
-    padding: '20px',
-    borderRadius: '10px',
-    width: isMobile ? '95vw' : '55%',
-    height: isMobile ? '90vh' : '85%',
-    overflowY: 'auto',
-    outline: 'none',
-  };
-
-  const textStyle = {
-    color: '#3f3f3f',
-    marginBottom: '10px',
-  };
-
-  const labelStyle = {
-    color: '#3f3f3f',
-    marginBottom: '10px',
-    fontWeight: 'bold',
-    textDecoration: 'underline',
-    fontSize: '1.5rem',
-  };
-
-  const subStyle = {
-    color: '#3f3f3f',
-    marginBottom: '10px',
-    fontSize: '1.25rem',
-    fontWeight: 'bold',
+  const handleNavigate = () => {
+    navigate("/pricing");
   };
 
   return (
-    <Modal open={open} onClose={onClose} className="flex items-center justify-center p-4">
-      <Box sx={boxStyle}>
-        <Typography variant="h4" component="h2" className='text-gry text-center'>
-          Custom Web Development
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
+      <DialogTitle
+        sx={{
+          fontWeight: 600,
+          backgroundColor: theme.palette.background.default,
+          color: theme.palette.text.primary,
+          px: 4,
+          pt: 3,
+        }}
+      >
+        Digital Product Development
+      </DialogTitle>
+      <DialogContent
+        dividers
+        sx={{
+          backgroundColor: theme.palette.background.default,
+          color: theme.palette.text.primary,
+          px: 4,
+          pb: 4,
+        }}
+      >
+        <Typography variant="body1" mb={3}>
+          We specialize in building reliable, scalable, and engaging digital products that
+          empower your business. Explore the areas we cover:
         </Typography>
 
-        <div className="bg-lght rounded-md p-2 mt-3 mb-2">
-          <Typography variant="h5" sx={labelStyle}>Why Choose Custom Web Development?</Typography>
+        {/* Web Development */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <WebIcon color="primary" />
+              <Typography fontWeight={600}>Web Development</Typography>
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="body2">
+              We build modern, responsive websites tailored to your brand. Whether it's a landing
+              page, blog, or corporate site, we ensure fast loading times, SEO optimization,
+              accessibility, and mobile responsiveness using frameworks like React, Next.js, or WordPress.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
-          <Typography sx={subStyle}>Tailored Solutions:</Typography>
-          <Typography sx={textStyle}>
-            Every business has unique requirements, and a custom web development service ensures that every aspect of your website is designed to fulfill those specific needs—from the overall layout and user experience to specialized functionalities and backend processes.
-          </Typography>
+        {/* App Development */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <AppIcon color="primary" />
+              <Typography fontWeight={600}>App Development</Typography>
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="body2">
+              We create cross-platform mobile applications using technologies like Flutter or React Native.
+              From prototyping to app store deployment, we ensure a smooth user experience,
+              performance, and seamless integration with your backend.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
-          <Typography sx={subStyle}>Scalability and Flexibility:</Typography>
-          <Typography sx={textStyle}>
-            As your business evolves, your website should adapt to new challenges and opportunities. Custom websites are built with scalability in mind, allowing for seamless updates, feature additions, and integrations with other systems and applications.
-          </Typography>
+        {/* E-commerce Solutions */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <ShopIcon color="primary" />
+              <Typography fontWeight={600}>E-commerce Solutions</Typography>
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="body2">
+              We build scalable online stores with secure checkout, product galleries, inventory management,
+              and integrations with Stripe, PayPal, and other platforms. Whether you're selling physical or digital
+              products, our e-commerce solutions are tailored for growth.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
-          <Typography sx={subStyle}>Optimized Performance:</Typography>
-          <Typography sx={textStyle}>
-            Custom websites can be optimized for performance, with faster load times and a smoother user journey. This is crucial for keeping visitors engaged and can also contribute positively to your search engine rankings.
-          </Typography>
-
-          <Typography sx={subStyle}>Enhanced Security:</Typography>
-          <Typography sx={textStyle}>
-            With custom web development, you get a site built with the latest security features, tailored to protect your specific content and data, which is especially important for e-commerce and sites handling sensitive user information.
-          </Typography>
-
-          <Typography sx={subStyle}>Brand Consistency:</Typography>
-          <Typography sx={textStyle}>
-            Your website is a digital extension of your brand. Custom development ensures that your site accurately reflects your brand's aesthetics and ethos, creating a cohesive experience that reinforces your brand identity.
-          </Typography>
-
-          <Typography variant="h6" sx={{ ...labelStyle, mt: 4 }}>
-            Our Custom Web Development Process
-          </Typography>
-
-          <Typography sx={subStyle}>Discovery and Planning:</Typography>
-          <Typography sx={textStyle}>
-            We gather all the necessary information, including your goals, target audience, and competitor analysis. This helps us create a strategic plan that aligns with your vision.
-          </Typography>
-
-          <Typography sx={subStyle}>Design and User Experience:</Typography>
-          <Typography sx={textStyle}>
-            Our designers craft a unique look and feel for your site that enhances usability while keeping your users engaged.
-          </Typography>
-
-          <Typography sx={subStyle}>Development:</Typography>
-          <Typography sx={textStyle}>
-            Our developers bring the designs to life, coding the functionality that powers your site. We focus on clean, maintainable code that adheres to industry standards.
-          </Typography>
-
-          <Typography sx={subStyle}>Testing and Quality Assurance:</Typography>
-          <Typography sx={textStyle}>
-            Rigorous testing ensures that every feature works as intended, with a seamless experience across all devices and browsers.
-          </Typography>
-
-          <Typography sx={subStyle}>Launch and Beyond:</Typography>
-          <Typography sx={textStyle}>
-            After the final checks, your website goes live. We offer ongoing support, maintenance, and updates to keep your site at the forefront of digital excellence.
-          </Typography>
-
-          <Typography sx={subStyle}>Analytics and Optimization:</Typography>
-          <Typography sx={textStyle}>
-            Post-launch, we analyze user behavior to refine and optimize the site, ensuring it continuously meets the needs of your visitors.
-          </Typography>
-        </div>
-      </Box>
-    </Modal>
+        {/* CTA */}
+        <Box textAlign="center" mt={4}>
+          <Button
+            onClick={handleNavigate}
+            variant="contained"
+            color="primary"
+            endIcon={<ArrowForwardIcon />}
+          >
+            View Pricing Packages
+          </Button>
+        </Box>
+      </DialogContent>
+    </Dialog>
   );
 }
 
-export default DigitalProductDevelopment;
+export default DigitalProductDevelopmentModal;
