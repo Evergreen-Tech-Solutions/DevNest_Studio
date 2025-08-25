@@ -120,7 +120,11 @@ function PricingPage({ darkMode }) {
         />
       )}
       {activeModal === "custom" && (
-        <CustomModal open={modalOpen} onClose={handleCloseModal} />
+        <CustomModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          darkMode={darkMode}
+        />
       )}
       {activeModal === "business" && (
         <BusinessOptimizationModal
