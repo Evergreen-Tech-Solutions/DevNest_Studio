@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styles from "../styles/HomePage.module.css";
 import darkLogo from "../assets/logo.png";
 import lightLogo from "../assets/logo_w.png";
 import darkModeVideo from "../assets/backgroundVids/darkMode_bg.mp4";
 import lightModeVideo from "../assets/backgroundVids/lightMode_bg.mp4";
 import customWebDevelopmentLogo from "../assets/logos/customWebDevelopmentLogo.png";
-import eCommerceLogo from "../assets/logos/eCommerceLogo.png";
-import crossPlatformLogo from "../assets/logos/crossPlatformLogo.png";
 import uiUxLogo from "../assets/logos/uiUxLogo.png";
-import testingQALogo from "../assets/logos/testingQALogo.png";
 import marketingPromotionLogo from "../assets/logos/marketingPromotionLogo.png";
-import businessAutomationLogo from "../assets/logos/businessProcessaAtomationLogo.png";
 import AiIntegrationLogo from "../assets/logos/aiIntegrationLogo.png";
 import ContactForm from "../components/ContactForm";
 import { useTheme, Box } from "@mui/material";
@@ -33,13 +29,9 @@ import {
   FaLaravel,
 } from "react-icons/fa";
 import DigitalProductDevelopment from "../components/modals/DigitalProductDevelopment";
-import Ecommerce from "../components/modals/w_eCommerce";
-import CrossPlatform from "../components/modals/m_crossPlatform";
 import DesignQualityLifecycle from "../components/modals/ DesignQualityLifecycle";
-import TestingQa from "../components/modals/m_testingQa";
 import BusinessOptimization from "../components/modals/ Business&Optimization";
-import BusinessAutomation from "../components/modals/w_businessAutomation";
-import AiIntegration from "../components/modals/w_aiIntegration";
+import AiIntegration from "../components/modals/AiIntegration";
 import "../styles/global.css";
 import { FaL } from "react-icons/fa6";
 
@@ -75,33 +67,7 @@ function HomePage({ darkMode }) {
       title: "Business Growth & Optimization",
       description:
         "Business Marketing & Promotion and Business Process Automation",
-    },
-    // {
-    //   id: "eCommerce",
-    //   logo: eCommerceLogo,
-    //   title: "E-commerce Solutions",
-    //   description: "Robust online stores with seamless shopping experiences.",
-    // },
-    // {
-    //   id: "crossPlatform",
-    //   logo: crossPlatformLogo,
-    //   title: "Cross-Platform Development",
-    //   description:
-    //     "Create apps that work seamlessly across Web, iOS, and Android.",
-    // },
-
-    // {
-    //   id: "testingQa",
-    //   logo: testingQALogo,
-    //   title: "Testing, Q/A, Deployment & Maintenance",
-    //   description: "Ensure smooth deployment and provide ongoing maintenance.",
-    // },
-    // {
-    //   id: "businessAutomation",
-    //   logo: businessAutomationLogo,
-    //   title: "",
-    //   description: "Automate operations to save time and reduce costs.",
-    // },
+    }
   ];
 
   const handleOpenModal = (id) => {
@@ -115,6 +81,10 @@ function HomePage({ darkMode }) {
     setActiveModal(null);
     setModalOpen(false);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -315,34 +285,6 @@ function HomePage({ darkMode }) {
           service={selectedService}
         />
       )}
-      {/* {activeModal === "eCommerce" && (
-        <Ecommerce
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )}
-      {activeModal === "crossPlatform" && (
-        <CrossPlatform
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )} */}
-      {/* {activeModal === "testingQa" && (
-        <TestingQa
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )} */}
-      {/* {activeModal === "businessAutomation" && (
-        <BusinessAutomation
-          open={modalOpen}
-          onClose={handleCloseModal}
-          service={selectedService}
-        />
-      )} */}
 
       {/* Testimonials Section */}
       {/* <div

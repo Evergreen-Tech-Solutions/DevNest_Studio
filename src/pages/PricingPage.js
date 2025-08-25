@@ -4,13 +4,15 @@ import StarterModal from "../components/modals/StarterPackageModal";
 import EcommerceModal from "../components/modals/EcommercePackageModal";
 import CustomModal from "../components/modals/CustomPackageModal";
 import AiIntegrationModal from "../components/modals/AiIntegrationModal";
-import CarouselPricingPage from "../components/CarouselPricingPage"; // your new carousel component
+import CarouselPricingPage from "../components/CarouselPricingPage";
+import BusinessOptimizationModal from "../components/modals/Business&OptimizationModal";
 
 // Package logos
 import starterIcon from "../assets/logos/starterPackageLogo.png";
 import ecommerceIcon from "../assets/logos/ecommercePackageLogo.png";
 import customIcon from "../assets/logos/customPackageLogo.png";
 import aiIcon from "../assets/logos/aiIntegrationLogo.png";
+import businessIcon from "../assets/logos/businessProcessaAtomationLogo.png";
 
 function PricingPage({ darkMode }) {
   const theme = useTheme();
@@ -68,6 +70,14 @@ function PricingPage({ darkMode }) {
       ],
       tagline: "Designed for startups and unique business models.",
     },
+    {
+      id: "business",
+      logo: businessIcon,
+      title: "Business Optimization Package",
+      salePrice: "Starts at C$850",
+      description:
+        "Streamline operations and promote your brand for growth.",
+    },
   ];
 
   const handleOpenModal = (id) => {
@@ -111,6 +121,13 @@ function PricingPage({ darkMode }) {
       )}
       {activeModal === "custom" && (
         <CustomModal open={modalOpen} onClose={handleCloseModal} />
+      )}
+      {activeModal === "business" && (
+        <BusinessOptimizationModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          package={selectedPackage}
+        />
       )}
     </>
   );

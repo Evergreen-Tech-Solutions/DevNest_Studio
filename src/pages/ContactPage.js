@@ -1,7 +1,11 @@
 import React from "react";
 import ContactForm from "../components/ContactForm";
+import { useEffect } from "react";
 
 function ContactPage({ darkMode }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div
       className={`min-h-screen ${

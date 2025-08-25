@@ -10,9 +10,13 @@ import {
   useTheme,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function AboutPage({ darkMode }) {
   const theme = useTheme();
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <div className={theme.palette.mode === "dark" ? Styles.darkMode : ""}>

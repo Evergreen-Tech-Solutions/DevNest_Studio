@@ -1,6 +1,6 @@
 // PricingPage.js
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "@mui/material";
 import {
   useTheme,
@@ -15,11 +15,13 @@ import EcommerceModal from "../components/modals/EcommercePackageModal";
 import CustomModal from "../components/modals/CustomPackageModal";
 import AiIntegrationModal from "../components/modals/AiIntegrationModal";
 import WorkflowSteps from "../components/WorkflowSteps";
+import BusinessOptimizationModal from "../components/modals/Business&OptimizationModal";
 
 import starterIcon from "../assets/logos/starterPackageLogo.png";
 import ecommerceIcon from "../assets/logos/ecommercePackageLogo.png";
 import customIcon from "../assets/logos/customPackageLogo.png";
 import aiIcon from "../assets/logos/aiIntegrationLogo.png";
+import businessIcon from "../assets/logos/businessProcessaAtomationLogo.png";
 
 const pricingPackages = [
   {
@@ -78,6 +80,19 @@ const pricingPackages = [
     ],
     tagline: "Designed for startups and unique business models.",
   },
+  {
+    id: "business",
+    logo: businessIcon,
+    title: "Business Optimization",
+    salePrice: "Starts at C$850",
+    features: [
+      "Business process automation",
+      "Custom dashboards & analytics",
+      "Email/Social media integration",
+      "Marketing & promotional tools",
+    ],
+    tagline: "Ideal for scaling businesses and startups ready to grow.",
+  },
 ];
 
 function PricingPage({ darkMode }) {
@@ -87,6 +102,10 @@ function PricingPage({ darkMode }) {
   const [activeModal, setActiveModal] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
@@ -282,9 +301,24 @@ function PricingPage({ darkMode }) {
       {activeModal === "custom" && (
         <CustomModal open={modalOpen} onClose={handleCloseModal} />
       )}
+      {activeModal === "business" && (
+        <BusinessOptimizationModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          package={selectedPackage}
+        />
+      )}
 
       {/* Below Carousel*/}
-      <Box sx={{ mt: 10, textAlign: "center", backgroundColor: theme.palette.background.paper, p: 4, borderRadius: 3 }}>
+      <Box
+        sx={{
+          mt: 10,
+          textAlign: "center",
+          backgroundColor: theme.palette.background.paper,
+          p: 4,
+          borderRadius: 3,
+        }}
+      >
         <Typography variant="h5" gutterBottom>
           Not sure which package is right for you?
         </Typography>
