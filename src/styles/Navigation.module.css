@@ -61,3 +61,10 @@
   color: #00a896;
   transform: scale(1.05);
 }
+
+.mobItem {
+  padding: 1.5rem;
+  border-radius: 20px;
+  border-bottom: 4px solid #00a896;
+  text-align: center;
+}
