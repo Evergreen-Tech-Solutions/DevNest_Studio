@@ -1,9 +1,9 @@
-import React from "react";
 import { Box, Typography, Container, Grid, Avatar, Link } from "@mui/material";
 import { FaLinkedin, FaGithub, FaGlobe } from "react-icons/fa";
 // Import images
 import miladImage from "../images/milad.jpg";
 import jamesonImage from "../images/jameson.jpg";
+import ladanImage from "../images/ladan.jpg";
 
 function OurTeamPage({ darkMode }) {
   return (
@@ -21,7 +21,6 @@ function OurTeamPage({ darkMode }) {
       {/* Jameson's Section */}
       <Box id="jameson" py={4}>
         <Grid container spacing={4} alignItems="center">
-          {/* Jameson's Image */}
           <Grid item xs={12} md={4} textAlign="center">
             <Avatar
               alt="Jameson"
@@ -32,25 +31,23 @@ function OurTeamPage({ darkMode }) {
                 margin: "0 auto",
                 bgcolor: "primary.main",
                 fontSize: "2rem",
-                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)", // Add drop shadow
+                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
               }}
             >
               J
             </Avatar>
           </Grid>
-
-          {/* Jameson's Bio */}
           <Grid item xs={12} md={8}>
             <Typography variant="h4" gutterBottom>
-              Jameson
+              Jameson Stickle
             </Typography>
             <Typography
               variant="subtitle1"
               gutterBottom
               sx={{
                 fontWeight: "bold",
-                letterSpacing: 1.2, // Add spacing for emphasis
-                fontSize: "1.2rem", // Slightly larger font size
+                letterSpacing: 1.2,
+                fontSize: "1.2rem",
               }}
             >
               Co-Founder / Lead Developer
@@ -72,15 +69,6 @@ function OurTeamPage({ darkMode }) {
               both powerful and intuitive.
             </Typography>
             <Typography variant="body1" paragraph>
-              Drawing on a diverse background in sales and customer service,
-              Jameson has a unique talent for bridging the gap between technical
-              teams and non-technical stakeholders. He is a big-picture thinker
-              with an eye for strategy and loves transforming abstract ideas
-              into tangible, impactful results. Whether it's backend
-              architecture, AI integration, or full-stack development, Jameson
-              brings a pragmatic and results-driven approach to every project.
-            </Typography>
-            <Typography variant="body1" paragraph>
               Jameson is a self-proclaimed coffee snob who takes great joy in
               brewing the perfect cup. He's also a passionate music lover who
               enjoys attending live shows and discovering hidden gems in the
@@ -88,28 +76,22 @@ function OurTeamPage({ darkMode }) {
               approachable nature make him an indispensable part of The DevNest
               team.
             </Typography>
-
-            {/* Social Media Links */}
             <Box display="flex" gap={2} mt={2}>
               <Link
                 href="https://www.linkedin.com/in/jamesonstickle"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Jameson's LinkedIn"
-                style={{
-                  color: darkMode ? "white" : "black", // Adjust color based on theme
-                }}
+                style={{ color: darkMode ? "white" : "black" }}
               >
                 <FaLinkedin size={24} />
               </Link>
               <Link
-                href="https://jameson-portfolio.com"
+                href="https://jamstick.ca"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Jameson's Portfolio"
-                style={{
-                  color: darkMode ? "white" : "black", // Adjust color based on theme
-                }}
+                style={{ color: darkMode ? "white" : "black" }}
               >
                 <FaGlobe size={24} />
               </Link>
@@ -118,9 +100,7 @@ function OurTeamPage({ darkMode }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Jameson's GitHub"
-                style={{
-                  color: darkMode ? "white" : "black", // Adjust color based on theme
-                }}
+                style={{ color: darkMode ? "white" : "black" }}
               >
                 <FaGithub size={24} />
               </Link>
@@ -132,7 +112,6 @@ function OurTeamPage({ darkMode }) {
       {/* Milad's Section */}
       <Box id="milad" py={4}>
         <Grid container spacing={4} alignItems="center">
-          {/* Milad's Image */}
           <Grid item xs={12} md={4} textAlign="center">
             <Avatar
               alt="Milad"
@@ -143,25 +122,23 @@ function OurTeamPage({ darkMode }) {
                 margin: "0 auto",
                 bgcolor: "primary.main",
                 fontSize: "2rem",
-                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)", // Add drop shadow
+                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
               }}
             >
               M
             </Avatar>
           </Grid>
-
-          {/* Milad's Bio */}
           <Grid item xs={12} md={8}>
             <Typography variant="h4" gutterBottom>
-              Milad
+              Milad Fotoohnejad
             </Typography>
             <Typography
               variant="subtitle1"
               gutterBottom
               sx={{
                 fontWeight: "bold",
-                letterSpacing: 1.2, // Add spacing for emphasis
-                fontSize: "1.2rem", // Slightly larger font size
+                letterSpacing: 1.2,
+                fontSize: "1.2rem",
               }}
             >
               Co-Founder / Lead Designer
@@ -171,63 +148,116 @@ function OurTeamPage({ darkMode }) {
               tapestry of international experience to The DevNest. His
               professional journey has taken him across Turkey, Malaysia,
               Germany, Poland, and Italy, before settling in the bustling tech
-              hub of Vancouver, Canada. With a background that includes roles
-              such as QA advisor and managing an internet café in his early
-              career, Milad's resourcefulness and entrepreneurial spirit are
-              evident in every project he undertakes.
+              hub of Vancouver, Canada.
             </Typography>
             <Typography variant="body1" paragraph>
               As Co-Founder and Lead Designer at The DevNest, Milad is
               passionate about crafting intuitive and visually stunning user
               experiences. His keen eye for detail and mastery of front-end
               design ensure every project he touches achieves the perfect
-              balance of form and function. Milad's dedication to making things
-              not only work seamlessly but also look exceptional is at the heart
-              of his approach to design.
+              balance of form and function.
             </Typography>
-            <Typography variant="body1" paragraph>
-              Milad loves to channel his creativity into 3D printing, where he
-              designs everything from quirky collectibles to innovative,
-              functional items that improve the lives of those around him. His
-              blend of technical expertise, artistic sensibility, and global
-              perspective makes him an invaluable part of The DevNest team.
-            </Typography>
-
-            {/* Social Media Links */}
             <Box display="flex" gap={2} mt={2}>
               <Link
                 href="https://www.linkedin.com/in/milad-fotoohnejad"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Milad's LinkedIn"
-                style={{
-                  color: darkMode ? "white" : "black", // Adjust color based on theme
-                }}
+                style={{ color: darkMode ? "white" : "black" }}
               >
                 <FaLinkedin size={24} />
               </Link>
-
               <Link
                 href="https://www.miladf.pro/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Milad's Portfolio"
-                style={{
-                  color: darkMode ? "white" : "black", // Adjust color based on theme
-                }}
+                style={{ color: darkMode ? "white" : "black" }}
               >
                 <FaGlobe size={24} />
               </Link>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Ladan's Section */}
+      <Box id="ladan" py={4}>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={4} textAlign="center">
+            <Avatar
+              alt="Ladan"
+              src={ladanImage}
+              sx={{
+                width: 350,
+                height: 350,
+                margin: "0 auto",
+                bgcolor: "primary.main",
+                fontSize: "2rem",
+                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
+              }}
+            >
+              L
+            </Avatar>
+          </Grid>
+          <Grid item xs={12} md={8}>
+<Typography variant="h4" gutterBottom>
+  Ladan Berg
+</Typography>
+<Typography
+  variant="subtitle1"
+  gutterBottom
+  sx={{
+    fontWeight: "bold",
+    letterSpacing: 1.2,
+    fontSize: "1.2rem",
+  }}
+>
+  Market Research & Business Strategy Lead
+</Typography>
+<Typography variant="body1" paragraph>
+  Ladan, originally from Shiraz, Iran, brings a wealth of expertise in market
+  research, consumer insights, and business strategy to The DevNest. She holds
+  an MBA in Marketing from the National University of Malaysia and has built a
+  dynamic career spanning market research, strategic consulting, and business
+  education. Now based in British Columbia's Lower Mainland, Ladan is
+  passionate about helping businesses make data-driven decisions that fuel
+  sustainable growth.
+</Typography>
+<Typography variant="body1" paragraph>
+  Her professional journey includes serving as Manager of Marketing Insights at
+  Hootsuite, where she led strategic research initiatives to guide marketing and
+  product decisions, and as Research Director at Leger, where she oversaw
+  competitive intelligence, buyer persona development, and industry research for
+  top-tier clients. Most recently, she joined Later as a Senior Market
+  Researcher at the forefront of social and influencer marketing. Her analytical
+  approach and keen ability to distill complex data into meaningful business
+  insights make her an invaluable asset to both startups and established
+  enterprises.
+</Typography>
+<Typography variant="body1" paragraph>
+  Beyond research, Ladan is an educator and mentor, sharing her expertise as an
+  Instructor at Vancouver Community College and University Canada West, where
+  she teaches courses in Fundamentals of Marketing, Business Communications,
+  Business Management Essentials, and Small Business Management for MBA
+  students. Her passion for education, combined with real-world industry
+  experience, equips her students with the tools they need to thrive in the
+  modern business landscape. Ladan enjoys exploring new market trends,
+  mentoring entrepreneurs, and discovering innovative business models. Her deep
+  expertise in consumer behavior, data analysis, and marketing strategy ensures
+  that The DevNest stays ahead of the curve in delivering research-backed,
+  strategic solutions to its clients.
+</Typography>
+
+            <Box display="flex" gap={2} mt={2}>
               <Link
-                href="https://github.com/Milad-fotoohnejad"
+                href="https://www.linkedin.com/in/ladanfotoohi/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Milad's GitHub"
-                style={{
-                  color: darkMode ? "white" : "black", // Adjust color based on theme
-                }}
+                aria-label="Ladan's LinkedIn"
+                style={{ color: darkMode ? "white" : "black" }}
               >
-                <FaGithub size={24} />
+                <FaLinkedin size={24} />
               </Link>
             </Box>
           </Grid>
