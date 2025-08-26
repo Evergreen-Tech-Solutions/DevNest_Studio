@@ -84,11 +84,10 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerToggle}>
-        <div>
+        <div className=" h-full flex flex-col items-center justify-center">
           <List className="w-32">
             {menuItems.map((item) => (
               <ListItem
-                className={`${styles.mobItem} w-full`}
                 button
                 key={item.text}
                 onClick={() => {
@@ -98,6 +97,7 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
               >
                 <ListItemText
                   primary={item.text}
+                  className={`${styles.mobItem}`}
                   primaryTypographyProps={{
                     fontSize: "1.3rem",
                     fontWeight: "bold",

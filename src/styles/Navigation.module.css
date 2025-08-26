@@ -63,8 +63,10 @@
 }
 
 .mobItem {
-  padding: 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   border-radius: 20px;
+  border-top: 4px solid #00a896;
   border-bottom: 4px solid #00a896;
   text-align: center;
 }
