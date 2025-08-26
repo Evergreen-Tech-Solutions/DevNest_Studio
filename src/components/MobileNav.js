@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import styles from "../styles/Navigation.module.css";
 import {
   AppBar,
   Toolbar,
@@ -17,6 +18,7 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import darkLogo from "../assets/logo.png";
 import lightLogo from "../assets/logo_w.png";
+import { m } from "framer-motion";
 
 function MobileNav({ onToggleDarkMode, darkMode }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -44,7 +46,7 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: isMobile ? "block" : "none" }}
+            sx={{ mr: 4, display: isMobile ? "block" : "none" }}
           >
             <MenuIcon />
           </IconButton>
@@ -74,7 +76,7 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
                 ))}
             </div>
           </div>
-          <div className="flex items-center space-x-4 ">
+          <div className="flex items-center space-x-4">
             <IconButton color="inherit" onClick={onToggleDarkMode}>
               {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
@@ -82,20 +84,29 @@ function MobileNav({ onToggleDarkMode, darkMode }) {
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerToggle}>
-        <List>
-          {menuItems.map((item) => (
-            <ListItem
-              button
-              key={item.text}
-              onClick={() => {
-                navigate(item.to);
-                handleDrawerToggle();
-              }}
-            >
-              <ListItemText primary={item.text} />
-            </ListItem>
-          ))}
-        </List>
+        <div>
+          <List className="w-32">
+            {menuItems.map((item) => (
+              <ListItem
+                className={`${styles.mobItem} w-full`}
+                button
+                key={item.text}
+                onClick={() => {
+                  navigate(item.to);
+                  handleDrawerToggle();
+                }}
+              >
+                <ListItemText
+                  primary={item.text}
+                  primaryTypographyProps={{
+                    fontSize: "1.3rem",
+                    fontWeight: "bold",
+                  }}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </div>
       </Drawer>
     </>
   );
