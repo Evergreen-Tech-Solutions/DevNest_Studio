@@ -1,4 +1,4 @@
-# Milad and Jameson's Company Website
+# The DevNest Studio 
 
 This repository contains the source code for our company's website.
 
