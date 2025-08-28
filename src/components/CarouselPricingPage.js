@@ -84,7 +84,7 @@ const pricingPackages = [
     id: "business",
     logo: businessIcon,
     title: "Business Optimization",
-    salePrice: "Starts at C$850",
+    salePrice: "Contact for Quote",
     features: [
       "Business process automation",
       "Custom dashboards & analytics",
