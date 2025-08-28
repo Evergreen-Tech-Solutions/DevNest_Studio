@@ -19,7 +19,7 @@ import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
 import AcknowledgementsPage from "./pages/AcknowledgementsPage";
 import FAQPage from "./pages/FAQPage";
 import OurTeamPage from "./pages/OurTeamPage";
-import { deepOrange, grey } from "@mui/material/colors";
+import { deepOrange, green, grey } from "@mui/material/colors";
 import Footer from "./components/Footer";
 import "./styles/global.css";
 
@@ -38,6 +38,7 @@ function App() {
       ? {
           // Light mode colors
           primary: { main: "#b6e1e0" },
+          secondary: { main: "#b6e1e0" },
           divider: "#00a896",
           text: {
             primary: grey[900],
@@ -52,7 +53,8 @@ function App() {
         }
       : {
           // Navy/Dark Blue mode colors
-          primary: { main: "#0d1b2a" }, // deep navy
+          primary: { main: "#0d1b2a" },
+          secondary: { main: "#00a896" },
           divider: "#00a896",
           background: {
             default: "#0d1b2a", // page background

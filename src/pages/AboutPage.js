@@ -15,8 +15,8 @@ import { useEffect } from "react";
 function AboutPage({ darkMode }) {
   const theme = useTheme();
   useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={theme.palette.mode === "dark" ? Styles.darkMode : ""}>
@@ -79,15 +79,15 @@ function AboutPage({ darkMode }) {
             >
               Begin your digital journey with The DevNest
             </Typography>
-                      <Button
-            variant="contained"
-            color="secondary"
-            size="large"
-            href="/ourteam"
-            sx={{ fontWeight: "bold" }}
-          >
-            Meet Our Team
-          </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              href="/ourteam"
+              sx={{ fontWeight: "bold" }}
+            >
+              Meet Our Team
+            </Button>
           </Grid>
           <Grid
             item

@@ -32,6 +32,7 @@ import DigitalProductDevelopment from "../components/modals/DigitalProductDevelo
 import DesignQualityLifecycle from "../components/modals/ DesignQualityLifecycle";
 import BusinessOptimization from "../components/modals/ Business&Optimization";
 import AiIntegration from "../components/modals/AiIntegration";
+import PackageSelectorGame from "../components/PackageSelector";
 import "../styles/global.css";
 import { FaL } from "react-icons/fa6";
 
@@ -67,7 +68,7 @@ function HomePage({ darkMode }) {
       title: "Business Growth & Optimization",
       description:
         "Business Marketing & Promotion and Business Process Automation",
-    }
+    },
   ];
 
   const handleOpenModal = (id) => {
@@ -325,39 +326,53 @@ function HomePage({ darkMode }) {
       </div> */}
 
       {/* Contact Section */}
-      <div className="flex justify-center mb-5">
-        <div
-          id="contact"
-          className={`m-2 p-6 rounded-lg shadow-xl ${
-            darkMode ? "bg-gray-700 text-white" : "bg-white text-gray-900"
-          }`}
-        >
-          <h2 className="text-4xl font-bold text-center mb-12">
-            Get in touch with us
-          </h2>
-          <div className="">
-            <p className="text-lg text-center mb-6">
-              We're here to answer your questions, discuss your ideas, and help
-              you get started with what you need. Whether you're curious about
-              our services, have feedback to share, or just want to say hello,
-              we're always happy to hear from you.
+      <div
+        id="contact"
+        className={`w-full py-20 px-4 md:px-20 ${
+          darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Left Column: Package Selector Game */}
+          <div className="w-full md:w-1/2">
+            <div className="h-full">
+              <PackageSelectorGame />
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div
+            className="hidden md:block h-64 w-px opacity-50"
+            style={{ background: theme.palette.divider }}
+          ></div>
+
+          {/* Right Column: Info & Links */}
+          <div className="w-full md:w-1/2">
+            <h2 className="text-4xl font-bold mb-6 text-center md:text-left">
+              Let’s Build Something Great Together
+            </h2>
+            <p className="text-lg mb-4 leading-relaxed text-center md:text-left">
+              We're here to answer your questions, discuss your goals, and
+              create something impactful, tailored just for you.
             </p>
-            <p className="text-lg text-center mb-6">
-              Feel free to reach out to us by visiting our
+            <p className="text-lg mb-4 leading-relaxed text-center md:text-left">
+              Whether you’re looking to launch a digital product, integrate AI,
+              or streamline your business process, we’re just a message away.
+            </p>
+            <div className="mt-6 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <a
                 href="/contact"
-                className="text-blue-500 underline hover:text-red-500 mx-1"
+                className={`border border-teal-600 hover:bg-teal-400 hover:text-slate-900 font-semibold py-3 px-6 rounded-full transition duration-300`}
               >
-                Contact Page
+                Contact Us
               </a>
-              . You'll find a simple form to send us your message, and we'll get
-              back to you as soon as possible!
-            </p>
-            <p className="text-lg text-center">
-              Let's connect and explore how we can work together to achieve your
-              goals. Your journey starts with a conversation—don't hesitate to
-              get in touch today.
-            </p>
+              <a
+                href="/pricing"
+                className={`font-semibold text-teal-600 underline hover:text-teal-300 transition duration-300`}
+              >
+                View Pricing →
+              </a>
+            </div>
           </div>
         </div>
       </div>
