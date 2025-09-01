@@ -25,7 +25,9 @@ function CustomPackageModal({ open, onClose, darkMode }) {
           Let us know your requirements, and we’ll craft a solution tailored to
           your needs.
         </Typography>
-        <ContactForm darkMode={darkMode} />
+
+        {/* Pass down initial selected package directly */}
+        <ContactForm darkMode={darkMode} initialPackage="custom" />
       </Box>
     </Modal>
   );

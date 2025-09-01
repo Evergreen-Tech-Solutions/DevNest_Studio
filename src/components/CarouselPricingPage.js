@@ -1,5 +1,3 @@
-// PricingPage.js
-
 import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "@mui/material";
 import {
@@ -16,12 +14,14 @@ import CustomModal from "../components/modals/CustomPackageModal";
 import AiIntegrationModal from "../components/modals/AiIntegrationModal";
 import WorkflowSteps from "../components/WorkflowSteps";
 import BusinessOptimizationModal from "../components/modals/Business&OptimizationModal";
+import DesignLifecycleModal from "../components/modals/DesignLifecycleModal";
 
 import starterIcon from "../assets/logos/starterPackageLogo.png";
 import ecommerceIcon from "../assets/logos/ecommercePackageLogo.png";
 import customIcon from "../assets/logos/customPackageLogo.png";
 import aiIcon from "../assets/logos/aiIntegrationLogo.png";
 import businessIcon from "../assets/logos/businessProcessaAtomationLogo.png";
+import designIcon from "../assets/logos/uiUxLogo.png";
 
 const pricingPackages = [
   {
@@ -93,6 +93,19 @@ const pricingPackages = [
     ],
     tagline: "Ideal for scaling businesses and startups ready to grow.",
   },
+  {
+    id: "design",
+    logo: designIcon,
+    title: "Design, Quality & Lifecycle",
+    salePrice: "Contact for Quote",
+    features: [
+      "UI/UX Design & branding systems",
+      "User testing & Quality Assurance",
+      "Deployment & staging pipelines",
+      "Ongoing maintenance & versioning",
+    ],
+    tagline: "Essential support for professional polish & sustainability.",
+  },
 ];
 
 function PricingPage({ darkMode }) {
@@ -128,6 +141,11 @@ function PricingPage({ darkMode }) {
     setActiveModal(null);
     setModalOpen(false);
   };
+
+  const handleSelectPackage = (pkgId) => {
+  setSelectedPackage(pkgId);
+};
+
 
   const getTransformStyle = (index) => {
     const diff = index - activeIndex;
@@ -286,26 +304,47 @@ function PricingPage({ darkMode }) {
           open={modalOpen}
           onClose={handleCloseModal}
           package={selectedPackage}
+          onSelectPackage={handleSelectPackage}
         />
       )}
       {activeModal === "ai" && (
-        <AiIntegrationModal open={modalOpen} onClose={handleCloseModal} />
+        <AiIntegrationModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          package={selectedPackage}
+          onSelectPackage={handleSelectPackage}
+        />
       )}
       {activeModal === "ecommerce" && (
         <EcommerceModal
           open={modalOpen}
           onClose={handleCloseModal}
           package={selectedPackage}
+          onSelectPackage={handleSelectPackage}
         />
       )}
       {activeModal === "custom" && (
-        <CustomModal open={modalOpen} onClose={handleCloseModal} />
+        <CustomModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          package={selectedPackage}
+          onSelectPackage={handleSelectPackage}
+        />
       )}
       {activeModal === "business" && (
         <BusinessOptimizationModal
           open={modalOpen}
           onClose={handleCloseModal}
           package={selectedPackage}
+          onSelectPackage={handleSelectPackage}
+        />
+      )}
+      {activeModal === "design" && (
+        <DesignLifecycleModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          package={selectedPackage}
+          onSelectPackage={handleSelectPackage}
         />
       )}
 

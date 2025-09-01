@@ -137,7 +137,6 @@ function getTopCategory(selections) {
   return Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
 }
 
-
 function PackageSelectorGame() {
   const theme = useTheme();
   const [started, setStarted] = useState(false);
@@ -178,7 +177,8 @@ function PackageSelectorGame() {
         p: 3,
         bgcolor: theme.palette.mode === "dark" ? "#1e293b" : "#f8fafc",
         borderRadius: 2,
-        height: 300,
+        minHeight: 300,
+        height: "auto",
         maxWidth: 600,
         mx: "auto",
         boxShadow: 6,
@@ -266,7 +266,7 @@ function PackageSelectorGame() {
               href={result?.href}
               sx={{ mt: 3, borderRadius: 2 }}
             >
-              View {result?.title}
+              View Packages
             </Button>
           </Box>
         </Fade>

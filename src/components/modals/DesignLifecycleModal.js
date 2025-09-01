@@ -1,14 +1,26 @@
+// DesignLifecycleModal.js
 import React from "react";
 import { Modal, Box, Typography, Button } from "@mui/material";
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-function EcommercePackageModal({ open, onClose, package: selectedPackage }) {
+function DesignLifecycleModal({
+  open,
+  onClose,
+  package: selectedPackage,
+  onSelectPackage,
+}) {
+  const handleSelectAndClose = () => {
+    if (onSelectPackage && selectedPackage?.id) {
+      onSelectPackage(selectedPackage.id);
+    }
+    onClose();
+  };
   const navigate = useNavigate();
 
   const handleRedirect = () => {
     onClose();
-    navigate("/contact?package=ecommerce");
+    navigate("/contact?package=design");
   };
 
   return (
@@ -30,27 +42,18 @@ function EcommercePackageModal({ open, onClose, package: selectedPackage }) {
       >
         {/* Title & Price */}
         <Typography variant="h5" fontWeight="normal" gutterBottom>
-          {selectedPackage?.title || "E-Commerce Website Package"}
+          {selectedPackage?.title || "Design, Quality & Lifecycle Package"}
         </Typography>
 
         <Typography variant="body1" sx={{ mb: 1 }}>
           <span style={{ color: "#e63946", fontWeight: "bold" }}>
-            {selectedPackage?.salePrice || "C$2,000"}
-          </span>{" "}
-          <span
-            style={{
-              textDecoration: "line-through",
-              color: "#aaa",
-              fontSize: "0.9rem",
-              marginLeft: 8,
-            }}
-          >
-            {selectedPackage?.regularPrice || "C$4,000"}
+            {selectedPackage?.salePrice || "Contact for Quote"}
           </span>
         </Typography>
 
         <Typography variant="h8" color="textSecondary">
-          Launch your online store with all the tools to start selling fast.
+          Professional design, quality control, and long-term support for your
+          product.
         </Typography>
 
         {/* Features */}
@@ -63,31 +66,25 @@ function EcommercePackageModal({ open, onClose, package: selectedPackage }) {
               style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
             >
               <FaCheckCircle color="#00a896" />
-              Everything in the Starter Package
+              UI/UX Design & Branding Systems
             </li>
             <li
               style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
             >
               <FaCheckCircle color="#00a896" />
-              Product Listings with Image Galleries
+              User Testing & Quality Assurance
             </li>
             <li
               style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
             >
               <FaCheckCircle color="#00a896" />
-              Secure Checkout & Payment Gateways
+              Staging Pipelines & Deployment Support
             </li>
             <li
               style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
             >
               <FaCheckCircle color="#00a896" />
-              Inventory & Order Management
-            </li>
-            <li
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <FaCheckCircle color="#00a896" />
-              Advanced SEO & Analytics Tools
+              Maintenance Plans & Version Updates
             </li>
           </ul>
         </Box>
@@ -116,4 +113,4 @@ function EcommercePackageModal({ open, onClose, package: selectedPackage }) {
   );
 }
 
-export default EcommercePackageModal;
+export default DesignLifecycleModal;

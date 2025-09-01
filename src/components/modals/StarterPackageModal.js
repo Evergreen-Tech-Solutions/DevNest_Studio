@@ -1,8 +1,16 @@
 import React from "react";
 import { Modal, Box, Typography, Button } from "@mui/material";
 import { FaCheckCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function StarterPackageModal({ open, onClose, package: selectedPackage }) {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    onClose();
+    navigate(`/contact?package=${selectedPackage?.id || "starter"}`);
+  };
+
   return (
     <Modal open={open} onClose={onClose}>
       <Box
@@ -51,41 +59,22 @@ function StarterPackageModal({ open, onClose, package: selectedPackage }) {
             What’s Included:
           </Typography>
           <ul style={{ lineHeight: "1.8" }}>
-            <li
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <FaCheckCircle color="#00a896" />
-              1–3 Page Responsive Website
-            </li>
-            <li
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <FaCheckCircle color="#00a896" />
-              Mobile-Friendly Design
-            </li>
-            <li
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <FaCheckCircle color="#00a896" />
-              Custom Contact Form
-            </li>
-            <li
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <FaCheckCircle color="#00a896" />
-              SEO Setup + Google Analytics
-            </li>
-            <li
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <FaCheckCircle color="#00a896" />
-              Deployed & Domain-Connected
-            </li>
-            <li
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <FaCheckCircle color="#00a896" />1 Month of Support & Maintenance
-            </li>
+            {[
+              "1–3 Page Responsive Website",
+              "Mobile-Friendly Design",
+              "Custom Contact Form",
+              "SEO Setup + Google Analytics",
+              "Deployed & Domain-Connected",
+              "1 Month of Support & Maintenance",
+            ].map((item, i) => (
+              <li
+                key={i}
+                style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+              >
+                <FaCheckCircle color="#00a896" />
+                {item}
+              </li>
+            ))}
           </ul>
         </Box>
 
@@ -96,9 +85,9 @@ function StarterPackageModal({ open, onClose, package: selectedPackage }) {
             color="primary"
             fullWidth
             sx={{ borderRadius: "12px", py: 1.2 }}
-            onClick={onClose}
+            onClick={handleRedirect}
           >
-            Get Started – Only C$500
+            Get Started – Contact Us
           </Button>
           <Button
             variant="text"
