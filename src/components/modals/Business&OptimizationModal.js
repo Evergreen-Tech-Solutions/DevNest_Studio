@@ -1,9 +1,20 @@
-// BusinessOptimizationModal.js
 import React from "react";
 import { Modal, Box, Typography, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 
-function BusinessOptimizationModal({ open, onClose, package: selectedPackage }) {
+function BusinessOptimizationModal({
+  open,
+  onClose,
+  package: selectedPackage,
+}) {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    onClose();
+    navigate(`/contact?package=${selectedPackage?.id || "business"}`);
+  };
+
   return (
     <Modal open={open} onClose={onClose}>
       <Box
@@ -21,14 +32,13 @@ function BusinessOptimizationModal({ open, onClose, package: selectedPackage }) 
           textAlign: "center",
         }}
       >
-        {/* Title & Price */}
         <Typography variant="h5" fontWeight="normal" gutterBottom>
           {selectedPackage?.title || "Business Optimization Package"}
         </Typography>
 
         <Typography variant="body1" sx={{ mb: 1 }}>
           <span style={{ color: "#e63946", fontWeight: "bold" }}>
-            {selectedPackage?.salePrice || "Starts at C$850"}
+            {selectedPackage?.salePrice || "Contact for Quote"}
           </span>
         </Typography>
 
@@ -36,45 +46,38 @@ function BusinessOptimizationModal({ open, onClose, package: selectedPackage }) 
           Streamline operations and promote your brand for growth.
         </Typography>
 
-        {/* Features */}
         <Box mt={3} textAlign="left">
           <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
             What’s Included:
           </Typography>
           <ul style={{ lineHeight: "1.8" }}>
-            <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <FaCheckCircle color="#00a896" />
-              Business Process Automation Workflows
-            </li>
-            <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <FaCheckCircle color="#00a896" />
-              Social Media & Email Campaign Integration
-            </li>
-            <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <FaCheckCircle color="#00a896" />
-              Custom Marketing Dashboards
-            </li>
-            <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <FaCheckCircle color="#00a896" />
-              Client Outreach & Retargeting Setup
-            </li>
-            <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <FaCheckCircle color="#00a896" />
-              Automation Tools Integration (Zapier, Integromat, etc.)
-            </li>
+            {[
+              "Business Process Automation Workflows",
+              "Social Media & Email Campaign Integration",
+              "Custom Marketing Dashboards",
+              "Client Outreach & Retargeting Setup",
+              "Automation Tools Integration (Zapier, Integromat, etc.)",
+            ].map((item) => (
+              <li
+                key={item}
+                style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+              >
+                <FaCheckCircle color="#00a896" />
+                {item}
+              </li>
+            ))}
           </ul>
         </Box>
 
-        {/* Call to Action */}
         <Box mt={4}>
           <Button
             variant="contained"
             color="primary"
             fullWidth
             sx={{ borderRadius: "12px", py: 1.2 }}
-            onClick={onClose}
+            onClick={handleRedirect}
           >
-            Get Started – From C$850
+            Get Started – Contact Us
           </Button>
           <Button
             variant="text"

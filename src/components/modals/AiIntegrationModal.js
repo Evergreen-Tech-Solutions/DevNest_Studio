@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, Box, Typography, Button } from "@mui/material";
 import { FaCheckCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -13,10 +14,17 @@ const style = {
   boxShadow: 24,
   p: 4,
   borderRadius: 2,
-  textAlign: "center"
+  textAlign: "center",
 };
 
-function AIIntegrationModal({ open, onClose, package: selectedPackage  }) {
+function AIIntegrationModal({ open, onClose, package: selectedPackage }) {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    onClose();
+    navigate("/contact?package=ai");
+  };
+
   return (
     <Modal open={open} onClose={onClose}>
       <Box sx={style}>
@@ -34,7 +42,7 @@ function AIIntegrationModal({ open, onClose, package: selectedPackage  }) {
           Tailored solutions for businesses of all sizes
         </Typography>
 
-        <Typography variant="body1" sx={{ my: 2 , textAlign: "left"}}>
+        <Typography variant="body1" sx={{ my: 2, textAlign: "left" }}>
           Power up your workflows with cutting-edge automation:
         </Typography>
 
@@ -64,9 +72,9 @@ function AIIntegrationModal({ open, onClose, package: selectedPackage  }) {
             color="primary"
             fullWidth
             sx={{ borderRadius: "12px", py: 1.2 }}
-            onClick={onClose}
+            onClick={handleRedirect}
           >
-            Get Started – From C$750
+            Get Started – Contact Us
           </Button>
           <Button
             variant="text"
