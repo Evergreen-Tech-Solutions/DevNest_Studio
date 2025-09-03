@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Styles from "../styles/HomePage.module.css";
-import darkLogo from "../assets/logo.png";
-import lightLogo from "../assets/logo_w.png";
 import darkModeVideo from "../assets/backgroundVids/darkMode_bg.mp4";
 import lightModeVideo from "../assets/backgroundVids/lightMode_bg.mp4";
 import customWebDevelopmentLogo from "../assets/logos/customWebDevelopmentLogo.png";
 import uiUxLogo from "../assets/logos/uiUxLogo.png";
 import marketingPromotionLogo from "../assets/logos/marketingPromotionLogo.png";
 import AiIntegrationLogo from "../assets/logos/aiIntegrationLogo.png";
-import ContactForm from "../components/ContactForm";
+import drkLogo from "../assets/logos/darkLogo.png";
+import lghtLogo from "../assets/logos/lightLogo.png";
 import { useTheme, Box } from "@mui/material";
 import {
   FaReact,
@@ -120,11 +119,11 @@ function HomePage({ darkMode }) {
             : "bg-opacity-50 bg-white text-gray-900"
         } mx-auto px-4 sm:px-6 lg:px-8 py-16 ${Styles.overlay}`}
       >
-        <div className="text-center">
+        <div className="text-center m-12">
           <img
-            src={darkMode ? lightLogo : darkLogo}
+            src={darkMode ? lghtLogo : drkLogo}
             alt="DevNest Studio Logo"
-            className="h-60 w-60 mx-auto mb-5"
+            className="h-72 w-72 mx-auto"
           />
           <h1 className="text-6xl font-bold mb-4">
             Transform Your Digital Presence
