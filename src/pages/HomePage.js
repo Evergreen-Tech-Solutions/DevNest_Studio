@@ -32,6 +32,7 @@ import DesignQualityLifecycle from "../components/modals/ DesignQualityLifecycle
 import BusinessOptimization from "../components/modals/ Business&Optimization";
 import AiIntegration from "../components/modals/AiIntegration";
 import PackageSelectorGame from "../components/PackageSelector";
+import LaunchPromoBox from "../components/modals/LaunchPromo";
 import "../styles/global.css";
 import { FaL } from "react-icons/fa6";
 
@@ -286,43 +287,9 @@ function HomePage({ darkMode }) {
         />
       )}
 
-      {/* Testimonials Section */}
-      {/* <div
-        className={`py-16 ${darkMode ? "bg-gray-700 text-gray-100" : "bg-gray-100 text-gray-900"
-          }`}
-      >
-        <h2 className="text-4xl font-bold text-center mb-12">
-          What Our Clients Say
-        </h2>
-        <div className="flex flex-wrap justify-center">
-          <div
-            className="max-w-md m-4 p-6 rounded-lg shadow-lg"
-            style={{
-              backgroundColor: darkMode ? "#999999" : "#ffffff",
-              color: darkMode ? "#ffffff" : "#000000",
-            }}
-          >
-            <p className="text-lg italic">
-              "The team at DevNest Studio transformed our website. Their
-              expertise in custom web development is unparalleled."
-            </p>
-            <p className="text-right font-bold mt-4">- Client Name</p>
-          </div>
-          <div
-            className="max-w-md m-4 p-6 rounded-lg shadow-lg"
-            style={{
-              backgroundColor: darkMode ? "#999999" : "#ffffff",
-              color: darkMode ? "#ffffff" : "#000000",
-            }}
-          >
-            <p className="text-lg italic">
-              "Thanks to their AI integration, our business operations are more
-              efficient than ever."
-            </p>
-            <p className="text-right font-bold mt-4">- Client Name</p>
-          </div>
-        </div>
-      </div> */}
+      <div className="mb-10 ml-10 mr-10">
+        <LaunchPromoBox />
+      </div>
 
       {/* Contact Section */}
       <div

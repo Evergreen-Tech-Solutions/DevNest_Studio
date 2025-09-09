@@ -50,7 +50,7 @@ function OurTeamPage({ darkMode }) {
                 fontSize: "1.2rem",
               }}
             >
-              Co-Founder / Lead Back-End Developer
+              Co-Founder / Back-End Developer
             </Typography>
             <Typography variant="body1" paragraph>
               Jameson was born near Montreal, Quebec, but his journey has taken
@@ -141,7 +141,7 @@ function OurTeamPage({ darkMode }) {
                 fontSize: "1.2rem",
               }}
             >
-              Co-Founder / Lead Front-End Developer
+              Co-Founder / Front-End Developer
             </Typography>
             <Typography variant="body1" paragraph>
               Milad, born in the historic city of Shiraz, Iran, brings a rich
