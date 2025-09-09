@@ -15,6 +15,7 @@ import AiIntegrationModal from "../components/modals/AiIntegrationModal";
 import WorkflowSteps from "../components/WorkflowSteps";
 import BusinessOptimizationModal from "../components/modals/Business&OptimizationModal";
 import DesignLifecycleModal from "../components/modals/DesignLifecycleModal";
+import LaunchPromoBox from "../components/modals/LaunchPromo";
 
 import starterIcon from "../assets/logos/starterPackageLogo.png";
 import ecommerceIcon from "../assets/logos/ecommercePackageLogo.png";
@@ -28,7 +29,7 @@ const pricingPackages = [
     id: "starter",
     logo: starterIcon,
     title: "Launch Your Brand Online",
-    salePrice: "C$500",
+    salePrice: "C$750",
     regularPrice: "C$1,500",
     features: [
       "Responsive 1–3 page website",
@@ -42,7 +43,7 @@ const pricingPackages = [
     id: "ai",
     logo: aiIcon,
     title: "AI Integration",
-    salePrice: "Starts at C$750",
+    salePrice: "Contact for Quote",
     description:
       "Automate tasks, create smart assistants, and gain insights with AI tailored to your business.",
     features: [
@@ -71,7 +72,7 @@ const pricingPackages = [
     id: "custom",
     logo: customIcon,
     title: "Tailored to Your Vision",
-    salePrice: "Pricing Upon Request",
+    salePrice: "Contact for Quote",
     features: [
       "Advanced web/app functionality",
       "AI automation & smart features",
@@ -119,7 +120,7 @@ function PricingPage({ darkMode }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
   };
@@ -143,9 +144,8 @@ function PricingPage({ darkMode }) {
   };
 
   const handleSelectPackage = (pkgId) => {
-  setSelectedPackage(pkgId);
-};
-
+    setSelectedPackage(pkgId);
+  };
 
   const getTransformStyle = (index) => {
     const diff = index - activeIndex;
@@ -229,9 +229,29 @@ function PricingPage({ darkMode }) {
               backgroundColor: theme.palette.background.paper,
               color: darkMode ? "#fff" : "#000",
               cursor: "pointer",
+              overflow: "hidden",
               ...getTransformStyle(index),
             }}
           >
+            <Box
+              sx={{
+                position: "absolute",
+                top: "22px",
+                left: "-35px",
+                width: "140px",
+                transform: "rotate(-45deg)",
+                backgroundColor: "#e63946",
+                color: "#fff",
+                textAlign: "center",
+                fontSize: "12px",
+                fontWeight: "600",
+                py: "4px",
+                boxShadow: 4,
+                letterSpacing: "0.5px",
+              }}
+            >
+              PROMOTION!
+            </Box>
             <img
               src={pkg.logo}
               alt={pkg.title}
@@ -246,7 +266,7 @@ function PricingPage({ darkMode }) {
               gutterBottom
             >
               {pkg.salePrice.includes("C$")
-                ? `Sale Price: ${pkg.salePrice}`
+                ? `Promotion Price: ${pkg.salePrice}`
                 : pkg.salePrice}
             </Typography>
             {pkg.regularPrice && (
@@ -349,6 +369,7 @@ function PricingPage({ darkMode }) {
       )}
 
       {/* Below Carousel*/}
+      <div className="mt-5"><LaunchPromoBox /></div>
       <Box
         sx={{
           mt: 10,
