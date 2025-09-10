@@ -96,17 +96,24 @@ function Footer() {
       </Box>
 
       {/* Footer Text */}
-      <Typography
-        variant="body2"
-        sx={{
-          fontFamily: "Quicksand, serif",
-          fontSize: "1rem",
-          color: theme.palette.mode === "dark" ? "#ffffffb3" : "#444",
-          mt: 1,
-        }}
-      >
-        © {currentYear} DevNest Studio
-      </Typography>
+      <div className="w-10 h-6 mt-2 object-cover">
+        <img
+          src={require("../assets/logos/CanadaFlag.png")}
+          alt="Canada, Beautiful British Columbia"
+        />
+      </div>
+      <div>
+        <Typography
+          variant="body2"
+          sx={{
+            fontFamily: "Quicksand, serif",
+            fontSize: "1.1rem",
+            color: theme.palette.text,
+          }}
+        >
+          © {currentYear} DevNest Studio
+        </Typography>
+      </div>
     </Container>
   );
 
@@ -123,18 +130,14 @@ function Footer() {
               right: 16,
               zIndex: 1301,
               backgroundColor:
-                theme.palette.mode === "light"
-                  ? "#00a89763"
-                  : "primary.main",
+                theme.palette.mode === "light" ? "#00a89763" : "primary.main",
               color: "#00a896",
               backdropFilter: "blur(6px)",
               boxShadow: "0 2px 6px #00a89763",
               borderRadius: "12px",
               "&:hover": {
                 backgroundColor:
-                  theme.palette.mode === "light"
-                    ? "#00a89763"
-                    : "primary.dark",
+                  theme.palette.mode === "light" ? "#00a89763" : "primary.dark",
               },
             }}
           >

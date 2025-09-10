@@ -1,4 +1,6 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import React from "react";
+import OffSign from "../../assets/logos/OffSign.png";
 
 const LaunchPromoBanner = () => {
   const theme = useTheme();
@@ -19,7 +21,7 @@ const LaunchPromoBanner = () => {
         backgroundColor: theme.palette.background.paper,
         color: isDark ? "#fff" : "#000",
         boxShadow: isDark
-          ? "0 10px 24px rgba(255, 100, 100, 0.3)" 
+          ? "0 10px 24px rgba(255, 100, 100, 0.3)"
           : "0 10px 24px #ff004048",
       }}
     >
@@ -34,19 +36,34 @@ const LaunchPromoBanner = () => {
       >
         <Box
           sx={{
-            border: "4px solid #e53935",
-            borderRadius: "16px",
-            p: 3,
-            color: "#e53935",
-            fontSize: "4rem",
+            p: 1,
             mb: 2,
-            fontWeight: 800,
-            backgroundColor: isDark ? "#2b0000" : "#fff5f5",
             display: "inline-block",
-            transform: "rotate(-5deg)",
+            transform: "rotate(-15deg)",
+            width: "190px",
+            animation: "pulse 2s infinite ease-in-out",
+            "@keyframes pulse": {
+              "0%": {
+                transform: "rotate(-15deg) scale(1)",
+              },
+              "50%": {
+                transform: "rotate(-15deg) scale(1.1)",
+              },
+              "100%": {
+                transform: "rotate(-15deg) scale(1)",
+              },
+            },
           }}
         >
-          50% OFF
+          <img
+            src={OffSign}
+            alt="50% OFF"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+            }}
+          />
         </Box>
 
         <Typography
@@ -58,7 +75,7 @@ const LaunchPromoBanner = () => {
             color: isDark ? "#ffcccc" : "#800000",
           }}
         >
-          25% OFF on Business Optimization for first 3 clients
+          25% OFF on Business Optimization for first client only
         </Typography>
       </Box>
 
@@ -82,12 +99,13 @@ const LaunchPromoBanner = () => {
           }}
         >
           To celebrate our official launch, DevNest Studio is offering an
-          exclusive <strong>50% discount on all packages</strong> and <strong>25%
-          off Business Optimization package</strong>. Whether you're starting
-          small, launching an online store, or building custom AI-powered
-          solutions!! now is the time to act. <br />
+          exclusive <strong>50% discount on all packages</strong> and{" "}
+          <strong>25% off Business Optimization package</strong>. Whether you're
+          starting small, launching an online store, or building custom
+          AI-powered solutions!! now is the time to act. <br />
           <br />
-          <strong>Bonus:</strong> Our for the first 3 clients only <strong>on each package</strong>.
+          <strong>Bonus:</strong> Our for the first 3 clients only{" "}
+          <strong>on each package</strong>.
         </Typography>
       </Box>
     </Box>
