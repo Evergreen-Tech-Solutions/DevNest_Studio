@@ -177,9 +177,11 @@ function HomePage({ darkMode }) {
 
         {/* Who We Are Section */}
         <div
-          className={`py-12 text-center rounded-lg shadow-2xl mt-5 mb-8 ${
-            darkMode ? "bg-gray-700 text-gray-100" : "bg-lght text-gray-900"
-          }`}
+          className={"py-12 text-center rounded-lg shadow-2xl mt-5 mb-8"}
+          sx={{
+          backgroundColor: theme.palette.background.paper,
+          color: theme.palette.text.primary,
+        }}
         >
           <h2 className="text-4xl font-bold mb-4">Who We Are</h2>
           <h3 className="text-2xl font-semibold mb-4">From BC to the World</h3>
@@ -190,12 +192,10 @@ function HomePage({ darkMode }) {
             e-commerce site, or AI solution ... we tailor every project to your
             vision.
           </p>
-          <a
+            <a
             href="/about"
-            className={` p-3 text-center text-lg rounded-lg shadow-2xl ${
-              darkMode ? "bg-lght text-gray-900" : "bg-gray-700 text-gray-100"
-            }`}
-          >
+                className={`border border-teal-600 hover:bg-teal-600 hover:text-slate-900 font-semibold py-3 px-6 rounded-full transition duration-300`}
+              >
             Learn more about us
           </a>
         </div>
@@ -328,7 +328,7 @@ function HomePage({ darkMode }) {
             <div className="mt-6 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <a
                 href="/contact"
-                className={`border border-teal-600 hover:bg-teal-400 hover:text-slate-900 font-semibold py-3 px-6 rounded-full transition duration-300`}
+                className={`border border-teal-600 hover:bg-teal-600 hover:text-slate-900 font-semibold py-3 px-6 rounded-full transition duration-300`}
               >
                 Contact Us
               </a>
