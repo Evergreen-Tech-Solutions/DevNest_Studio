@@ -73,14 +73,14 @@ function Footer() {
         }}
       >
         <a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/company/the-devnest-studio"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin size={24} />
         </a>
         <a
-          href="https://www.github.com"
+          href="https://github.com/Evergreen-Tech-Solutions/DevNest_Studio"
           target="_blank"
           rel="noopener noreferrer"
         >
