@@ -4,6 +4,15 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translate3d(0,0,0)" },
+          "100%": { transform: "translate3d(-50%,0,0)" },
+        },
+      },
+      animation: {
+        marquee: 'marquee 80s linear infinite',
+      },
       colors: {
         blu: "#b6e1e0",
         orng: "#f7b633",
