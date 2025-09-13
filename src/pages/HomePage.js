@@ -149,16 +149,16 @@ function HomePage({ darkMode }) {
             : "bg-opacity-50 bg-gray-800 text-white"
         } mx-auto px-4 sm:px-6 lg:px-8 py-16 ${Styles.overlay}`}
       >
-        <div className="text-center m-16">
+        <div className="text-center px-4 sm:px-8 md:m-16">
           <img
             src={lghtLogo}
             alt="DevNest Studio Logo"
-            className="h-72 w-72 mx-auto"
+            className="h-36 w-36 sm:h-48 sm:w-48 md:h-72 md:w-72 mx-auto"
           />
-          <h1 className="text-6xl font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Transform Your Digital Presence
           </h1>
-          <p className="text-lg mb-8">
+          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto">
             We offer top-notch services to meet your needs. From custom web
             development to AI integration, we have you covered.
           </p>
