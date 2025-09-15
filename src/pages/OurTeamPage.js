@@ -12,6 +12,7 @@ import { FaLinkedin, FaGithub, FaGlobe } from "react-icons/fa";
 import miladImage from "../images/milad.jpg";
 import jamesonImage from "../images/jameson.jpg";
 import ladanImage from "../images/ladan.jpg";
+import wuImage from "../images/wu.JPG";
 
 function OurTeamPage({ darkMode }) {
   const theme = useTheme();
@@ -178,11 +179,19 @@ function OurTeamPage({ darkMode }) {
               where he honed his analytical and process optimization skills. His
               journey has taken him across Turkey, Malaysia, Germany, Poland,
               France, and Italy, not only in pursuit of professional growth, but
-              also personal development. As an <a href="https://aiesec.org/about-us" className="text-teal-600 hover:underline"target="_blank" rel="noopener noreferrer">AIESECer</a>, Milad engaged in
-              meaningful volunteer work in Poland, demonstrating a deep
-              commitment to cultural exchange and social impact. Now based in
-              the bustling tech hub of Vancouver, Canada, he continues to blend
-              global insight with technical expertise.
+              also personal development. As an{" "}
+              <a
+                href="https://aiesec.org/about-us"
+                className="text-teal-600 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AIESECer
+              </a>
+              , Milad engaged in meaningful volunteer work in Poland,
+              demonstrating a deep commitment to cultural exchange and social
+              impact. Now based in the bustling tech hub of Vancouver, Canada,
+              he continues to blend global insight with technical expertise.
             </Typography>
             <Typography variant="body1" paragraph>
               As Co-Founder and Front-End Developer at The DevNest, Milad is
@@ -333,6 +342,121 @@ function OurTeamPage({ darkMode }) {
                 }}
               >
                 <FaLinkedin size={24} />
+              </Link>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+      {/* Wu's Section */}
+      <Box id="wu" py={4}>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={4} textAlign="center">
+            <Avatar
+              alt="Wu"
+              src={wuImage}
+              sx={{
+                width: 350,
+                height: 350,
+                margin: "0 auto",
+                bgcolor: "primary.main",
+                fontSize: "2rem",
+                boxShadow: "0px 20px 15px rgba(0, 0, 0, 0.2)",
+              }}
+            >
+              L
+            </Avatar>
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <Typography
+              variant="subtitle1"
+              gutterBottom
+              sx={{
+                fontWeight: "bold",
+                letterSpacing: 1.2,
+                fontSize: "1.2rem",
+              }}
+            >
+              Front-End Developer/ AI Integration Specialist
+            </Typography>
+            <Typography variant="body1" paragraph>
+              Zhipeng Wu is an AI-focused technologist with deep expertise in
+              data stewardship, database design, and intelligent system
+              development. He has extensive experience building APIs, managing
+              large-scale data infrastructures, and creating solutions that make
+              complex information more accessible and actionable. At the
+              Department of Fisheries and Oceans Canada, Zhipeng supports
+              scientific projects by maintaining high-quality data pipelines,
+              architecting scalable databases, and enabling researchers with
+              geospatial dashboards and applications.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              At the Department of Fisheries and Oceans Canada, Zhipeng applies
+              his expertise in AI integration to support scientific research and
+              data-driven initiatives. He develops intelligent solutions that
+              enhance geospatial dashboards, optimize data management processes,
+              and improve the accessibility of complex scientific datasets. By
+              incorporating machine learning and AI-driven features, he enables
+              researchers to streamline workflows, uncover insights more
+              efficiently, and make better-informed decisions. His work ensures
+              that advanced technology translates into real-world impact for the
+              scientific community and beyond.
+            </Typography>
+
+            <Typography variant="body1" paragraph>
+              With a fast-learning mindset and a collaborative spirit, Zhipeng
+              thrives on solving complex problems and finding elegant solutions.
+              Beyond his technical contributions, he is motivated by the
+              potential of AI to transform industries, improve efficiency, and
+              create smarter applications. His unique blend of development
+              skills, data expertise, and forward-thinking approach to AI
+              integration makes him an invaluable asset to any team driving
+              innovation.
+            </Typography>
+            <Box display="flex" gap={2} mt={2}>
+               <Link
+                href="https://wu.wuapp.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Wu's Portfolio"
+                sx={{
+                  color: theme.palette.text.primary,
+                  transition: "color 0.3s ease-in-out",
+                  "&:hover": {
+                    color: theme.palette.divider,
+                  },
+                }}
+              >
+                <FaGlobe size={24} />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/zhipengwu90/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ladan's LinkedIn"
+                sx={{
+                  color: theme.palette.text.primary,
+                  transition: "color 0.3s ease-in-out",
+                  "&:hover": {
+                    color: theme.palette.divider,
+                  },
+                }}
+              >
+                <FaLinkedin size={24} />
+              </Link>
+              <Link
+                href="https://github.com/zhipengwu90"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Milad's GitHub"
+                sx={{
+                  color: theme.palette.text.primary,
+                  transition: "color 0.3s ease-in-out",
+                  "&:hover": {
+                    color: theme.palette.divider,
+                  },
+                }}
+              >
+                <FaGithub size={24} />
               </Link>
             </Box>
           </Grid>

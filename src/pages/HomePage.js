@@ -224,11 +224,11 @@ function HomePage({ darkMode }) {
             <div className="md:pl-8 pr-4 md:mb-0">
               <h3 className="text-2xl font-semibold">From BC to the World</h3>
               <p className="text-lg sm:text-xl mt-2">
-                Rooted in British Columbia, we are a collective of developers,
-                designers, and marketing strategists crafting digital
-                experiences for the next generation of businesses. Whether it’s
-                a custom app, e-commerce site, or AI solution... we tailor every
-                project to your vision.
+                Rooted in British Columbia, we are a collective of developers
+                and marketing strategist crafting digital experiences for the
+                next generation of businesses. Whether it’s a custom app,
+                e-commerce site, or AI solution... we tailor every project to
+                your vision.
               </p>
               <a
                 href="/about"
@@ -250,10 +250,12 @@ function HomePage({ darkMode }) {
                 From BC to your Project
               </h3>
               <p className="text-lg sm:text-xl leading-relaxed mt-2">
-                At DevNest, we design, build, and launch custom digital
-                solutions... from sleek front-ends and powerful backends to
-                AI-integrated platforms. We turn ideas into beautiful,
-                functional, and high-performing products.
+                At DevNest, we design and deliver custom digital solutions that
+                bring innovation to life and solutions that empower your
+                businesses to grow. Whether it’s building intuitive front-end
+                experiences, architecting scalable back-end systems, or
+                integrating AI to unlock smarter strategies, we turn bold ideas
+                into functional.
               </p>
               <a
                 href="/pricing"
