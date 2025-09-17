@@ -175,11 +175,11 @@ function OurTeamPage({ darkMode }) {
             <Typography variant="body1" paragraph>
               Milad, born in the historic city of Shiraz, Iran, brings a rich
               tapestry of international experience to The DevNest. With a degree
-              in Industrial Engineering, he began his career as a Quality Control supervisor,
-              where he honed his analytical and process optimization skills. His
-              journey has taken him across Turkey, Malaysia, Germany, Poland,
-              France, and Italy, not only in pursuit of professional growth, but
-              also personal development. As an{" "}
+              in Industrial Engineering, he began his career as a Quality
+              Control supervisor, where he honed his analytical and process
+              optimization skills. His journey has taken him across Turkey,
+              Malaysia, Germany, Poland, France, and Italy, not only in pursuit
+              of professional growth, but also personal development. As an{" "}
               <a
                 href="https://aiesec.org/about-us"
                 className="text-teal-600 hover:underline"
@@ -347,6 +347,7 @@ function OurTeamPage({ darkMode }) {
           </Grid>
         </Grid>
       </Box>
+
       {/* Wu's Section */}
       <Box id="wu" py={4}>
         <Grid container spacing={4} alignItems="center">
@@ -367,6 +368,9 @@ function OurTeamPage({ darkMode }) {
             </Avatar>
           </Grid>
           <Grid item xs={12} md={8}>
+            <Typography variant="h4" gutterBottom>
+              Zhipeng Wu
+            </Typography>
             <Typography
               variant="subtitle1"
               gutterBottom
@@ -413,7 +417,7 @@ function OurTeamPage({ darkMode }) {
               innovation.
             </Typography>
             <Box display="flex" gap={2} mt={2}>
-               <Link
+              <Link
                 href="https://wu.wuapp.app/"
                 target="_blank"
                 rel="noopener noreferrer"
