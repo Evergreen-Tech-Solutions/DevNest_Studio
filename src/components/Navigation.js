@@ -18,7 +18,10 @@ function Navigation({ onToggleDarkMode, darkMode }) {
   return (
     <AppBar position="fixed">
       <Toolbar className="w-full z-10">
-        <NavLink to="/" className="flex items-center transition-transform hover:scale-110 hover:text-[#00a896]">
+        <NavLink
+          to="/"
+          className="flex items-center transition-transform hover:scale-110 hover:text-[#00a896]"
+        >
           {/* <img
             src={darkMode ? lightLogo : darkLogo}
             alt="Logo"
@@ -37,6 +40,15 @@ function Navigation({ onToggleDarkMode, darkMode }) {
             >
               Home
             </NavLink>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                `${style.navItemBase} ${isActive ? style.navItemActive : ""}`
+              }
+            >
+              Projects
+            </NavLink>
+
             <NavLink
               to="/pricing"
               className={({ isActive }) =>
