@@ -10,6 +10,7 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import MobileNav from "./components/MobileNav";
 import HomePage from "./pages/HomePage";
+import Projects from "./pages/Projects";
 import AboutPage from "./pages/AboutPage";
 import PricingPage from "./pages/PricingPage";
 import QuoteBuilderPage from "./pages/QuoteBuilderPage";
@@ -32,46 +33,45 @@ function App() {
   const [manualToggle, setManualToggle] = useState(false);
   const mode = darkMode ? "dark" : "light";
   const theme = createTheme({
-  palette: {
-    mode,
-    ...(mode === "light"
-      ? {
-          // Light mode colors
-          primary: { main: "#b6e1e0" },
-          secondary: { main: "#b6e1e0" },
-          divider: "#00a896",
-          text: {
-            primary: grey[900],
-            secondary: grey[800],
-          },
-          background: {
-            default: "#ffffff",
-            green: "#00a896",
-            paper: "#f5f5f5",
-            ctaSection: "#ffffff",
-          },
-        }
-      : {
-          // Navy/Dark Blue mode colors
-          primary: { main: "#0d1b2a" },
-          secondary: { main: "#00a896" },
-          divider: "#00a896",
-          background: {
-            default: "#0d1b2a", // page background
-            paper: "#1b263b",   // cards, modals
-            ctaSection: "#1b263b",
-          },
-          text: {
-            primary: "#e0e1dd",  // soft light
-            secondary: "#778da9", // muted blue-gray
-          },
-        }),
-  },
-  typography: {
-    fontFamily: `"Quicksand", serif`,
-  },
-});
-
+    palette: {
+      mode,
+      ...(mode === "light"
+        ? {
+            // Light mode colors
+            primary: { main: "#b6e1e0" },
+            secondary: { main: "#b6e1e0" },
+            divider: "#00a896",
+            text: {
+              primary: grey[900],
+              secondary: grey[800],
+            },
+            background: {
+              default: "#ffffff",
+              green: "#00a896",
+              paper: "#f5f5f5",
+              ctaSection: "#ffffff",
+            },
+          }
+        : {
+            // Navy/Dark Blue mode colors
+            primary: { main: "#0d1b2a" },
+            secondary: { main: "#00a896" },
+            divider: "#00a896",
+            background: {
+              default: "#0d1b2a", // page background
+              paper: "#1b263b", // cards, modals
+              ctaSection: "#1b263b",
+            },
+            text: {
+              primary: "#e0e1dd", // soft light
+              secondary: "#778da9", // muted blue-gray
+            },
+          }),
+    },
+    typography: {
+      fontFamily: `"Quicksand", serif`,
+    },
+  });
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
@@ -123,6 +123,10 @@ function App() {
                     darkMode={darkMode}
                   />
                 }
+              />
+              <Route
+                path="/projects"
+                element={<Projects darkMode={darkMode} />}
               />
               <Route
                 path="/pricing"

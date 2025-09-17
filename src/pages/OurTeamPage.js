@@ -175,7 +175,7 @@ function OurTeamPage({ darkMode }) {
             <Typography variant="body1" paragraph>
               Milad, born in the historic city of Shiraz, Iran, brings a rich
               tapestry of international experience to The DevNest. With a degree
-              in Industrial Engineering, he began his career as a QC Manager,
+              in Industrial Engineering, he began his career as a Quality Control supervisor,
               where he honed his analytical and process optimization skills. His
               journey has taken him across Turkey, Malaysia, Germany, Poland,
               France, and Italy, not only in pursuit of professional growth, but
