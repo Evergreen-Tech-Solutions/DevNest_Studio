@@ -16,14 +16,14 @@ The DevNest Studio is a collective of web developers, designers, and automation 
 
 | Category        | Tools / Frameworks                              |
 |----------------|--------------------------------------------------|
-| Frontend       | ReactJS, Next.js, Tailwind CSS, MUI              |
+| Frontend       | ReactJS, Next.js, Tailwind CSS, MUI,    |
 | Routing        | React Router                                     |
-| Animations     | Framer Motion                                    |
+| Animations     | Framer Motion, ThreeJS                           |
 | Icons          | React Icons                                      |
 | Backend (TBD)  | Node.js / Express (Future plans)                 |
 | Version Control| Git, GitHub                                      |
 | Hosting        | Vercel / Netlify                                 |
-| Forms / Email  | Custom backend or integrations (e.g., Formspree) |
+| Forms / Email  | Custom backend, EmailJS                          |
 
 ---
 
