@@ -233,7 +233,7 @@ function PricingPage({ darkMode }) {
               ...getTransformStyle(index),
             }}
           >
-            <Box
+            {/* <Box
               sx={{
                 position: "absolute",
                 top: "22px",
@@ -251,7 +251,7 @@ function PricingPage({ darkMode }) {
               }}
             >
               PROMOTION!
-            </Box>
+            </Box> */}
             <img
               src={pkg.logo}
               alt={pkg.title}
