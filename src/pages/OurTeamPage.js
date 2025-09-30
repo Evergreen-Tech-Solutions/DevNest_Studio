@@ -256,7 +256,7 @@ function OurTeamPage({ darkMode }) {
       </Box>
 
       {/* Ladan's Section */}
-      <Box id="ladan" py={4}>
+      {/* <Box id="ladan" py={4}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={4} textAlign="center">
             <Avatar
@@ -346,7 +346,7 @@ function OurTeamPage({ darkMode }) {
             </Box>
           </Grid>
         </Grid>
-      </Box>
+      </Box> */}
 
       {/* Wu's Section */}
       <Box id="wu" py={4}>
