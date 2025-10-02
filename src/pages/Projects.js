@@ -21,7 +21,8 @@ import BakeryProject from "../components/projects/Bakery_project";
 function Projects({ darkMode }) {
   const theme = useTheme();
 
-  const projects = [WeddingProject, BakeryProject];
+  // Add the Wedding Project later here
+  const projects = [BakeryProject];
 
   return (
     <Box
@@ -31,39 +32,8 @@ function Projects({ darkMode }) {
         overflow: "hidden",
       }}
     >
+      {/* 🔹 3D ThreeJS Background */}
       <ThreeBackground />
-      {/* Video for dark mode */}
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          pointerEvents: "none",
-          display: darkMode ? "block" : "none",
-          filter: "saturate(80%) brightness(65%)",
-        }}
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source rel="preload" src={darkModeVideo} type="video/mp4" />
-      </video>
-
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          pointerEvents: "none",
-          display: !darkMode ? "block" : "none",
-          filter: "hue-rotate(195deg) saturate(80%) brightness(65%)",
-        }}
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source rel="preload" src={darkModeVideo} type="video/mp4" />
-      </video> */}
-
-      {/* 🔹 Overlay for slight tint depending on mode */}
       <Box
         sx={{
           position: "fixed",
