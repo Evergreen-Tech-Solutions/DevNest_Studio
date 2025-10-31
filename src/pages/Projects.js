@@ -17,12 +17,13 @@ import ThreeBackground from "../components/ThreeBackground";
 
 import WeddingProject from "../components/projects/Wedding_project";
 import BakeryProject from "../components/projects/Bakery_project";
+import IceAthleteProject from "../components/projects/MRS_project";
 
 function Projects({ darkMode }) {
   const theme = useTheme();
 
   // Add the Wedding Project later here
-  const projects = [BakeryProject];
+  const projects = [BakeryProject, IceAthleteProject];
 
   return (
     <Box
