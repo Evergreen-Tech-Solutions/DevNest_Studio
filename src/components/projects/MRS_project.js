@@ -2,7 +2,7 @@ import iceAthletePic from "../../assets/projectsPics/mrs_pic.png";
 
 const IceAthleteProject = {
   title: "Ice Climbing Athlete — Portfolio & Class Booking (in Development)",
-  description: `A full-stack platform for a competitive ice climber to showcase achievements, 
+  description: `A full-stack platform for a competitive ice climber athlete to showcase achievements, 
 media, and run paid training classes. Built with Next.js (App Router), Sanity, a headless CMS, and SupaBase for the Postgres database and authentication.
 It features an admin dashboard for managing classes, capacity, schedules, and media; 
 a trainee dashboard for bookings, payments, and history; and secure authentication with OAuth. 
@@ -19,7 +19,7 @@ Stripe Checkout + webhooks power payments and receipts, while ISR/SSR keeps page
     "Responsive Design",
   ],
   image: iceAthletePic,
-  live: "https://mrs-ice-athlete-web.vercel.app/",
+  live: "https://www.rezasafdarian.world/",
   github: "https://github.com/Evergreen-Tech-Solutions/MRS_Ice_Athlete", 
   imageOptions: {
     width: { xs: "100%", md: "50%" },
