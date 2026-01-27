@@ -17,7 +17,7 @@ import {
 import Styles from "../styles/QuoteBuilderPage.module.css";
 
 function QuoteBuilderPage({ darkMode }) {
-  const theme = useTheme();
+  // const theme = useTheme();
   const [projectType, setProjectType] = useState("");
   const [numPages, setNumPages] = useState("");
   const [numViews, setNumViews] = useState("");

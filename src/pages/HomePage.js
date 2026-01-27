@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Styles from "../styles/HomePage.module.css";
 import darkModeVideo from "../assets/backgroundVids/darkMode_bg.mp4";
-import lightModeVideo from "../assets/backgroundVids/lightMode_bg.mp4";
+// import lightModeVideo from "../assets/backgroundVids/lightMode_bg.mp4";
 import customWebDevelopmentLogo from "../assets/logos/customWebDevelopmentLogo.png";
 import uiUxLogo from "../assets/logos/uiUxLogo.png";
 import marketingPromotionLogo from "../assets/logos/marketingPromotionLogo.png";
 import AiIntegrationLogo from "../assets/logos/aiIntegrationLogo.png";
-import drkLogo from "../assets/logos/darkLogo.png";
+// import drkLogo from "../assets/logos/darkLogo.png";
 import lghtLogo from "../assets/logos/lightLogo.png";
-import MapleLeaf from "../assets/logos/maple.png";
+// import MapleLeaf from "../assets/logos/maple.png";
 import { useTheme, Box, useMediaQuery } from "@mui/material";
 import {
   FaReact,
@@ -37,10 +37,11 @@ import AiIntegration from "../components/modals/AiIntegration";
 import PackageSelectorGame from "../components/PackageSelector";
 import LaunchPromoBox from "../components/modals/LaunchPromo";
 import "../styles/global.css";
-import { FaL } from "react-icons/fa6";
+// import { FaL } from "react-icons/fa6";
 
 function HomePage({ darkMode }) {
   const theme = useTheme();
+  // eslint-disable-next-line
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [activeModal, setActiveModal] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
