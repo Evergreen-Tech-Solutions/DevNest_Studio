@@ -61,7 +61,7 @@ function OurTeamPage({ darkMode }) {
                 fontSize: "1.2rem",
               }}
             >
-              Co-Founder / Back-End Developer
+              Founder / Back-End Developer
             </Typography>
             <Typography variant="body1" paragraph>
               Jameson was born near Montreal, Quebec, but his journey has taken
@@ -170,7 +170,7 @@ function OurTeamPage({ darkMode }) {
                 fontSize: "1.2rem",
               }}
             >
-              Co-Founder / Front-End Developer
+              Application Support / Front-End Developer
             </Typography>
             <Typography variant="body1" paragraph>
               Milad, born in the historic city of Shiraz, Iran, brings a rich
@@ -194,14 +194,16 @@ function OurTeamPage({ darkMode }) {
               he continues to blend global insight with technical expertise.
             </Typography>
             <Typography variant="body1" paragraph>
-              As Co-Founder and Front-End Developer at The DevNest, Milad is
-              passionate about crafting intuitive and visually stunning user
-              experiences. His keen eye for detail and mastery of front-end
+              As an Application support and Front-End Developer at The DevNest,
+              Milad is passionate about crafting intuitive and visually stunning
+              user experiences. His keen eye for detail and mastery of front-end
               design ensure every project he touches achieves the perfect
               balance of form and function. His multidisciplinary background
               empowers him to lead with both empathy and precision, driving
               innovation and excellence at every stage of the development
-              lifecycle.
+              lifecycle. His role bridges the gap between technical development
+              and user support, ensuring that both the backend processes and the
+              front-end interfaces operate seamlessly.
             </Typography>
 
             <Box display="flex" gap={2} mt={2}>

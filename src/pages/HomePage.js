@@ -371,9 +371,9 @@ function HomePage({ darkMode }) {
         />
       )}
 
-      <div className="mb-10 ml-10 mr-10">
+      {/* <div className="mb-10 ml-10 mr-10">
         <LaunchPromoBox />
-      </div>
+      </div> */}
 
       {/* Contact Section */}
       <div
