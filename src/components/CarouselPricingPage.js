@@ -369,7 +369,7 @@ function PricingPage({ darkMode }) {
       )}
 
       {/* Below Carousel*/}
-      <div className="mt-5"><LaunchPromoBox /></div>
+      {/* <div className="mt-5"><LaunchPromoBox /></div> */}
       <Box
         sx={{
           mt: 10,
